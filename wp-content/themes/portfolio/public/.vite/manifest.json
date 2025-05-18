@@ -1,11 +1,31 @@
 {
   "wp-content/themes/portfolio/resources/css/styles.scss": {
-    "file": "assets/css-DYumQnK0.css",
+    "file": "assets/css-BTNsLFLD.css",
     "src": "wp-content/themes/portfolio/resources/css/styles.scss",
     "isEntry": true
   },
+  "wp-content/themes/portfolio/resources/fonts/Ethereal-Thin.otf": {
+    "file": "assets/Ethereal-Thin-CH4U-63c.otf",
+    "src": "wp-content/themes/portfolio/resources/fonts/Ethereal-Thin.otf"
+  },
+  "wp-content/themes/portfolio/resources/fonts/Poppins-Regular.ttf": {
+    "file": "assets/Poppins-Regular-D1nUktjN.ttf",
+    "src": "wp-content/themes/portfolio/resources/fonts/Poppins-Regular.ttf"
+  },
+  "wp-content/themes/portfolio/resources/fonts/Poppins-Thin.ttf": {
+    "file": "assets/Poppins-Thin-6EIUaOEn.ttf",
+    "src": "wp-content/themes/portfolio/resources/fonts/Poppins-Thin.ttf"
+  },
+  "wp-content/themes/portfolio/resources/img/main-flower.jpg": {
+    "file": "assets/main-flower-C1tEMASL.jpg",
+    "src": "wp-content/themes/portfolio/resources/img/main-flower.jpg"
+  },
+  "wp-content/themes/portfolio/resources/img/main-flower.png": {
+    "file": "assets/main-flower-B1kxdKS8.png",
+    "src": "wp-content/themes/portfolio/resources/img/main-flower.png"
+  },
   "wp-content/themes/portfolio/resources/js/main.js": {
-    "file": "assets/js-Bzsld0tX.js",
+    "file": "assets/js-l0sNRNKZ.js",
     "name": "js",
     "src": "wp-content/themes/portfolio/resources/js/main.js",
     "isEntry": true

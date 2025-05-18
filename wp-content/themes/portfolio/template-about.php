@@ -1,7 +1,7 @@
 <?php /* Template Name: Page "About" */ ?>
 
 <?php get_header(); ?>
-    <section>
+    <section class="description">
         <h1>About me</h1>
         <p>Seren Coban, I am passionate about creating innovative and visually appealing digital experiences. Let me help your projects flourish by designing warm, engaging, and user-friendly interfaces that truly connect with people.</p>
     </section>

@@ -4,29 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?= wp_title('·', false, 'right') . get_bloginfo('name') ?></title>
-  <link rel="stylesheet" type="text/css" href="<?= dw_asset('css'); ?>">
+    <link rel="icon" href="wp-content/themes/portfolio/resources/img/seren-logo.svg">
+    <link rel="stylesheet" type="text/css" href="<?= dw_asset('css'); ?>">
   <script src="<?= dw_asset('js') ?>" defer></script>
   <?php wp_head(); ?>
 </head>
 <body>
 <header>
   <h1 class="hidden"><?php the_title(); ?></h1>
-    <div class="nav_container">
-            <img src="resources/img/logo.svg" alt="">
-        <nav class="nav_menu">
-            <h2 class="hidden"></h2>
-            <div id="menuToggle">
-                <input type="checkbox" id="menuCheckbox"/>
+    <nav class="nav_menu">
+        <h2 class="hidden">Main navigation</h2>
+        <a href="">
+            <img src="wp-content/themes/portfolio/resources/img/seren-logo.svg" alt="">
+        </a>
+        <div class="menu-icon">
+            <input type="checkbox" id="checkbox_toggle" class="menu-checkbox" />
+            <label for="checkbox_toggle" class="menu-label">
                 <span></span>
                 <span></span>
-                <div>
-                    <?php wp_nav_menu([
-                        'theme_location' => 'header',
-                        'container' => 'nav',
-                    ]); ?>
-                </div>
-            </div>
-        </nav>
-    </div>
+            </label>
+        </div>
+        <div class="nav_links">
+            <?php wp_nav_menu([
+                'menu_class' => 'main-nav'
+            ]); ?>
+        </div>
+    </nav>
 </header>
 <main>

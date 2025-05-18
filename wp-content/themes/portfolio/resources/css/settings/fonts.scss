@@ -1,88 +1,31 @@
-/* Defined weights:
-  * 100: -
-  * 200: -
-  * 300: light
-  * 400: regular
-  * 500: medium
-  * 600: semi-bold
-  * 700: bold
-  * 800: -
-  * 900: -
- */
-
 :root {
-  font-family: 'Poppins', Helvetica, Arial, sans-serif;
-  font-family: 'Ethereal', Helvetica, Arial, sans-serif;
+  --font-base: 'Poppins', Helvetica, Arial, sans-serif;
+  --font-title: 'Ethereal', 'Poppins', Arial, serif;
 }
 
-/* Montserrat */
+/* ETHEREAL (300) */
 @font-face {
-  src: url('//resources/fonts/Boldonse-Regular.ttf') format('TrueType');
-  font-family: 'Boldonse';
+  font-family: 'Ethereal';
+  src: url('/wp-content/themes/portfolio/resources/fonts/Ethereal-Thin.otf') format('opentype');
   font-display: swap;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 300;
 }
 
-/* Montserrat */
+/* POPPINS (500) */
 @font-face {
-  src: url('//resources/fonts/Comfortaa-Regular.ttf') format('TrueType');
-  font-family: 'Comfortaa';
-  font-display: swap;
-  font-style: normal;
-  font-weight: 900;
-}
-
-/* Montserrat */
-@font-face {
-  src: url('//resources/fonts/Comfortaa-Regular.ttf') format('TrueType');
-  font-family: 'Comfortaa';
-  font-display: swap;
-  font-style: normal;
-  font-weight: 800;
-}
-
-/* Montserrat */
-@font-face {
-  src: url('//resources/fonts/Comfortaa-Regular.ttf') format('TrueType');
-  font-family: 'Comfortaa';
-  font-display: swap;
-  font-style: normal;
-  font-weight: 700;
-}
-
-/* Montserrat Light */
-@font-face {
-  src: url('//resources/fonts/Comfortaa-Regular.ttf') format('TrueType');
-  font-family: 'Comfortaa';
-  font-display: swap;
-  font-style: normal;
-  font-weight: 600;
-}
-
-/* Montserrat */
-@font-face {
-  src: url('//resources/fonts/Comfortaa-Regular.ttf') format('TrueType');
-  font-family: 'Comfortaa';
+  font-family: 'Poppins';
+  src: url('/wp-content/themes/portfolio/resources/fonts/Poppins-Regular.ttf') format('truetype');
   font-display: swap;
   font-style: normal;
   font-weight: 500;
 }
 
-/* Montserrat */
+/* POPPINS (300) */
 @font-face {
-  src: url('//resources/fonts/Comfortaa-Regular.ttf') format('TrueType');
-  font-family: 'Comfortaa';
+  font-family: 'Poppins';
+  src: url('/wp-content/themes/portfolio/resources/fonts/Poppins-Thin.ttf') format('truetype');
   font-display: swap;
-  font-style: italic;
-  font-weight: 400;
-}
-
-/* Montserrat */
-@font-face {
-  src: url('//resources/fonts/Comfortaa-Regular.ttf') format('TrueType');
-  font-family: 'Comfortaa';
-  font-display: swap;
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
 }

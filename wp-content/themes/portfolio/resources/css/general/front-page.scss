@@ -1,129 +1,198 @@
-html{
-  color: var(--beige);
-}
+@import "../settings/breakpoints";
+
 .header {
-  background-image: url('../../img/main-flower.jpg');
+  background-image: url('/wp-content/themes/portfolio/resources/img/main-flower.png');
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  background-position: center;
+  min-height: 300px;
 
   &_elm {
     position: absolute;
-    top: 300px;
-    left: 100px;
+    top: 150px;
+    left: 24px;
 
-    h1 {
-      font-size: 6rem;
+    h2 {
+      font-size: 40px;
+      color: white;
+      font-family: var(--font-title), serif;
     }
 
     p {
-      font-size: 3.5rem;
+      font-size: 24px;
+      color: white;
+      font-family: var(--font-title), serif;
+    }
+  }
+
+  @include tablet{
+    height: 50vh;
+
+    &_elm{
+      top: 200px;
+      left: 32px;
+
+      h2{
+        font-size: 50px ;
+      }
+
+      p{
+        font-size: 32px;
+      }
+    }
+  }
+  @include desktop {
+    background-size: cover;
+    height: 100vh;
+    min-width: 100%;
+    &_elm {
+      top: 300px;
+      left: 100px;
+      h2 {
+        font-size: 96px;
+      }
+      p {
+        font-size: 60px;
+      }
     }
   }
 }
 
 .about_me {
   background-color: var(--beige);
-  padding: 100px;
+  padding: 40px 24px;
   text-align: center;
   color: var(--black);
-  p{
-    margin-bottom: 24px;
+  a{
+    background-color: var(--pink);
+    border-radius: 24px 0 24px 0;
   }
-}
-
-.flower {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: -96px;
-}
-
-.stem {
-  display: flex;
-  justify-content: center;
-  position: relative;
-  top: -300px;
-}
-
-.growth-step {
-  display: flex;
-  align-items: center;
-  max-width: 1000px;
-  width: 100%;
-  margin-bottom: 100px;
-
-  &:hover {
-    .petal {
-      transform: rotate(10deg);
+  @include desktop{
+    padding: 64px 24px;
+    p{
+      font-size: 20px;
     }
   }
 }
 
-.project-content {
-  position: relative;
-  width: 430px;
-  height: 230px;
-  margin: 0 20px;
-  border-radius: 24px 0;
-  background-image: url('../../img/main-flower.jpg');
-  background-size: cover;
-  background-position: center;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    .overlay {
-      bottom: 0;
-    }
-
-    .overlay-text {
-      transform: translateY(0);
-    }
-  }
-}
-
-.overlay {
-  position: absolute;
-  bottom: -100%;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--pink);
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  transition: bottom 0.5s ease;
-}
-
-.overlay-text {
-  color: var(--beige);
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 50px;
-  transform: translateY(100%);
-  transition: transform 0.5s ease 0.1s;
-}
-
-.petal {
-  transition: transform 0.6s;
-  transform-origin: right center;
-}
-
-.btn {
-  background-color: var(--pink);
-  padding: 12px 32px;
-  display: inline-block;
-  color: var(--beige);
-  border-radius: 24px 0 24px 0;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: var(--pink2);
-  }
-}
 .flower-stem-section {
-  margin-bottom: 100px;
-}
+  position: relative;
 
+  @include tablet {
+    display: flex;
+    padding: 50px;
+    position: relative;
+  }
+
+  .flower_and_stem {
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    .flower{
+        width: 100%;
+      }
+    .stem{
+      position: relative;
+      top: -50Px;
+      left: 50%;
+      height: 600px;
+      overflow: hidden;
+      z-index: -10;
+
+      svg {
+      height: 100%;
+      width: auto;
+      }
+    }
+    @include tablet{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      top: -140px;
+      .stem{
+
+      }
+    }
+  }
+
+  .flower-stem-container {
+    margin: 150px 24px 0;
+    position: relative;
+    z-index: 1;
+
+    .growth-step {
+      margin-top: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .petal {
+      display: none;
+
+    }
+
+    .project-content {
+      position: relative;
+      width: 300px;
+      height: 160px;
+      border-radius: 32px 0;
+      background-image: url('/wp-content/themes/portfolio/resources/img/main-flower.jpg');
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+
+      // Appliquer l'effet uniquement sur ce bloc au survol
+      &:hover {
+        .overlay {
+          bottom: 0;
+        }
+
+        .overlay-text {
+          transform: translateY(0);
+        }
+      }
+
+      .overlay {
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--pink);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        transition: bottom 0.5s ease;
+      }
+
+      .overlay-text {
+        color: var(--beige);
+        font-size: 24px;
+        font-weight: 500;
+        margin-bottom: 50px;
+        transform: translateY(100%);
+        transition: transform 0.5s ease 0.1s;
+      }
+
+      .btn {
+        background-color: var(--pink);
+        padding: 12px 60px;
+        display: inline-block;
+        color: var(--beige);
+        border-radius: 24px 0 24px 0;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: red;
+        }
+      }
+
+    }
+  }}

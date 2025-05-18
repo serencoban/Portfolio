@@ -1,4 +1,6 @@
+<?php wp_footer(); ?>
 </main>
+<footer>
 <div class="footer_top">
     <div class="left_footer">
         <a class="footer_logo" href="logo">
@@ -66,6 +68,5 @@
 </div>
 
     </footer>
-    <?php wp_footer(); ?>
 </body>
 </html>

@@ -5,7 +5,7 @@ include_once('fields.php');
 
 // Vérifier si la session est active ("started") ?
 if (session_status() === PHP_SESSION_NONE) {
-  session_start();
+    session_start();
 }
 
 /**
@@ -20,7 +20,7 @@ if (session_status() === PHP_SESSION_NONE) {
  */
 function hepl_trad_load_textdomain(): void
 {
-  load_theme_textdomain('hepl-trad', get_template_directory() . '/locales');
+    load_theme_textdomain('hepl-trad', get_template_directory() . '/locales');
 }
 
 // Exécute la fonction lors de l'initialisation du thème.
@@ -29,16 +29,16 @@ add_action('after_setup_theme', 'hepl_trad_load_textdomain');
 function __hepl(string $translation, array $replacements = []): array|string|null
 {
 // 1. Récupérer la traduction de la phrase présente dans $translation
-  $base = __($translation, 'hepl-trad');
+    $base = __($translation, 'hepl-trad');
 
 // 2. Remplacer toutes les occurrences des variables par leur valeur
-  foreach ($replacements as $key => $value) {
-    $variable = ':' . $key;
-    $base = str_replace($variable, $value, $base);
-  }
+    foreach ($replacements as $key => $value) {
+        $variable = ':' . $key;
+        $base = str_replace($variable, $value, $base);
+    }
 
 // 3. Retourner la traduction complète.
-  return $base;
+    return $base;
 }
 
 /**
@@ -55,7 +55,7 @@ function __hepl(string $translation, array $replacements = []): array|string|nul
  */
 function get__option($field): mixed
 {
-  return get_field($field, pll_current_language('slug'));
+    return get_field($field, pll_current_language('slug'));
 }
 
 // Gutenberg est le nouvel éditeur de contenu propre à Wordpress
@@ -69,21 +69,21 @@ add_filter('use_widgets_block_editor', '__return_false');
 
 // Disable default front-end styles.
 add_action('wp_enqueue_scripts', function () {
-  // Remove CSS on the front end.
-  wp_dequeue_style('wp-block-library');
-  // Remove Gutenberg theme.
-  wp_dequeue_style('wp-block-library-theme');
-  // Remove inline global CSS on the front end.
-  wp_dequeue_style('global-styles');
+    // Remove CSS on the front end.
+    wp_dequeue_style('wp-block-library');
+    // Remove Gutenberg theme.
+    wp_dequeue_style('wp-block-library-theme');
+    // Remove inline global CSS on the front end.
+    wp_dequeue_style('global-styles');
 }, 20);
 
 add_action('init', 'init_remove_support', 100);
 
 function init_remove_support(): void
 {
-  remove_post_type_support('post', 'editor');
-  remove_post_type_support('page', 'editor');
-  remove_post_type_support('product', 'editor');
+    remove_post_type_support('post', 'editor');
+    remove_post_type_support('page', 'editor');
+    remove_post_type_support('product', 'editor');
 }
 
 remove_action('wp_head', 'print_emoji_detection_script', 7);
@@ -102,13 +102,13 @@ function enqueue_assets_from_vite_manifest(): void
         $manifest = json_decode(file_get_contents($manifestPath), true);
 
         // Vérifier et ajouter le fichier JavaScript
-        if (isset($manifest['wp-content/themes/dw/resources/js/main.js'])) {
-            wp_enqueue_script('dw', get_theme_file_uri('public/' . $manifest['wp-content/themes/dw/resources/js/main.js']['file']), [], null, true);
+        if (isset($manifest['wp-content/themes/portfolio/resources/js/main.js'])) {
+            wp_enqueue_script('dw', get_theme_file_uri('public/' . $manifest['wp-content/themes/portfolio/resources/js/main.js']['file']), [], null, true);
         }
 
         // Vérifier et ajouter le fichier CSS
-        if (isset($manifest['wp-content/themes/dw/resources/css/styles.scss'])) {
-            wp_enqueue_style('dw', get_theme_file_uri('public/' . $manifest['wp-content/themes/dw/resources/css/styles.scss']['file']));
+        if (isset($manifest['wp-content/themes/portfolio/resources/css/styles.scss'])) {
+            wp_enqueue_style('dw', get_theme_file_uri('public/' . $manifest['wp-content/themes/portfolio/resources/css/styles.scss']['file']));
         }
     }
 }
@@ -140,11 +140,11 @@ add_action('wp_enqueue_scripts', 'enqueue_assets_from_vite_manifest');
 // Exemple : ici nous ajoutons le format SVG en tant que type d'image compatible pour l'upload.
 function my_own_mime_types($mimes)
 {
-  // Ajout du mime type pour les fichiers SVG
-  $mimes['svg'] = 'image/svg+xml';
+    // Ajout du mime type pour les fichiers SVG
+    $mimes['svg'] = 'image/svg+xml';
 
-  // Retourne le tableau des types MIME mis à jour
-  return $mimes;
+    // Retourne le tableau des types MIME mis à jour
+    return $mimes;
 }
 
 // Ajoute notre fonction de filtrage à l'action 'upload_mimes' pour permettre l'upload des fichiers SVG.
@@ -157,29 +157,29 @@ add_theme_support('post-thumbnails', ['recipe', 'travel']);
 // "wp_posts", avec un identifiant de type spécifique dans la colonne "post_type":
 
 register_post_type('work', [
-  'label' => 'Works',
-  'description' => 'My works',
-  'menu_position' => 7,
-  'menu_icon' => 'dashicons-welcome-learn-more',
-  'public' => true,
-  'has_archive' => true,
-  'rewrite' => [
-    'slug' => 'works',
-  ],
-  'supports' => ['title', 'excerpt', 'editor', 'thumbnail'],
+    'label' => 'Works',
+    'description' => 'My works',
+    'menu_position' => 7,
+    'menu_icon' => 'dashicons-welcome-learn-more',
+    'public' => true,
+    'has_archive' => true,
+    'rewrite' => [
+        'slug' => 'works',
+    ],
+    'supports' => ['title', 'excerpt', 'editor', 'thumbnail'],
 ]);
 
 
 
 register_taxonomy('type_work', ['work'], [
-  'labels' => [
-    'name' => 'Work type',
-    'singular_name' => 'Work type'
-  ],
-  'description' => 'Project type',
-  'public' => true,
-  'hierarchical' => true,
-  'show_tagcloud' => false,
+    'labels' => [
+        'name' => 'Work type',
+        'singular_name' => 'Work type'
+    ],
+    'description' => 'Project type',
+    'public' => true,
+    'hierarchical' => true,
+    'show_tagcloud' => false,
 ]);
 
 
@@ -200,31 +200,31 @@ register_nav_menu('footer', 'Le menu de navigation de fin de page.');
 
 function dw_get_navigation_links(string $location): array
 {
-  // Récupérer l'objet WP pour le menu à la location $location
-  $locations = get_nav_menu_locations();
+    // Récupérer l'objet WP pour le menu à la location $location
+    $locations = get_nav_menu_locations();
 
-  if (!isset($locations[$location])) {
-    return [];
-  }
+    if (!isset($locations[$location])) {
+        return [];
+    }
 
-  $nav_id = $locations[$location];
-  $nav = wp_get_nav_menu_items($nav_id);
+    $nav_id = $locations[$location];
+    $nav = wp_get_nav_menu_items($nav_id);
 
-  // Transformer le menu en un tableau de liens, chaque lien étant un objet personnalisé
+    // Transformer le menu en un tableau de liens, chaque lien étant un objet personnalisé
 
-  $links = [];
+    $links = [];
 
-  foreach ($nav as $post) {
-    $link = new stdClass();
-    $link->href = $post->url;
-    $link->label = $post->title;
-    $link->icon = get_field('icon', $post);
+    foreach ($nav as $post) {
+        $link = new stdClass();
+        $link->href = $post->url;
+        $link->label = $post->title;
+        $link->icon = get_field('icon', $post);
 
-    $links[] = $link;
-  }
+        $links[] = $link;
+    }
 
-  // Retourner ce tableau d'objets (liens).
-  return $links;
+    // Retourner ce tableau d'objets (liens).
+    return $links;
 }
 
 // Ajouter la fonctionnalité "POST" pour un formulaire de contact personnalisé :
@@ -235,26 +235,26 @@ add_action('admin_post_nopriv_dw_submit_contact_form', 'dw_handle_contact_form')
 // Créer une fonction qui permet de créer des pages d'options ACF pour le thème :
 function create_site_options_page(): void
 {
-  if (function_exists('acf_add_options_page')) {
-    // Page principale
-    acf_add_options_page([
-      'page_title' => 'Site Options',
-      'menu_title' => 'Site Settings',
-      'menu_slug' => 'site-options',
-      'capability' => 'edit_posts',
-      'redirect' => false
-    ]);
+    if (function_exists('acf_add_options_page')) {
+        // Page principale
+        acf_add_options_page([
+            'page_title' => 'Site Options',
+            'menu_title' => 'Site Settings',
+            'menu_slug' => 'site-options',
+            'capability' => 'edit_posts',
+            'redirect' => false
+        ]);
 
-    foreach (['fr', 'en'] as $lang) {
-      acf_add_options_sub_page([
-        'page_title' => sprintf(__('Options du site %s', 'hepl-trad'), strtoupper($lang)),
-        'menu_title' => sprintf(__('Options du site %s', 'hepl-trad'), strtoupper($lang)),
-        'menu_slug' => 'site-options-' . $lang,
-        'post_id' => $lang,
-        'parent' => 'site-options',
-      ]);
+        foreach (['fr', 'en'] as $lang) {
+            acf_add_options_sub_page([
+                'page_title' => sprintf(__('Options du site %s', 'hepl-trad'), strtoupper($lang)),
+                'menu_title' => sprintf(__('Options du site %s', 'hepl-trad'), strtoupper($lang)),
+                'menu_slug' => 'site-options-' . $lang,
+                'post_id' => $lang,
+                'parent' => 'site-options',
+            ]);
+        }
     }
-  }
 }
 
 add_action('acf/init', 'create_site_options_page');

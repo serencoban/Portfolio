@@ -1,0 +1,89 @@
+@import "../settings/breakpoints";
+
+footer {
+  padding: 2rem;
+  color: white;
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .footer_top {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding-bottom: 20px;
+    font-weight: 300;
+
+    .left_footer,
+    .center_footer,
+    .right_footer {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .left_footer {
+      .footer_logo {
+        display: block;
+        margin-bottom: 2rem;
+      }
+
+      .socials {
+        ul {
+          display: flex;
+          gap: 1rem;
+          padding: 0;
+        }
+      }
+    }
+
+    .center_footer {
+      ul {
+        padding: 0;
+      }
+
+      li {
+        padding-bottom: 24px;
+      }
+    }
+
+    .right_footer {
+      p {
+        margin: 0 0 0.5rem;
+        line-height: 24px;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer_bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    border-top: #aaaaaa 1px solid;
+    opacity: 0.5;
+  }
+
+  span {
+    color: var(--pink);
+  }
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--pink);
+  margin-top: 24px;
+  padding: 16px 24px;
+  border-radius: 24px 0;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #c48990;
+  }
+}
