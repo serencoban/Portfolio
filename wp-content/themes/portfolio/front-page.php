@@ -42,13 +42,19 @@
                         </div>
                         <div class="project-content">
                             <div class="overlay">
-                                <?php $lien = get_sub_field('link'); ?>
+                                <?php
+                                $lien = get_sub_field('link');
+                                $titre = get_sub_field('project_title');
+                                ?>
                                 <?php if ($lien) : ?>
-                                    <a href="<?php echo esc_url($lien); ?>" class="overlay-text"><?php the_sub_field('project_title'); ?></a>
+                                    <a href="<?php echo esc_url($lien); ?>" title="Discover more information about<?php echo esc_attr($titre); ?>" class="overlay-text">
+                                        <?php echo esc_html($titre); ?>
+                                    </a>
                                 <?php else : ?>
-                                    <p class="overlay-text"><?php the_sub_field('project_title'); ?></p>
+                                    <p class="overlay-text"><?php echo esc_html($titre); ?></p>
                                 <?php endif; ?>
                             </div>
+
                         </div>
                     </div>
                 <?php endwhile; ?>

@@ -1,13 +1,13 @@
 @import "../settings/breakpoints";
 
 footer {
-  padding: 2rem;
+  padding: 0 32px 24px;
   color: white;
-
-  a{
-    text-decoration: none;
-    color: white;
+  @include max-tablet{
+    padding: 0 100px 24PX;
   }
+
+
 
   .footer_top {
     display: flex;

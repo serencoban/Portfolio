@@ -1,5 +1,6 @@
 @import "../settings/breakpoints";
 
+
 .header {
   background-image: url('/wp-content/themes/portfolio/resources/img/main-flower.png');
   background-size: cover;
@@ -24,18 +25,14 @@
       font-family: var(--font-title), serif;
     }
   }
-
   @include tablet{
     height: 50vh;
-
     &_elm{
       top: 200px;
       left: 32px;
-
       h2{
         font-size: 50px ;
       }
-
       p{
         font-size: 32px;
       }
@@ -67,22 +64,13 @@
     background-color: var(--pink);
     border-radius: 24px 0 24px 0;
   }
-  @include desktop{
+  @include max-tablet{
     padding: 64px 24px;
-    p{
-      font-size: 20px;
-    }
   }
 }
 
 .flower-stem-section {
   position: relative;
-
-  @include tablet {
-    display: flex;
-    padding: 50px;
-    position: relative;
-  }
 
   .flower_and_stem {
     position: absolute;
@@ -90,13 +78,16 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 0;
+    transition: all 0.6s ease-in-out;
+
     .flower{
-        width: 100%;
+      width: 80%;
+      transition: transform 0.6s ease-in-out;
       }
     .stem{
       position: relative;
       top: -50Px;
-      left: 50%;
+      left: 30%;
       height: 600px;
       overflow: hidden;
       z-index: -10;
@@ -106,15 +97,24 @@
       width: auto;
       }
     }
-    @include tablet{
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      top: -140px;
-      .stem{
+    @include max-tablet{
+      top: -250px;
+      left: 170px;
 
+      .flower{
+        width: 70%;
+        transform: rotate(30deg);
+      }
+      .stem{
+        height: 700px;
+        left: 50px;
+        top: -100px;
+      }
+    }
+    @include tablet{
+      .stem{
+        display: flex;
+        justify-content: left;
       }
     }
   }
@@ -123,6 +123,15 @@
     margin: 150px 24px 0;
     position: relative;
     z-index: 1;
+    transition: margin-left 0.6s ease, transform 0.6s ease;
+
+    @include max-tablet{
+      .growth-step:nth-child(even){
+      margin-left: 120px;
+    }
+      .growth-step:nth-child(odd){
+        margin-left: 70px;
+      }}
 
     .growth-step {
       margin-top: 48px;
@@ -130,11 +139,34 @@
       align-items: center;
       justify-content: center;
       gap: 20px;
-    }
 
+      @include max-tablet{
+        margin-left: 50px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &:hover {
+          .petal {
+            transform: rotate(10deg);
+          }
+        }
+      }
+    }
     .petal {
       display: none;
 
+      @include max-tablet{
+
+          display: flex;
+          transition: transform 0.6s;
+          transform-origin: left center;
+
+        svg{
+          width: 60%;
+        }
+
+      }
     }
 
     .project-content {
@@ -148,7 +180,6 @@
       overflow: hidden;
       transition: transform 0.3s ease;
 
-      // Appliquer l'effet uniquement sur ce bloc au survol
       &:hover {
         .overlay {
           bottom: 0;
@@ -190,7 +221,7 @@
         transition: background-color 0.3s ease;
 
         &:hover {
-          background-color: red;
+          background-color:var(--pink2);
         }
       }
 

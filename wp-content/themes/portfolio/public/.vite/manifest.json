@@ -1,6 +1,6 @@
 {
   "wp-content/themes/portfolio/resources/css/styles.scss": {
-    "file": "assets/css-BTNsLFLD.css",
+    "file": "assets/css-CQvHqkoz.css",
     "src": "wp-content/themes/portfolio/resources/css/styles.scss",
     "isEntry": true
   },
@@ -15,6 +15,10 @@
   "wp-content/themes/portfolio/resources/fonts/Poppins-Thin.ttf": {
     "file": "assets/Poppins-Thin-6EIUaOEn.ttf",
     "src": "wp-content/themes/portfolio/resources/fonts/Poppins-Thin.ttf"
+  },
+  "wp-content/themes/portfolio/resources/fonts/noticaserif-yqql8.ttf": {
+    "file": "assets/noticaserif-yqql8-D1r3jbGH.ttf",
+    "src": "wp-content/themes/portfolio/resources/fonts/noticaserif-yqql8.ttf"
   },
   "wp-content/themes/portfolio/resources/img/main-flower.jpg": {
     "file": "assets/main-flower-C1tEMASL.jpg",

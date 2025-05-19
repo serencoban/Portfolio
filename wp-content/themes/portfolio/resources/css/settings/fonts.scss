@@ -1,15 +1,16 @@
 :root {
   --font-base: 'Poppins', Helvetica, Arial, sans-serif;
-  --font-title: 'Ethereal', 'Poppins', Arial, serif;
+  --font-title: 'Ethereal', "Times New Roman" , serif;
+  --font-time:'Notica Serif', "Times New Roman" , serif;
 }
 
-/* ETHEREAL (300) */
+/* ETHEREAL (100) */
 @font-face {
   font-family: 'Ethereal';
-  src: url('/wp-content/themes/portfolio/resources/fonts/Ethereal-Thin.otf') format('opentype');
+  src: url('/wp-content/themes/portfolio/resources/fonts/Ethereal-Thin.otf') format('truetype');
   font-display: swap;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 100;
 }
 
 /* POPPINS (500) */
@@ -28,4 +29,13 @@
   font-display: swap;
   font-style: normal;
   font-weight: 300;
+}
+
+/* NOTICA SERIF (100) */
+@font-face {
+  font-family: 'Notica Serif';
+  src: url('/wp-content/themes/portfolio/resources/fonts/noticaserif-yqql8.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100;
 }
