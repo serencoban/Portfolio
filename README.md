@@ -1,4 +1,4 @@
-# ꒰ა ☆ My Portfolio ໒꒱
+# ꒰ა My Portfolio ໒꒱
 
 ‧₊˚⊹ ✧ welcome to my Garden ✧ ˚₊‧  
 
