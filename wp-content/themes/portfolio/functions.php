@@ -151,7 +151,7 @@ function my_own_mime_types($mimes)
 add_filter('upload_mimes', 'my_own_mime_types');
 
 // Activer l'utilisation des vignettes (image de couverture) sur nos post types:
-add_theme_support('post-thumbnails', ['recipe', 'travel']);
+add_theme_support('post-thumbnails', ['work']);
 
 // Enregistrer de nouveaux "types de contenu", qui seront stockés dans la table
 // "wp_posts", avec un identifiant de type spécifique dans la colonne "post_type":
@@ -164,12 +164,10 @@ register_post_type('work', [
     'public' => true,
     'has_archive' => true,
     'rewrite' => [
-        'slug' => 'works',
+        'slug' => 'all-works',
     ],
-    'supports' => ['title', 'excerpt', 'editor', 'thumbnail'],
+    'supports' => ['title', 'editor', 'thumbnail'],
 ]);
-
-
 
 register_taxonomy('type_work', ['work'], [
     'labels' => [
@@ -180,6 +178,7 @@ register_taxonomy('type_work', ['work'], [
     'public' => true,
     'hierarchical' => true,
     'show_tagcloud' => false,
+    'rewrite' => ['slug' => 'project-type'],
 ]);
 
 
@@ -256,5 +255,8 @@ function create_site_options_page(): void
         }
     }
 }
+
+
+
 
 add_action('acf/init', 'create_site_options_page');

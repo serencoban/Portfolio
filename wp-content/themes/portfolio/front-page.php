@@ -2,7 +2,6 @@
 <?php get_header(); ?>
 
 <section class="header">
-    <h1 class="hidden">Home</h1>
     <div class="header_elm">
         <h2>SEREN COBAN</h2>
         <p>Web developer</p>
@@ -34,13 +33,11 @@
             <?php if (have_rows('projects')) : ?>
                 <?php while (have_rows('projects')) : the_row(); ?>
                     <div class="growth-step">
-                        <div class="petal">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="191" height="88" viewBox="0 0 191 88" fill="none">
+                            <svg class="petal" xmlns="http://www.w3.org/2000/svg" width="191" height="88" viewBox="0 0 191 88" fill="none">
                                 <path d="M0 22.6961C10.2942 67.9019 55.3488 96.1901 100.632 85.8796L191 65.3036C180.705 20.0978 135.651 -8.19013 90.3671 2.12045L0 22.6961Z" fill="#898962"/>
                                 <path d="M171 49.5C145.346 40.1383 118.688 50.1615 88.5002 51.5C43.2319 53.5072 22.8612 51.323 3.02718 24.2908" stroke="#EAE8C6" stroke-width="2" stroke-linecap="round"/>
                             </svg>
-                        </div>
-                        <div class="project-content">
+                        <article class="project-content">
                             <div class="overlay">
                                 <?php
                                 $lien = get_sub_field('link');
@@ -55,7 +52,7 @@
                                 <?php endif; ?>
                             </div>
 
-                        </div>
+                        </article>
                     </div>
                 <?php endwhile; ?>
             <?php endif; ?>

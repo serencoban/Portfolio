@@ -1,21 +1,18 @@
 @import "../settings/breakpoints";
 
 footer {
-  padding: 0 32px 24px;
   color: white;
-  @include max-tablet{
-    padding: 0 100px 24PX;
-  }
-
-
 
   .footer_top {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5rem;
-    padding-bottom: 20px;
+    padding: 0 32px 12px;
     font-weight: 300;
+    @include max-tablet{
+      padding: 0 100px 24px ;
+    }
 
     .left_footer,
     .center_footer,
@@ -65,11 +62,13 @@ footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding-top: 20px;
+    padding: 12px 32px 12px;
     border-top: #aaaaaa 1px solid;
     opacity: 0.5;
+    @include max-tablet{
+      padding: 12px 100px 24PX;
+    }
   }
-
   span {
     color: var(--pink);
   }

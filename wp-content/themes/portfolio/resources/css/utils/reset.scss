@@ -1,3 +1,4 @@
+@import "../settings/breakpoints";
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -54,6 +55,14 @@ table {
 .hidden{
   display: none;
 }
-main{
-  margin-top: 90px;
+
+h2{
+  font-family: var(--font-title), serif;
+  font-size: 32px;
+  @include tablet{
+    font-size: 40px;
+  }
+  @include desktop{
+    font-size: 60px;
+  }
 }

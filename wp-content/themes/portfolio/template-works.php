@@ -1,37 +1,52 @@
-<?php /* Template Name: Page "Works" */ ?>
-
-<?php get_header(); ?>
-
-<h2><?php the_title(); ?></h2>
-
-
 <?php
-
-    while (have_posts() ) :
-        the_post();
-
-
-     endwhile;
+/* Template Name: Page "My works" */
+get_header();
 ?>
-
-<section>
-    <div>
-        
+<section class="page-header">
+    <div class="header_work">
+        <h2><?php the_title(); ?></h2>
+        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <a href="">And more to come !</a>
+        <?php endwhile; endif; ?>
     </div>
-    <div>
-        <article>
-            <a href=""></a>
-            <div>
-                <div>
-                    <h3><?php the_field('work_name');?></h3>
-                </div>
-                <figure>
-                    <img src="" alt="">
-                </figure>
-            </div>
-        </article>
 
-    </div>
+
 </section>
+    <section class="works-list">
+        <?php
+        $args = [
+            'post_type' => 'work',
+            'posts_per_page' => -1, // -1 pour tout afficher
+            'orderby' => 'date',
+            'order' => 'DESC'
+        ];
+        $works_query = new WP_Query($args);
+
+        if ($works_query->have_posts()) :
+            while ($works_query->have_posts()) : $works_query->the_post();
+                ?>
+                <article class="work-item">
+                    <h2><?php the_title(); ?></h2>
+
+                    <?php if (has_post_thumbnail()) : ?>
+                        <div class="work-thumbnail">
+                            <?php the_post_thumbnail('medium'); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="work-excerpt">
+                        <?php the_excerpt(); ?>
+                    </div>
+
+                    <a href="<?php the_permalink(); ?>" class="read-more">Voir plus</a>
+                </article>
+            <?php
+            endwhile;
+            wp_reset_postdata();
+        else :
+            echo '<p>Aucun projet trouvé.</p>';
+        endif;
+        ?>
+    </section>
 
 <?php get_footer(); ?>

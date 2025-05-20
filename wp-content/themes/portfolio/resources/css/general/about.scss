@@ -2,13 +2,7 @@
 @import "../settings/fonts";
 
 
-h2{
-  font-family: var(--font-title), serif;
-  font-size: 32px;
-  @include max-tablet{
-    font-size: 60px;
-  }
-}
+
 p{
   font-family: var(--font-base), sans-serif;
   font-size: 12px;
@@ -28,8 +22,11 @@ p{
   }
 }
 
-
 .description-section {
+  margin-top: 40px;
+  @include max-tablet{
+    margin-top: 48px;
+  }
   .description-content {
     display: flex;
     flex-direction: row;
@@ -91,20 +88,81 @@ p{
 }
 
 .studies-timeline {
-  margin-top: 48px;
+  margin-top: 80px;
   display: flex;
   flex-direction: column;
   gap: 24px;
 
   li {
     display: flex;
-    align-items: flex-start;
-    gap: 32px;
+    align-items: center;
+    gap: 72px;
     margin-bottom: 48px;
+    padding-bottom: 70px;
+    border-bottom: 1px solid white;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 
-    time {
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .placement{
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      @include desktop{
+        flex-direction: row;
+      }
+    }
+
+    .studies {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      p:first-of-type{
+        font-weight: bold;
+      }
+      p:last-of-type{
+        font-weight: 300;
+      }
+
+    }
+
+    .svg-wrapper {
+      flex-shrink: 0;
+
+
+    }
+    .svg-wrapper {
+      .petal-about {
+        transition: transform 0.3s ease;
+        transform-origin: 85% 20%;
+      }
+    }
+
+    &:hover {
+      .svg-wrapper .petal-about {
+        transform: rotate(-5deg) translateY(-5px);
+      }
+    }
+  }
+
+
+
+
+  time {
       font-family: var(--font-time), serif;
-      font-size: 64px;
+      font-size: 32px;
+
+      @include tablet{
+        font-size: 48px;
+      }
+      @include desktop{
+        font-size: 64px;
+      }
 
     }
 
@@ -112,16 +170,11 @@ p{
       line-height: 1.4;
     }
   }
-}
-
 
 .skills-section {
-  .section-title {
-
-    color: white;
-    font-size: 36px;
+  h2{
+    margin-bottom: 80px;
   }
-
   .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -134,59 +187,62 @@ p{
     }
   }
 
+
+
   .skill-card {
     position: relative;
-    background-color: var(--green);
-    height: 200px;
-    overflow: hidden;
+    background-color: var(--beige);
+    height: 160px;
     border-radius: 96px 0;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--black);
+
+    @include tablet{
+      height: 200px;
+    }
 
     .skill-title {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 600;
       font-family: var(--font-title), serif;
       transition: transform 0.4s ease-in-out;
       z-index: 2;
+      @include max-tablet{
+        font-size: 24px;
+      }
     }
 
     .skill-list {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(40px);
       transition: opacity 0.4s ease, transform 0.4s ease;
-      list-style: none;
-      padding: 0;
-      margin: 0;
       text-align: center;
       z-index: 1;
 
       li {
         font-size: 16px;
         margin: 6px 0;
-        color: white;
+        color: var(--black);
       }
     }
 
     &:hover {
+
       .skill-title {
-        transform: translate(-50%, calc(-50% - 50px)); // monte de 20px
+        padding-bottom: 20px;
+        transform: translate(-50%, calc(-50% - 30px)); // monte de 20px
       }
 
       .skill-list {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-10px);
       }
     }
   }
-
 }
-
-

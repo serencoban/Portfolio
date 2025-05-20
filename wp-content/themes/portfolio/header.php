@@ -17,22 +17,24 @@
 <header>
   <h1 class="hidden"><?php the_title(); ?></h1>
     <nav class="nav_menu">
-        <h2 class="hidden">Main navigation</h2>
+        <h2 class="hidden"></h2>
         <a href="">
             <img src="wp-content/themes/portfolio/resources/img/seren-logo.svg" alt="">
         </a>
-        <div class="menu-icon">
-            <input type="checkbox" id="checkbox_toggle" class="menu-checkbox" />
-            <label for="checkbox_toggle" class="menu-label">
+        <div id="menuToggle">
+            <label for="menuCheckbox"></label>
+            <input type="checkbox" id="menuCheckbox">
                 <span></span>
                 <span></span>
-            </label>
-        </div>
-        <div class="nav_links">
-            <?php wp_nav_menu([
-                'menu_class' => 'main-nav'
-            ]); ?>
+                <span></span>
+            <div class="sidenav">
+                <?php wp_nav_menu([
+                    'container' => false
+                ]); ?>
+            </div>
+
         </div>
     </nav>
 </header>
 <main>
+

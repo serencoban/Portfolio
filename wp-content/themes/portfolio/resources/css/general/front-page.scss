@@ -63,6 +63,7 @@
   a{
     background-color: var(--pink);
     border-radius: 24px 0 24px 0;
+
   }
   @include max-tablet{
     padding: 64px 24px;
@@ -80,20 +81,20 @@
     z-index: 0;
     transition: all 0.6s ease-in-out;
 
-    .flower{
-      width: 80%;
-      transition: transform 0.6s ease-in-out;
-      }
+    .flower {
+      width: 90%;
+      transition: width 0.6s ease-in-out;
+    }
+
     .stem{
       position: relative;
-      top: -50Px;
-      left: 30%;
+      top: -60Px;
+      left: 20%;
+      width: 100%;
       height: 600px;
       overflow: hidden;
       z-index: -10;
-
       svg {
-      height: 100%;
       width: auto;
       }
     }
@@ -102,11 +103,10 @@
       left: 170px;
 
       .flower{
-        width: 70%;
         transform: rotate(30deg);
       }
       .stem{
-        height: 700px;
+        height: 900px;
         left: 50px;
         top: -100px;
       }
@@ -179,6 +179,12 @@
       background-position: center;
       overflow: hidden;
       transition: transform 0.3s ease;
+      @include max-tablet{
+        width: 100%;
+        height: 260px;
+        border-radius: 96px 0;
+        max-width: 600px;
+      }
 
       &:hover {
         .overlay {
@@ -211,19 +217,20 @@
         transform: translateY(100%);
         transition: transform 0.5s ease 0.1s;
       }
-
-      .btn {
-        background-color: var(--pink);
-        padding: 12px 60px;
-        display: inline-block;
-        color: var(--beige);
-        border-radius: 24px 0 24px 0;
-        transition: background-color 0.3s ease;
-
-        &:hover {
-          background-color:var(--pink2);
-        }
-      }
-
     }
   }}
+
+.btn {
+  background-color: var(--pink);
+  padding: 12px 60px;
+  display: inline-block;
+  font-family: var(--font-base);
+  font-size: 12px;
+  color: white;
+  border-radius: 24px 0 24px 0;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color:var(--pink2);
+  }
+}

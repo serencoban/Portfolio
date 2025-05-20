@@ -1,1 +1,55 @@
 @import "../settings/breakpoints";
+
+.page-header {
+  background-image: url('/wp-content/themes/portfolio/resources/img/single-flower.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 300px;
+
+  .header_work {
+    position: absolute;
+    top: 150px;
+    left: 24px;
+
+    h2 {
+      font-size: 40px;
+      color: white;
+      font-family: var(--font-title), serif;
+    }
+
+    a {
+      font-size: 12px;
+      color: white;
+      font-family: var(--font-title), serif;
+    }
+  }
+  @include tablet{
+    height: 50vh;
+    .header_work{
+      top: 200px;
+      left: 32px;
+      h2{
+        font-size: 50px ;
+      }
+      a{
+        font-size: 16px;
+      }
+    }
+  }
+  @include desktop {
+    background-size: cover;
+    height: 100vh;
+    min-width: 100%;
+    .header_work {
+      top: 300px;
+      left: 100px;
+      h2 {
+        font-size: 96px;
+      }
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+}
