@@ -1,8 +1,5 @@
 @import "../settings/breakpoints";
 @import "../settings/fonts";
-
-
-
 p{
   font-family: var(--font-base), sans-serif;
   font-size: 12px;
@@ -14,18 +11,18 @@ p{
 .container{
   max-width: 1200px;
   margin: 0 auto;
-  color: white;
-  padding: 0 32px 48px;
+  color: var(--white);
+  padding: 0 32px 96px;
 
-  @include max-tablet{
+  @include desktop{
     padding: 0 100px 100px;
   }
 }
 
 .description-section {
-  margin-top: 40px;
+  padding-top: 100px;
   @include max-tablet{
-    margin-top: 48px;
+    padding-top: 150px;
   }
   .description-content {
     display: flex;
@@ -88,7 +85,7 @@ p{
 }
 
 .studies-timeline {
-  margin-top: 80px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -97,12 +94,15 @@ p{
     display: flex;
     align-items: center;
     gap: 72px;
-    margin-bottom: 48px;
-    padding-bottom: 70px;
-    border-bottom: 1px solid white;
+    padding: 56px 0;
+    border-bottom: 1px solid var(--white);
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+
+    .studies-timeline li:not(:last-child) {
+      margin-bottom: 48px;
+    }
 
     &.visible {
       opacity: 1;
@@ -150,9 +150,6 @@ p{
     }
   }
 
-
-
-
   time {
       font-family: var(--font-time), serif;
       font-size: 32px;
@@ -172,77 +169,54 @@ p{
   }
 
 .skills-section {
-  h2{
-    margin-bottom: 80px;
-  }
+  font-family: var(--font-base), sans-serif;
+
   .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
-    max-width: 800px;
-    margin: auto;
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
 
-    @include max-tablet {
-      grid-template-columns: repeat(2, 1fr); // max 2 par ligne
+    @include desktop {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
-
-
-
   .skill-card {
-    position: relative;
     background-color: var(--beige);
-    height: 160px;
-    border-radius: 96px 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 24px;
+    border-radius: 56px 0;
     color: var(--black);
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    // ↑ Ajout de transform à la transition
 
-    @include tablet{
-      height: 200px;
-    }
-
-    .skill-title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 20px;
-      font-weight: 600;
-      font-family: var(--font-title), serif;
-      transition: transform 0.4s ease-in-out;
-      z-index: 2;
-      @include max-tablet{
-        font-size: 24px;
-      }
+    &:hover {
+      transform: scale(1.03);
+      background-color: var(--green);
     }
 
     .skill-list {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      text-align: center;
-      z-index: 1;
-
-      li {
-        font-size: 16px;
-        margin: 6px 0;
-        color: var(--black);
-      }
+      padding-top: 20px;
     }
 
-    &:hover {
+    .skill-title {
+      font-size: 24px;
+      position: relative;
+      display: inline-block;
+    }
+  }
+    .skill-list li {
+      padding-bottom: 12px;
+      font-size: 16px;
+    }
+
+    @include desktop {
+      padding: 40px 20px;
+      border-radius: 72px 0;
 
       .skill-title {
-        padding-bottom: 20px;
-        transform: translate(-50%, calc(-50% - 30px)); // monte de 20px
-      }
-
-      .skill-list {
-        opacity: 1;
-        transform: translateY(-10px);
+        font-size: 32px;
       }
     }
   }
-}

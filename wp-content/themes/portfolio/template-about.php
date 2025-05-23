@@ -16,7 +16,7 @@ get_header();
                     <?php the_title(); ?>
                 </h2>
                 <p class="description-text">
-                    <?php echo esc_html__('Seren Coban, I am passionate about creating innovative and visually appealing digital experiences. Let me help your projects flourish by designing warm, engaging, and user-friendly interfaces that truly connect with people.', 'your-textdomain'); ?>
+                    <?php echo get_field('about_desc'); ?>
                 </p>
             </div>
         </div>
@@ -26,7 +26,7 @@ get_header();
 
 <section class="studies-section">
     <div class="container">
-        <h2 class="section-title"><?php echo esc_html__('My Studies', 'portfolio'); ?></h2>
+        <h2 class="section-title"><?php echo get_field('studies') ?></h2>
         <ul class="studies-timeline">
             <li>
                 <div class="svg-wrapper">
@@ -79,14 +79,15 @@ get_header();
 
 <section class="skills-section">
     <div class="container">
-        <h2 class="section-title"><?php echo esc_html__('My Skills', 'portfolio'); ?></h2>
+        <h2 class="section-title"><?php echo get_field('skills') ?></h2>
         <div class="skills-grid">
             <?php
+            $others_label = get_field('others');
             $skills = [
-                'Front-end' => ['HTML', 'CSS/SCSS', 'JavaScript', 'React'],
-                'Back-end'  => ['PHP', 'MySQL', 'Node.js'],
-                'Design'    => ['Figma', 'Adobe XD', 'Photoshop'],
-                'Others'    => ['Git', 'WordPress', 'SEO']
+                'Front-end' => ['HTML', 'CSS/SCSS', 'JavaScript'],
+                'Back-end'  => ['PHP', 'MySQL'],
+                'Design'    => ['Figma', 'Illustrator', 'Photoshop'],
+                $others_label => ['WordPress', 'SEO']
             ];
             foreach ($skills as $category => $items): ?>
                 <div class="skill-card">

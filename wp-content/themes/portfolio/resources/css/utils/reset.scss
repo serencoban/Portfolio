@@ -32,6 +32,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
   line-height: 1;
+  overflow-x: hidden;
 }
 a{
   text-decoration: none;
@@ -58,6 +59,7 @@ table {
 
 h2{
   font-family: var(--font-title), serif;
+  color: var(--white);
   font-size: 32px;
   @include tablet{
     font-size: 40px;
@@ -65,4 +67,7 @@ h2{
   @include desktop{
     font-size: 60px;
   }
+}
+.btn{
+  font-family: var(--font-base);
 }

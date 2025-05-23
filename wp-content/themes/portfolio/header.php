@@ -15,12 +15,14 @@
 </head>
 <body>
 <header>
-  <h1 class="hidden"><?php the_title(); ?></h1>
+
+    <h1 class="hidden"><?php the_title(); ?></h1>
     <nav class="nav_menu">
         <h2 class="hidden"></h2>
-        <a href="">
-            <img src="wp-content/themes/portfolio/resources/img/seren-logo.svg" alt="">
+        <a class="nav__logo" href="<?= home_url() ?>" title="<?= __hepl('Se diriger vers la page d’accueil') ?>">
+            <img class="logo" src="/wp-content/themes/portfolio/resources/img/logo.svg" alt="" height="100" width="65">
         </a>
+
         <div id="menuToggle">
             <label for="menuCheckbox"></label>
             <input type="checkbox" id="menuCheckbox">
@@ -32,9 +34,12 @@
                     'container' => false
                 ]); ?>
             </div>
-
+        </div>
+        <div class="menu-desktop">
+            <?php wp_nav_menu([
+                'container' => false
+            ]); ?>
         </div>
     </nav>
 </header>
 <main>
-

@@ -49,15 +49,14 @@
         </div>
     </div>
     <div class="center_footer">
-        <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./works.html">Work</a></li>
-            <li><a href="./about-me.html">About</a></li>
-        </ul>
+        <?php wp_nav_menu([
+            'theme_location' => 'footer_menu',
+            'container' => false,
+        ]); ?>
     </div>
     <div class="right_footer">
         <p><span>Let your projects flourish!</span>  Contact me and let us water your ideas carefully!</p>
-        <a href="mailto:serencobs@gmail.com">serencobs@gmail.com</a>
+        <a href="mailto:serennnnnncobs@gmail.com">test</a>
     </div>
 </div>
 

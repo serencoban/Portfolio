@@ -1,26 +1,55 @@
 @import "../settings/breakpoints";
 
-body.error404 {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url("wp-content/themes/portfolio/resources/img/page404.JPG") no-repeat center center;
-  background-size: cover;
-  text-align: center;
-}
-body.error404 h2 {
-  font-size: 96px;
-  margin: 0;
-  line-height: 1.1;
-}
+  .error-container {
+    background-image: url('/wp-content/themes/portfolio/resources/img/page404.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 5vw;
 
-body.error404 a {
-  display: inline-block;
-  margin-top: 20px;
-  font-size: 56px;
-  text-decoration: underline;
-  transition: all 0.3s ease;
-}
+    .error-content {
+      color: var(--white);
+      max-width: 600px;
+
+      .error-title {
+        font-family: var(--font-time), serif;
+        font-size: 96px;
+        font-weight: bold;
+        margin-bottom: 24px;
+        @include mobile{
+          font-size: 76px;
+        }
+      }
+
+      .error-text {
+        font-size: 24px;
+        margin-bottom: 32px;
+        @include mobile{
+          font-size: 16px;
+        }
+      }
+
+      .error-link {
+        font-family: var(--font-base), sans-serif;
+        font-size: 18px;
+        text-decoration: none;
+        background-color: var(--pink);
+        padding: 12px 24px;
+        border-radius: 16px 0;
+        display: inline-block;
+        transition: 0.3s ease;
+        @include mobile{
+          font-size: 16px;
+        }
+
+        &:hover {
+          background-color: var(--pink2);
+        }
+      }
+    }
+  }
+
+

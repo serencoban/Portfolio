@@ -1,6 +1,6 @@
 {
   "wp-content/themes/portfolio/resources/css/styles.scss": {
-    "file": "assets/css-R6fhjZZG.css",
+    "file": "assets/css-C6Htdwch.css",
     "src": "wp-content/themes/portfolio/resources/css/styles.scss",
     "isEntry": true
   },
@@ -21,19 +21,23 @@
     "src": "wp-content/themes/portfolio/resources/fonts/noticaserif-yqql8.ttf"
   },
   "wp-content/themes/portfolio/resources/img/main-flower.jpg": {
-    "file": "assets/main-flower-C1tEMASL.jpg",
+    "file": "assets/main-flower-CV1Cc_6w.jpg",
     "src": "wp-content/themes/portfolio/resources/img/main-flower.jpg"
   },
-  "wp-content/themes/portfolio/resources/img/main-flower.png": {
-    "file": "assets/main-flower-B1kxdKS8.png",
-    "src": "wp-content/themes/portfolio/resources/img/main-flower.png"
+  "wp-content/themes/portfolio/resources/img/page404.JPG": {
+    "file": "assets/page404-Cc_SL4ap.JPG",
+    "src": "wp-content/themes/portfolio/resources/img/page404.JPG"
+  },
+  "wp-content/themes/portfolio/resources/img/project-flower.jpg": {
+    "file": "assets/project-flower-BCmCtYsB.jpg",
+    "src": "wp-content/themes/portfolio/resources/img/project-flower.jpg"
   },
   "wp-content/themes/portfolio/resources/img/single-flower.jpg": {
     "file": "assets/single-flower-ONio6wYJ.jpg",
     "src": "wp-content/themes/portfolio/resources/img/single-flower.jpg"
   },
   "wp-content/themes/portfolio/resources/js/main.js": {
-    "file": "assets/js-C_vrbUox.js",
+    "file": "assets/js-Crnp4bLI.js",
     "name": "js",
     "src": "wp-content/themes/portfolio/resources/js/main.js",
     "isEntry": true

@@ -2,7 +2,7 @@
 
 
 .header {
-  background-image: url('/wp-content/themes/portfolio/resources/img/main-flower.png');
+  background-image: url('/wp-content/themes/portfolio/resources/img/main-flower.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -13,15 +13,15 @@
     top: 150px;
     left: 24px;
 
-    h2 {
+    .main_title {
       font-size: 40px;
-      color: white;
+      color: var(--white);
       font-family: var(--font-title), serif;
     }
 
     p {
       font-size: 24px;
-      color: white;
+      color: var(--white);
       font-family: var(--font-title), serif;
     }
   }
@@ -30,7 +30,7 @@
     &_elm{
       top: 200px;
       left: 32px;
-      h2{
+      .main_title{
         font-size: 50px ;
       }
       p{
@@ -39,13 +39,12 @@
     }
   }
   @include desktop {
-    background-size: cover;
     height: 100vh;
     min-width: 100%;
     &_elm {
       top: 300px;
       left: 100px;
-      h2 {
+      .main_title {
         font-size: 96px;
       }
       p {
@@ -72,6 +71,7 @@
 
 .flower-stem-section {
   position: relative;
+  margin-bottom: 100px;
 
   .flower_and_stem {
     position: absolute;
@@ -174,9 +174,6 @@
       width: 300px;
       height: 160px;
       border-radius: 32px 0;
-      background-image: url('/wp-content/themes/portfolio/resources/img/main-flower.jpg');
-      background-size: cover;
-      background-position: center;
       overflow: hidden;
       transition: transform 0.3s ease;
       @include max-tablet{
@@ -221,16 +218,25 @@
   }}
 
 .btn {
-  background-color: var(--pink);
-  padding: 12px 60px;
   display: inline-block;
-  font-family: var(--font-base);
+  background-color: var(--pink);
+  margin-top: 24px;
+  padding: 16px 40px;
+  border-radius: 24px 0;
+  transition: 0.3s;
   font-size: 12px;
-  color: white;
-  border-radius: 24px 0 24px 0;
-  transition: background-color 0.3s ease;
+  @include max-tablet{
+    font-size: 16px;
+  }
 
   &:hover {
-    background-color:var(--pink2);
+    background-color: var(--pink2);
   }
+}
+
+
+.see-more{
+  text-align: center;
+  margin-bottom: 120px;
+
 }

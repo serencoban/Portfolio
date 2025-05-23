@@ -162,9 +162,9 @@ register_post_type('work', [
     'menu_position' => 7,
     'menu_icon' => 'dashicons-welcome-learn-more',
     'public' => true,
-    'has_archive' => true,
+    'has_archive' => false,
     'rewrite' => [
-        'slug' => 'all-works',
+        'slug' => 'works',
     ],
     'supports' => ['title', 'editor', 'thumbnail'],
 ]);
@@ -180,6 +180,7 @@ register_taxonomy('type_work', ['work'], [
     'show_tagcloud' => false,
     'rewrite' => ['slug' => 'project-type'],
 ]);
+
 
 
 // Paramétrer des tailles d'images pour le générateur de thumbnails de Wordpress :
