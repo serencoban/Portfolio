@@ -17,6 +17,7 @@
     }
     h2{
       margin-bottom: 16px;
+      font-size: 32px;
     }
   }
   @include tablet{
@@ -27,11 +28,9 @@
       a{
         font-size: 16px;
       }
-
-
     }
   }
-  @include desktop {
+  @include max-desktop {
     background-size: cover;
     height: 100vh;
     min-width: 100%;
@@ -51,9 +50,11 @@
 .works-list{
   color: var(--white);
   padding: 0 32px;
+  margin: 0 auto;
 
-  @include desktop{
+  @include max-desktop{
     padding: 0 100px;
+    margin: 0 auto;
   }
 
   .order_work{
@@ -62,7 +63,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    font-family: var(--font-title);
+    font-family: var(--font-title), serif;
 
     .filtered_item {
       display: inline-block;
@@ -96,82 +97,136 @@
       }
 
     }
-    @include desktop{
-      font-size: 24px;
-      margin-bottom: 200px;
+    @include max-desktop{
+      font-size: 20px;
+      margin-bottom: 100px;
     }
 
   }
 
 }
 .works-container {
-  font-family: var(--font-base);
+  font-family: var(--font-base), sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
 
   .work-item {
     display: grid;
-    grid-template-columns: 1fr; // mobile
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin-bottom: 200px;
+    margin-bottom: 56px;
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-
     &.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    .work-text {
+    @include max-tablet {
+      grid-template-columns: 2fr 3fr;
+      align-items: center;
+      gap: 3rem;
+      margin-bottom: 4rem;
+      padding: 2rem 0;
       text-align: left;
+    }
 
+    &:last-child {
+      margin-bottom: 0;
+    }
 
+    .work-text {
       h3 {
-        font-size: 24px;
-        margin-bottom: 16px;
+        font-size: 16px;
+        margin-bottom: 8px ;
+        line-height: 1.2;
+
+        a {
+          color: #fff;
+          text-decoration: none;
+          transition: opacity 0.3s ease;
+
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+
+      p {
+        font-size: 12px;
+        line-height: 1.6;
+        opacity: 0.8;
+        margin: 0;
+      }
+
+      @include max-tablet {
+        h3 {
+          font-size: 2rem;
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
       }
     }
 
     .work-image {
+      max-width: 100%;
+      width: 100%;
       position: relative;
-      transition: transform 0.3s ease;
 
-        &:hover {
-          transform: scale(1.01);
-        }
 
 
       .work_flower {
         position: absolute;
-        width: 40%;
-        left: -90px;
-        top: -70px;
-      }
-
-      img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        display: block;
-        border-radius: 32px;
-      }
-    }
-
-    @include desktop {
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-
-      .work-text {
-        h3 {
-          font-size: 36px;
+        height: auto;
+        z-index: 2;
+        width: 60px;
+        top: -22px;
+        left: -30px;
+        @include max-tablet{
+          position: absolute;
+          height: auto;
+          z-index: 2;
+          width: 114px;
+          top: -40px;
+          left: -50px;
         }
       }
 
-      .work-image {
-        // Force le débordement si container a du padding
-        margin-right: -130px;
+
+      figure {
+        position: relative;
+
+
+
+        @include desktop {
+          margin-right: -100px;
+        }
+        @include tablet{
+          margin-right: -32px;
+        }
+
+        a {
+          display: block;
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.02);
+          }
+        }
+
         img {
+          width: 100%;
           height: auto;
-          max-width: 100%;
+          display: block;
+          border-radius: 24px;
+          transition: transform 0.3s ease;
+          @include max-tablet{
+            border-radius: 32px 0 0 32px;
+          }
         }
       }
     }

@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function () {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // pour ne l'animer qu'une fois
             }
         });
     }, {
@@ -40,3 +39,44 @@ window.addEventListener("scroll", function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const skillCards = document.querySelectorAll('.skill-card');
+
+    skillCards.forEach((card, index) => {
+        if (index < 2) {
+            card.classList.add('from-left');
+        } else {
+            card.classList.add('from-right');
+        }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+
+            }
+        });
+    }, { threshold: 0.1 });
+
+    skillCards.forEach(card => {
+        observer.observe(card);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const aboutSection = document.querySelector('.about-text-container');
+
+    if (aboutSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+
+                }
+            });
+        }, { threshold: 0.1 });
+
+        observer.observe(aboutSection);
+    }
+});

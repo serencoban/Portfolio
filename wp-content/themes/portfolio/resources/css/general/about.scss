@@ -12,7 +12,7 @@ p{
   max-width: 1200px;
   margin: 0 auto;
   color: var(--white);
-  padding: 0 32px 96px;
+  padding: 0 32px 72px;
 
   @include desktop{
     padding: 0 100px 100px;
@@ -53,6 +53,13 @@ p{
       align-items: flex-start;
       text-align: left;
 
+      .description-text{
+        line-height: 20px;
+        @include max-tablet{
+          line-height: 32px;
+        }
+      }
+
       .section-title {
         margin-bottom: 8px;
 
@@ -85,20 +92,26 @@ p{
 }
 
 .studies-timeline {
-  margin-top: 40px;
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  @include desktop{
+    gap: 24px;
+  }
 
   li {
     display: flex;
     align-items: center;
-    gap: 72px;
-    padding: 56px 0;
+    gap: 56px;
+    padding: 32px 0;
     border-bottom: 1px solid var(--white);
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 0.8s ease, transform 0.8s ease;
+
+    @include desktop{
+      padding: 48px 0;
+    }
 
     .studies-timeline li:not(:last-child) {
       margin-bottom: 48px;
@@ -112,9 +125,10 @@ p{
     .placement{
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 16px;
       @include desktop{
         flex-direction: row;
+        gap: 32px;
       }
     }
 
@@ -168,6 +182,73 @@ p{
     }
   }
 
+.design-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+
+  .design {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .timeline {
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .timeline-content {
+      padding: 1.75rem;
+      background-color: var(--pink);
+      box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #242424;
+      border-radius: 6px;
+      color: white;
+      transition: 0.4s ease;
+      overflow-wrap: break-word !important;
+    }
+
+    .timeline-component {
+      margin: 0 20px 20px 20px;
+    }
+  }
+
+  @include max-tablet{
+    .timeline {
+      display: grid;
+      grid-template-columns: 1fr 3px 1fr;
+
+      .timeline-middle {
+        position: relative;
+        background-image: linear-gradient(45deg, var(--pink), var(--pink2));
+        width: 3px;
+        height: 100%;
+      }
+
+      .main-middle {
+        opacity: 0;
+      }
+
+      .timeline-circle {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-image: linear-gradient(45deg, var(--pink), var(--pink2));
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+
 .skills-section {
   font-family: var(--font-base), sans-serif;
 
@@ -188,8 +269,25 @@ p{
     padding: 24px;
     border-radius: 56px 0;
     color: var(--black);
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-    // ↑ Ajout de transform à la transition
+    opacity: 0;
+    transform: translateX(0);
+    transition:
+            background-color 0.3s ease-in-out,
+            transform 0.6s ease-out,
+            opacity 0.6s ease-out;
+
+    &.from-left {
+      transform: translateX(-100px);
+    }
+
+    &.from-right {
+      transform: translateX(100px);
+    }
+
+    &.in-view {
+      opacity: 1;
+      transform: translateX(0);
+    }
 
     &:hover {
       transform: scale(1.03);
@@ -205,7 +303,7 @@ p{
       position: relative;
       display: inline-block;
     }
-  }
+
     .skill-list li {
       padding-bottom: 12px;
       font-size: 16px;
@@ -220,3 +318,4 @@ p{
       }
     }
   }
+}

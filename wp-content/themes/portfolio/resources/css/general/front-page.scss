@@ -2,7 +2,7 @@
 
 
 .header {
-  background-image: url('/wp-content/themes/portfolio/resources/img/main-flower.jpg');
+  background-image: url('/wp-content/themes/portfolio/resources/img/main-flower.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -38,7 +38,7 @@
       }
     }
   }
-  @include desktop {
+  @include max-desktop {
     height: 100vh;
     min-width: 100%;
     &_elm {
@@ -59,6 +59,17 @@
   padding: 40px 24px;
   text-align: center;
   color: var(--black);
+
+  .about-text-container{
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
+    &.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
   a{
     background-color: var(--pink);
     border-radius: 24px 0 24px 0;

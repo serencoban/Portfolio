@@ -30,7 +30,7 @@ header {
   .menu-desktop {
     display: none;
 
-    @include desktop {
+    @include max-desktop {
       display: flex;
       position: absolute;
       top: 50px;
@@ -39,6 +39,16 @@ header {
       align-items: center;
       gap: 2rem;
       margin-right: 100px;
+      @include wide{
+        display: flex;
+        position: absolute;
+        top: 50px;
+        right: 100px;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 2rem;
+        margin-bottom: auto;
+      }
 
       ul {
         display: flex;
@@ -129,7 +139,7 @@ header {
     transition: 0.5s ease-in-out;
   }
 
-  @include desktop {
+  @include max-desktop {
     input[id="menuCheckbox"],
     span {
       display: none;
@@ -190,8 +200,11 @@ header {
 
 .logo {
   padding-left: 32px;
+  width: 50px;
 
-  @include desktop {
+  @include max-desktop {
     padding-left: 100px;
+    width: 70px;
   }
+
 }

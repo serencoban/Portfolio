@@ -25,6 +25,13 @@ footer {
       .footer_logo {
         display: block;
         margin-bottom: 2rem;
+
+        svg{
+          width: 120px;
+          @include max-tablet{
+            width: 150px;
+          }
+        }
       }
 
       .socials {

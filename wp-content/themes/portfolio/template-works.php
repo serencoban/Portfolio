@@ -55,13 +55,12 @@ get_header();
                         <?php endif; ?>
                     </div>
                     <div class="work-image">
-                        <img class="work_flower" src="/wp-content/themes/portfolio/resources/img/flower.png" alt="">
-
+                            <img class="work_flower" src="/wp-content/themes/portfolio/resources/img/flower.png" alt="">
                         <?php if ($image) : ?>
                             <figure>
                                 <a href="<?php the_permalink(); ?>">
                                     <img
-                                            src="<?php echo esc_url($image['sizes']['medium']); ?>"
+                                            src="<?php echo esc_url($image['url']); ?>"
                                             alt="<?php echo esc_attr($image['alt'] ?: 'Image of ' . get_the_title()); ?>">
                                 </a>
                             </figure>
