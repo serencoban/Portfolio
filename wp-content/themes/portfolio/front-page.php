@@ -33,8 +33,24 @@
             </div>
         </div>
         <div class="flower-stem-container">
-            <?php if (have_rows('projects')) : ?>
-                <?php while (have_rows('projects')) : the_row(); ?>
+            <?php
+            $projects = new WP_Query([
+                'post_type' => 'work',
+                'posts_per_page' => 3,
+            ]);
+            if ($projects->have_posts()) :
+                while ($projects->have_posts()) : $projects->the_post();
+                    // Nouveau champ thumbnail spécial
+                    $img = get_field('thumbnail');
+
+                    // Fallback vers work_img si non défini
+                    if (!$img) {
+                        $img = get_field('work_img');
+                    }
+
+                    $title = get_field('work_title');
+                    $link = get_permalink();
+                    ?>
                     <div class="growth-step">
                         <svg class="petal" xmlns="http://www.w3.org/2000/svg" width="191" height="88" viewBox="0 0 191 88" fill="none">
                             <path d="M0 22.6961C10.2942 67.9019 55.3488 96.1901 100.632 85.8796L191 65.3036C180.705 20.0978 135.651 -8.19013 90.3671 2.12045L0 22.6961Z" fill="#898962"/>
@@ -42,16 +58,24 @@
                         </svg>
                         <article class="project-content">
                             <div class="overlay">
-                                    <a href="" title="Discover more information about<?php echo get_field('work-title') ?>" class="overlay-text">
-                                        <img src="<?php get_field('work_img') ?>" alt="">
-                                    </a>
-                                <p class="overlay-text"><?php echo get_field('work_title') ?></p>
+                                <a href="<?= esc_url($link); ?>" title="Discover more information about <?= esc_attr($title); ?>" class="overlay-text">
+                                    <?php if ($img): ?>
+                                        <img src="<?= esc_url($img['url']); ?>" alt="<?= esc_attr($img['alt']); ?>">
+                                    <?php endif; ?>
+                                </a>
+                                <span class="overlay-text"><?= esc_html($title); ?></span>
                             </div>
                         </article>
                     </div>
-    <?php endwhile; ?>
-    <?php endif; ?>
+                <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+                ?>
+                <p class="projects__empty">Il n'y a pas de projets à présenter.</p>
+            <?php endif; ?>
         </div>
+
 
     </section>
     <div class="see-more">
