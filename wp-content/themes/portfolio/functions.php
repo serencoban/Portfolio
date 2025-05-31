@@ -227,10 +227,42 @@ function dw_get_navigation_links(string $location): array
     return $links;
 }
 
+// Ajouter un post-type custom pour sauvegarder les messages de contact
+
+register_post_type('contact_message', [
+    'label' => 'Messages de contact',
+    'description' => 'Les envois de formulaire via la page de contact',
+    'menu_position' => 10,
+    'menu_icon' => 'dashicons-email',
+    'public' => false,
+    'show_ui' => true,
+    'has_archive' => false,
+    'supports' => ['title', 'editor'],
+]);
+
 // Ajouter la fonctionnalité "POST" pour un formulaire de contact personnalisé :
 add_action('admin_post_dw_submit_contact_form', 'dw_handle_contact_form');
 add_action('admin_post_nopriv_dw_submit_contact_form', 'dw_handle_contact_form');
 
+// Chargement de notre class qui va gérer ce formulaire
+require_once(__DIR__ . '/forms/ContactForm.php');
+
+function dw_handle_contact_form()
+{
+    $form = (new \DW_Theme\Forms\ContactForm())
+        ->rule('firstname', 'required')
+        ->rule('lastname', 'required')
+        ->rule('email', 'required')
+        ->rule('email', 'email')
+        ->rule('message', 'required')
+        ->rule('message', 'no_test')
+        ->sanitize('firstname', 'sanitize_text_field')
+        ->sanitize('lastname', 'sanitize_text_field')
+        ->sanitize('email', 'sanitize_text_field')
+        ->sanitize('message', 'sanitize_textarea_field');
+
+    return $form->handle($_POST);
+}
 
 // Créer une fonction qui permet de créer des pages d'options ACF pour le thème :
 function create_site_options_page(): void

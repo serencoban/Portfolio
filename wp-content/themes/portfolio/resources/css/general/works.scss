@@ -18,6 +18,9 @@
     h2{
       margin-bottom: 16px;
       font-size: 32px;
+      @include max-desktop{
+        font-size: 60px;
+      }
     }
   }
   @include tablet{
@@ -108,7 +111,7 @@
 .works-container {
   font-family: var(--font-base), sans-serif;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 100px;
 
   .work-item {
     display: grid;

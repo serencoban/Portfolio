@@ -62,6 +62,8 @@ header {
 
       a {
         transition: 0.3s ease;
+        font-family: var(--font-title);
+        font-weight: 100;
 
         &:hover {
           // Ajoute ton style si besoin
