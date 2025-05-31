@@ -1,14 +1,9 @@
 <?php /* Template Name: Page "Contact" */ ?>
 
 <?php get_header(); ?>
-<aside>
-    <h2>Contactez-moi</h2>
-</aside>
+    <h2><?php the_title(); ?> </h2>
 <?php
-// On ouvre "la boucle" (The Loop), la structure de contrôle
-// de contenu propre à Wordpress:
 if(have_posts()): while(have_posts()): the_post(); ?>
-
     <section class="contact">
         <div class="contact__left"><?= get_the_content(); ?></div>
         <div class="contact__right">
