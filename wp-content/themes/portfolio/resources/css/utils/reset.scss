@@ -71,3 +71,14 @@ h2{
 .btn{
   font-family: var(--font-base);
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); // ajoute un petit effet de montée
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

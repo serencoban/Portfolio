@@ -19,8 +19,8 @@
     <h1 class="hidden"><?php the_title(); ?></h1>
     <nav class="nav_menu">
         <h2 class="hidden"></h2>
-        <a class="nav__logo" href="<?= home_url() ?>" title="<?= __hepl('Se diriger vers la page d’accueil') ?>">
-            <img class="logo" src="/wp-content/themes/portfolio/resources/img/logo.svg" alt="" height="100" width="65">
+        <a class="nav__logo" href="<?= home_url() ?>" title="<?php echo esc_attr__('Go to Home', 'portfolio'); ?>">
+        <img class="logo" src="/wp-content/themes/portfolio/resources/img/logo.svg" alt="" height="100" width="65">
         </a>
 
         <div id="menuToggle">
@@ -31,13 +31,16 @@
                 <span></span>
             <div class="sidenav">
                 <?php wp_nav_menu([
+                        'theme_location' => 'Header',
                     'container' => false
                 ]); ?>
             </div>
         </div>
         <div class="menu-desktop">
             <?php wp_nav_menu([
-                'container' => false
+                'theme_location' => '', // pas besoin ici
+                'container' => false,
+                'menu' => pll_current_language() === 'en' ? 'Header en' : (pll_current_language() === 'fr' ? 'Header fr' : 'Header tr'),
             ]); ?>
         </div>
     </nav>

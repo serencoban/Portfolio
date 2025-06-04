@@ -7,6 +7,8 @@
   background-repeat: no-repeat;
   background-position: center;
   min-height: 300px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in-out forwards;
 
   &_elm {
     position: absolute;
@@ -46,6 +48,7 @@
       left: 100px;
       .main_title {
         font-size: 96px;
+        margin-bottom: 14px;
       }
       p {
         font-size: 60px;
@@ -136,13 +139,14 @@
     z-index: 1;
     transition: margin-left 0.6s ease, transform 0.6s ease;
 
-    @include max-tablet{
-      .growth-step:nth-child(even){
-      margin-left: 120px;
-    }
-      .growth-step:nth-child(odd){
+    @include max-tablet {
+      .growth-step:nth-child(even) {
+        margin-left: 120px;
+      }
+      .growth-step:nth-child(odd) {
         margin-left: 70px;
-      }}
+      }
+    }
 
     .growth-step {
       margin-top: 48px;
@@ -151,7 +155,7 @@
       justify-content: center;
       gap: 20px;
 
-      @include max-tablet{
+      @include max-tablet {
         margin-left: 64px;
         display: flex;
         align-items: center;
@@ -164,15 +168,16 @@
         }
       }
     }
+
     .petal {
       display: none;
 
-      @include max-tablet{
-          display: flex;
-          transition: transform 0.6s;
-          transform-origin: left center;
+      @include max-tablet {
+        display: flex;
+        transition: transform 0.6s;
+        transform-origin: left center;
 
-        svg{
+        svg {
           width: 80%;
         }
 
@@ -183,24 +188,72 @@
       border-radius: 32px 0;
       overflow: hidden;
       transition: transform 0.3s ease;
-      img{
+
+      .overlay {
+        position: relative;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        object-position: center;
-        display: block;
-        filter: brightness(0.7);
-      }
-      @include max-tablet{
-        width: 100%;
-        height: 260px;
-        border-radius: 52px 0;
-        max-width: 600px;
-      }
 
+        .overlay-link {
+          display: block;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+          .overlay-bg {
+            position: absolute;
+            bottom: -40px;
+            left: -40px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--pink);
+            border-radius: 30%;
+            z-index: 1;
+            transform: scale(0);
+            transition: transform 0.8s ease;
+          }
+          &:hover .overlay-bg {
+            transform: scale(25);
+          }
+          .overlay-text{
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            transform: translate(0, 0);
+            font-family: var(--font-base);
+            white-space: nowrap;
+            color: var(--white);
+            font-size: 24px;
+            pointer-events: none;
+            transition: all 0.4s ease;
+            z-index: 2;
+              @include max-desktop{
+                font-size: 32px;
+              }
+          }
+          &:hover .overlay-text {
+            bottom: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            filter: brightness(0.5);
+          }
+        }
+        @include max-tablet {
+          width: 100%;
+          height: 260px;
+          border-radius: 52px 0;
+          max-width: 600px;
+        }
+      }
     }
   }}
-
 .btn {
   display: inline-block;
   background-color: var(--pink);

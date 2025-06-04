@@ -1,0 +1,144 @@
+@import "../settings/breakpoints";
+
+.contact{
+  padding: 0 50px 96px;
+  color: var(--white);
+  p{
+    font-size: 16px;
+    @include max-desktop{
+      font-size: 32px;
+    }
+    @include tablet{
+      font-size: 24px;
+    }
+  }
+  label{
+    display: none;
+  }
+  input, textarea{
+    &::placeholder{
+      font-family: var(--font-base);
+    }
+
+  }
+}
+
+.header-contact{
+  background-image: url('/wp-content/themes/portfolio/resources/img/sakura.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 300px;
+  margin-bottom: 48px;
+  opacity: 0;
+  animation: fadeIn 0.6s ease-in-out forwards;
+  .title_contact{
+    margin-top: 40px;
+  }
+  @include tablet{
+    height: 50vh;
+  }
+  @include max-desktop {
+    height: 60vh;
+    min-width: 100%;
+    .title_contact{
+      font-size: 90px;
+    }
+}
+}
+.form-text-ctn{
+  display: flex;
+  flex-direction: column;
+  @include tablet{
+    flex-direction: column;
+  }
+  @include max-desktop{
+    flex-direction: row;
+  }
+}
+.form__row {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+  @include max-desktop {
+    margin-bottom: 32px;
+  }
+
+  .field {
+    flex: 1;
+
+    &__input {
+      border: none;
+      border-bottom: 1px solid gray;
+      background: transparent;
+      font-size: 18px;
+      color: white;
+      padding: 8px;
+      width: 100%;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-bottom: none;
+        background-color: #333;
+        padding: 8px;
+        border-radius: 4px;
+      }
+    }
+  }
+  &--full {
+    flex-direction: column;
+    align-items: stretch;
+    .field__input {
+      width: 100%;
+    }
+  }
+}
+.form__row_mail{
+  @include max-desktop{
+    margin-left: 30px;
+  }
+
+}
+.form__submit {
+  display: flex;
+  justify-content: flex-end; // le bouton va à droite
+  .btn{
+   border: none;
+    color: white;
+  }
+
+}
+/* Animation de la gauche */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation de la droite */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-from-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-from-right {
+  animation: slideInRight 0.8s ease-out forwards;
+}

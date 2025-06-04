@@ -80,3 +80,16 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(aboutSection);
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const leftElement = document.querySelector('.form-text-ctn');
+    const rightElement = document.querySelector('.form__row--full');
+
+    if (leftElement) {
+        leftElement.classList.add('animate-from-left');
+    }
+
+    if (rightElement) {
+        rightElement.classList.add('animate-from-right');
+    }
+});

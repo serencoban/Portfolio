@@ -2,7 +2,14 @@
 
 footer {
   color: var(--white);
-
+  font-family: var(--font-base);
+  .footer-container{
+    padding: 0 16px;
+    @include max-desktop{
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  }
   .footer_top {
     display: flex;
     justify-content: space-between;

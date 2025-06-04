@@ -15,28 +15,42 @@ get_header();
         <?php
         $base_url = get_post_type_archive_link('work');
         $current_filter = $_GET['type_work'] ?? '';
+        $page_url = get_permalink();
 
-        echo '<a class="filtered_item' . (empty($current_filter) ? ' active' : '') . '" href="' . esc_url($base_url) . '">' . __('All', 'hepl-trad') . '</a>';
+        echo '<a class="filtered_item' . (empty($current_filter) ? ' active' : '') . '" href="' . esc_url($page_url) . '">' . __('All', 'hepl-trad') . '</a>';
 
         $terms = get_terms([
             'taxonomy' => 'type_work',
             'hide_empty' => false,
         ]);
         foreach ($terms as $term) {
-            $term_url = add_query_arg('type_work', $term->slug, $base_url);
+            $term_url = add_query_arg('type_work', $term->slug, $page_url);
             $active = ($current_filter === $term->slug) ? ' active' : '';
             echo '<a class="filtered_item' . $active . '" href="' . esc_url($term_url) . '">' . esc_html($term->name) . '</a>';
         }
+
         ?>
     </div>
     <div class="works-container">
         <?php
+        $current_filter = $_GET['type_work'] ?? '';
+
         $args = [
             'post_type'      => 'work',
             'posts_per_page' => -1,
             'orderby'        => 'date',
-            'order'          => 'DESC'
+            'order'          => 'DESC',
         ];
+
+        if (!empty($current_filter)) {
+            $args['tax_query'] = [
+                [
+                    'taxonomy' => 'type_work',
+                    'field'    => 'slug',
+                    'terms'    => $current_filter,
+                ]
+            ];
+        }
 
         $works = new WP_Query($args);
 

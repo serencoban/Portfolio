@@ -1,0 +1,17 @@
+@import "../settings/breakpoints";
+
+.mentions-container{
+  margin: 0 auto;
+  color: var(--white);
+  padding: 40px 32px;
+  max-width: 900px;
+  @include max-desktop{
+    padding: 150px 50px;
+  }
+  .mentions-ctn{
+    margin-top: 60px;
+    h2{
+      margin-bottom: 24px;
+    }
+  }
+}

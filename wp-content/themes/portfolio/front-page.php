@@ -13,8 +13,10 @@
         <h3 class="hidden">About me</h3>
         <div class="about-text-container">
             <div class="about-me-text"><?php echo get_field('about_me'); ?></div>
-            <a class="btn" href="<?php echo get_permalink(pll_get_post(get_page_by_path('about')->ID)); ?>">
-                <?php echo get_field('btn') ?>
+            <a class="btn"
+               href="<?php echo get_permalink(pll_get_post(get_page_by_path('about')->ID)); ?>"
+               title="<?php echo esc_attr(pll__('Learn more about me')); ?>">
+                <?php echo get_field('btn'); ?>
             </a>
         </div>
     </section>
@@ -27,8 +29,8 @@
             </div>
 
             <div class="stem">
-                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="1359" viewBox="0 0 80 1359" fill="none">
-                    <path d="M77.0002 1C77.0002 1 9.39734 195.048 9.39734 293.99C9.39734 392.932 67.637 557.283 69.4604 656.197C71.2838 755.11 7.07604 876.894 3.86415 989.372C0.652254 1101.85 53.4177 1246.82 49.5 1358.5" stroke="#898962" stroke-width="5.5"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="85" height="1375" viewBox="0 0 85 1375" fill="none">
+                    <path d="M81.5 1C81.5 1 27.0001 212 28.9999 310.5C30.9997 409 81.5 517.5 69 613C56.5 708.5 -7.00013 879.5 4.49985 988.5C15.9998 1097.5 84.4174 1262.82 80.4997 1374.5" stroke="#898962" stroke-width="5.5"/>
                 </svg>
             </div>
         </div>
@@ -40,14 +42,8 @@
             ]);
             if ($projects->have_posts()) :
                 while ($projects->have_posts()) : $projects->the_post();
-                    // Nouveau champ thumbnail spécial
-                    $img = get_field('thumbnail');
 
-                    // Fallback vers work_img si non défini
-                    if (!$img) {
-                        $img = get_field('work_img');
-                    }
-
+                    $img = get_field('work_img');
                     $title = get_field('work_title');
                     $link = get_permalink();
                     ?>
@@ -58,12 +54,13 @@
                         </svg>
                         <article class="project-content">
                             <div class="overlay">
-                                <a href="<?= esc_url($link); ?>" title="Discover more information about <?= esc_attr($title); ?>" class="overlay-text">
+                                <a href="<?= esc_url($link); ?>" title="Discover more information about <?= esc_attr($title); ?>" class="overlay-link">
                                     <?php if ($img): ?>
                                         <img src="<?= esc_url($img['url']); ?>" alt="<?= esc_attr($img['alt']); ?>">
                                     <?php endif; ?>
+                                    <span class="overlay-text"><?= esc_html($title); ?></span>
+                                    <span class="overlay-bg"></span>
                                 </a>
-                                <span class="overlay-text"><?= esc_html($title); ?></span>
                             </div>
                         </article>
                     </div>

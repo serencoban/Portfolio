@@ -1,6 +1,7 @@
 <?php wp_footer(); ?>
 </main>
 <footer>
+    <div class="footer-container">
 <div class="footer_top">
     <div class="left_footer">
         <a class="footer_logo" href="logo">
@@ -50,13 +51,14 @@
     </div>
     <div class="center_footer">
         <?php wp_nav_menu([
-            'theme_location' => 'footer_menu',
+            'theme_location' => '',
             'container' => false,
+            'menu' => pll_current_language() === 'fr' ? 'Footer FR' : (pll_current_language() === 'en' ? 'Footer EN' : 'Footer TR'),
         ]); ?>
     </div>
+
     <div class="right_footer">
         <p><span>Let your projects flourish!</span>  Contact me and let us water your ideas carefully!</p>
-        <a href="mailto:serennnnnncobs@gmail.com">test</a>
     </div>
 </div>
 
@@ -67,5 +69,6 @@
 </div>
 
     </footer>
+</div>
 </body>
 </html>

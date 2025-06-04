@@ -250,14 +250,12 @@ require_once(__DIR__ . '/forms/ContactForm.php');
 function dw_handle_contact_form()
 {
     $form = (new \DW_Theme\Forms\ContactForm())
-        ->rule('firstname', 'required')
-        ->rule('lastname', 'required')
+        ->rule('name', 'required')
         ->rule('email', 'required')
         ->rule('email', 'email')
         ->rule('message', 'required')
         ->rule('message', 'no_test')
-        ->sanitize('firstname', 'sanitize_text_field')
-        ->sanitize('lastname', 'sanitize_text_field')
+        ->sanitize('name', 'sanitize_text_field')
         ->sanitize('email', 'sanitize_text_field')
         ->sanitize('message', 'sanitize_textarea_field');
 
@@ -288,9 +286,5 @@ function create_site_options_page(): void
         }
     }
 }
-
-
-
-
 
 add_action('acf/init', 'create_site_options_page');
