@@ -1,5 +1,11 @@
 @import "../settings/breakpoints";
 
+.contact__wrapper{
+  @include wide{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
 .contact{
   padding: 0 50px 96px;
   color: var(--white);
@@ -19,10 +25,8 @@
     &::placeholder{
       font-family: var(--font-base);
     }
-
   }
 }
-
 .header-contact{
   background-image: url('/wp-content/themes/portfolio/resources/img/sakura.png');
   background-size: cover;
@@ -32,6 +36,9 @@
   margin-bottom: 48px;
   opacity: 0;
   animation: fadeIn 0.6s ease-in-out forwards;
+  display: flex;
+  align-items: center;
+  padding-left: 50px;
   .title_contact{
     margin-top: 40px;
   }
@@ -56,89 +63,92 @@
     flex-direction: row;
   }
 }
-.form__row {
-  display: flex;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 16px;
-  @include max-desktop {
-    margin-bottom: 32px;
-  }
-
-  .field {
-    flex: 1;
-
-    &__input {
-      border: none;
-      border-bottom: 1px solid gray;
-      background: transparent;
-      font-size: 18px;
-      color: white;
-      padding: 8px;
-      width: 100%;
-      transition: all 0.3s ease;
-
-      &:focus {
-        outline: none;
-        border-bottom: none;
-        background-color: #333;
+.form__fields {
+  font-family: var(--font-base);
+  .form__row {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+    @include max-desktop {
+      margin-bottom: 32px;
+    }
+    .field {
+      flex: 1;
+      &__input {
+        border: none;
+        border-bottom: 1px solid gray;
+        background: transparent;
+        font-size: 18px;
+        color: white;
         padding: 8px;
-        border-radius: 4px;
+        width: 100%;
+        transition: all 0.3s ease;
+        &:focus {
+          outline: none;
+          border-bottom: none;
+          background-color: #333;
+          padding: 8px;
+          border-radius: 4px;
+        }
+        &:hover{
+          outline: none;
+          border-bottom: none;
+          background-color: #333;
+          padding: 8px;
+          border-radius: 4px;
+        }
+      }
+    }
+    &--full {
+      flex-direction: column;
+      align-items: stretch;
+      .field__input {
+        width: 100%;
       }
     }
   }
-  &--full {
-    flex-direction: column;
-    align-items: stretch;
-    .field__input {
-      width: 100%;
+  .form__row_mail {
+    @include max-desktop {
+      margin-left: 30px;
     }
   }
-}
-.form__row_mail{
-  @include max-desktop{
-    margin-left: 30px;
+  .form__submit {
+    display: flex;
+    justify-content: flex-end;
+    button{
+      border: red;
+      color: white;
+    }
   }
 
-}
-.form__submit {
-  display: flex;
-  justify-content: flex-end; // le bouton va à droite
-  .btn{
-   border: none;
-    color: white;
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
-}
-/* Animation de la gauche */
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100px);
+  /* Animation de la droite */
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  .animate-from-left {
+    animation: slideInLeft 0.8s ease-out forwards;
   }
-}
-
-/* Animation de la droite */
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
+  .animate-from-right {
+    animation: slideInRight 0.8s ease-out forwards;
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.animate-from-left {
-  animation: slideInLeft 0.8s ease-out forwards;
-}
-
-.animate-from-right {
-  animation: slideInRight 0.8s ease-out forwards;
 }

@@ -1,13 +1,6 @@
 @import "../settings/breakpoints";
 @import "../settings/fonts";
-p{
-  font-family: var(--font-base), sans-serif;
-  font-size: 12px;
-  line-height: 24px;
-  @include max-tablet{
-    font-size: 16px;
-  }
-}
+
 .container{
   max-width: 1200px;
   margin: 0 auto;
@@ -21,13 +14,22 @@ p{
 
 .description-section {
   padding-top: 100px;
-  @include max-tablet{
+  font-family: var(--font-base), sans-serif;
+  font-size: 12px;
+  margin: 0 auto;
+  @include max-tablet {
     padding-top: 150px;
+    font-size: 16px;
   }
+  @include max-desktop {
+    font-size: 16px;
+    max-width: 1200px;
+  }
+
   .description-content {
     display: flex;
     flex-direction: row;
-    align-items: center ;
+    align-items: center;
     gap: 16px;
 
     .description-image {
@@ -53,9 +55,10 @@ p{
       align-items: flex-start;
       text-align: left;
 
-      .description-text{
+      .description-text {
         line-height: 20px;
-        @include max-tablet{
+
+        @include max-tablet {
           line-height: 32px;
         }
       }
@@ -63,12 +66,11 @@ p{
       .section-title {
         margin-bottom: 8px;
 
-        @include max-tablet{
-            margin-bottom: 48px;
+        @include max-tablet {
+          margin-bottom: 48px;
         }
       }
     }
-
     @include max-tablet {
       flex-direction: row;
       align-items: flex-start;
@@ -79,7 +81,7 @@ p{
         flex-shrink: 0;
         width: 200px;
 
-        @include desktop{
+        @include desktop {
           width: 300px;
         }
       }
@@ -91,96 +93,106 @@ p{
   }
 }
 
-.studies-timeline {
-  margin-top: 16px;
-  display: flex;
-  flex-direction: column;
-  @include desktop{
-    gap: 24px;
+.studies-section {
+  p {
+    font-family: var(--font-base), sans-serif;
+    font-size: 12px;
+    line-height: 24px;
+    @include max-tablet {
+      font-size: 16px;
+    }
   }
 
-  li {
+  .studies-timeline {
+    margin-top: 16px;
     display: flex;
-    align-items: center;
-    gap: 56px;
-    padding: 32px 0;
-    border-bottom: 1px solid var(--white);
-    opacity: 0;
-    transform: translateX(-50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-
-    @include desktop{
-      padding: 48px 0;
+    flex-direction: column;
+    @include desktop {
+      gap: 24px;
     }
 
-    .studies-timeline li:not(:last-child) {
-      margin-bottom: 48px;
-    }
-
-    &.visible {
-      opacity: 1;
+    li {
+      display: flex;
+      align-items: center;
+      gap: 56px;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--white);
+      opacity: 1; // Visible par défaut
       transform: translateX(0);
-    }
+      transition: opacity 0.8s ease, transform 0.8s ease;
+      &.js-animate { // utilisé uniquement si JS est activé
+        opacity: 0;
+        transform: translateX(-50px);
+        &.visible {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
-    .placement{
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      @include desktop{
-        flex-direction: row;
-        gap: 32px;
+      @include desktop {
+        padding: 48px 0;
+      }
+
+      .studies-timeline li:not(:last-child) {
+        margin-bottom: 48px;
+      }
+
+      .placement {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @include desktop {
+          flex-direction: row;
+          gap: 32px;
+        }
+      }
+
+      .studies {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        p:first-of-type {
+          font-weight: bold;
+        }
+
+        p:last-of-type {
+          font-weight: 300;
+        }
+      }
+
+      .svg-wrapper {
+        flex-shrink: 0;
+
+        .petal-about {
+          transition: transform 0.3s ease;
+          transform-origin: 85% 20%;
+        }
+      }
+
+      &:hover {
+        .svg-wrapper .petal-about {
+          transform: rotate(-5deg) translateY(-5px);
+        }
       }
     }
 
-    .studies {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      p:first-of-type{
-        font-weight: bold;
-      }
-      p:last-of-type{
-        font-weight: 300;
-      }
-
-    }
-
-    .svg-wrapper {
-      flex-shrink: 0;
-
-
-    }
-    .svg-wrapper {
-      .petal-about {
-        transition: transform 0.3s ease;
-        transform-origin: 85% 20%;
-      }
-    }
-
-    &:hover {
-      .svg-wrapper .petal-about {
-        transform: rotate(-5deg) translateY(-5px);
-      }
-    }
-  }
-
-  time {
+    time {
       font-family: var(--font-time), serif;
       font-size: 32px;
-
-      @include tablet{
+      @include tablet {
         font-size: 48px;
       }
-      @include desktop{
+      @include desktop {
         font-size: 64px;
       }
-
     }
-
     p {
       line-height: 1.4;
     }
   }
+}
 
 .design-section {
   display: flex;
@@ -218,7 +230,7 @@ p{
     }
   }
 
-  @include max-tablet{
+  @include max-tablet {
     .timeline {
       display: grid;
       grid-template-columns: 1fr 3px 1fr;
@@ -248,7 +260,6 @@ p{
   }
 }
 
-
 .skills-section {
   font-family: var(--font-base), sans-serif;
 
@@ -259,35 +270,32 @@ p{
     max-width: 1000px;
     margin: 40px auto;
     text-align: center;
-
     @include desktop {
       grid-template-columns: repeat(2, 1fr);
     }
-  }
-  .skill-card {
-    background-color: var(--beige);
-    padding: 24px;
-    border-radius: 56px 0;
-    color: var(--black);
-    opacity: 0;
-    transform: translateX(0);
-    transition:
-            background-color 0.3s ease-in-out,
-            transform 0.6s ease-out,
-            opacity 0.6s ease-out;
 
-    &.from-left {
-      transform: translateX(-100px);
-    }
-
-    &.from-right {
-      transform: translateX(100px);
-    }
-
-    &.in-view {
+    .skill-card {
+      background-color: var(--beige);
+      padding: 24px;
+      border-radius: 56px 0;
+      color: var(--black);
       opacity: 1;
       transform: translateX(0);
-    }
+      transition: background-color 0.3s ease-in-out, transform 0.6s ease-out, opacity 0.6s ease-out;
+
+      &.js-animate {
+        opacity: 0;
+        &.from-left {
+          transform: translateX(-100px);
+        }
+        &.from-right {
+          transform: translateX(100px);
+        }
+        &.in-view {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
 
     &:hover {
       transform: scale(1.03);
@@ -296,25 +304,29 @@ p{
 
     .skill-list {
       padding-top: 20px;
-    }
 
-    .skill-title {
-      font-size: 24px;
-      position: relative;
-      display: inline-block;
+      li {
+        padding-bottom: 12px;
+        font-size: 16px;
+      }
     }
-
-    .skill-list li {
-      padding-bottom: 12px;
-      font-size: 16px;
-    }
-
-    @include desktop {
-      padding: 40px 20px;
-      border-radius: 72px 0;
 
       .skill-title {
-        font-size: 32px;
+        font-size: 24px;
+        position: relative;
+        display: inline-block;
+        @include mobile{
+          font-size: 20px;
+        }
+      }
+
+      @include desktop {
+        padding: 40px 20px;
+        border-radius: 72px 0;
+
+        .skill-title {
+          font-size: 32px;
+        }
       }
     }
   }

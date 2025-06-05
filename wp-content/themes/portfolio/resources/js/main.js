@@ -1,95 +1,46 @@
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-        }
-    });
-}, {
-    threshold: 0.2
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    const items = document.querySelectorAll('.work-item');
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    items.forEach(item => observer.observe(item));
-});
-
-document.querySelectorAll('.studies-timeline li').forEach(li => {
-    observer.observe(li);
-});
-
-window.addEventListener("scroll", function () {
-    const header = document.querySelector("header");
-    if (window.scrollY > 50) {
-        header.classList.add("scrolled");
-    } else {
-        header.classList.remove("scrolled");
-    }
-});
-
 document.addEventListener('DOMContentLoaded', () => {
+    // Observer générique
+    const createObserver = (selector, className, threshold = 0.1) => {
+        const elements = document.querySelectorAll(selector);
+
+        if (elements.length > 0) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add(className);
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold });
+
+            elements.forEach(el => observer.observe(el));
+        }
+    };
+
+    // Animation des .work-item
+    createObserver('.work-item', 'visible', 0.1);
+
+    // Animation des skill-cards (avec direction)
     const skillCards = document.querySelectorAll('.skill-card');
-
     skillCards.forEach((card, index) => {
-        if (index < 2) {
-            card.classList.add('from-left');
-        } else {
-            card.classList.add('from-right');
-        }
+        card.classList.add(index < 2 ? 'from-left' : 'from-right');
     });
+    createObserver('.skill-card', 'in-view');
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
+    // Animation section About
+    createObserver('.about-text-container', 'in-view');
 
-            }
-        });
-    }, { threshold: 0.1 });
-
-    skillCards.forEach(card => {
-        observer.observe(card);
-    });
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    const aboutSection = document.querySelector('.about-text-container');
-
-    if (aboutSection) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-
-                }
-            });
-        }, { threshold: 0.1 });
-
-        observer.observe(aboutSection);
-    }
-});
-
-document.addEventListener('DOMContentLoaded', () => {
+    // Animation formulaire sans observer (animations directes)
     const leftElement = document.querySelector('.form-text-ctn');
     const rightElement = document.querySelector('.form__row--full');
 
-    if (leftElement) {
-        leftElement.classList.add('animate-from-left');
-    }
+    if (leftElement) leftElement.classList.add('animate-from-left');
+    if (rightElement) rightElement.classList.add('animate-from-right');
+});
 
-    if (rightElement) {
-        rightElement.classList.add('animate-from-right');
-    }
+// Effet scroll sur le header
+window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+    header.classList.toggle("scrolled", window.scrollY > 50);
 });

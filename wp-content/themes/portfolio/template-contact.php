@@ -2,12 +2,15 @@
 
 <?php get_header(); ?>
 <section class="header-contact">
-    <div class="header_elm">
-        <h2 class="title_contact">Let's get in touch</h2>
+    <div class="contact__wrapper">
+        <div class="contact-title-ctn">
+            <h2 class="title_contact">Let's get in touch</h2>
+        </div>
     </div>
 </section>
 
 <section class="contact">
+    <div class="contact__wrapper">
     <div class="contact__container">
         <?php
         $errors = $_SESSION['contact_form_errors'] ?? [];
@@ -71,6 +74,7 @@
                 </div>
             </form>
         <?php endif; ?>
+    </div>
     </div>
 </section>
 <?php get_footer(); ?>

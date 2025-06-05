@@ -1,95 +1,109 @@
 @import "../settings/breakpoints";
-
-
 .header {
+  display: flex;
+  align-items: center;     // verticalement centré
+  justify-content: flex-start; // aligné à gauche
+  padding-left: 1.5rem;    // petit espace à gauche
   background-image: url('/wp-content/themes/portfolio/resources/img/main-flower.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 300px;
+  min-height: 18.75rem;
   opacity: 0;
   animation: fadeIn 0.6s ease-in-out forwards;
-
   &_elm {
-    position: absolute;
-    top: 150px;
-    left: 24px;
-
     .main_title {
-      font-size: 40px;
+      font-size: 2.5rem;
       color: var(--white);
       font-family: var(--font-title), serif;
     }
-
     p {
-      font-size: 24px;
+      font-size: 1.5rem;
       color: var(--white);
       font-family: var(--font-title), serif;
     }
   }
-  @include tablet{
+  @include tablet {
     height: 50vh;
-    &_elm{
-      top: 200px;
-      left: 32px;
-      .main_title{
-        font-size: 50px ;
+    padding-left: 2rem;
+    &_elm {
+      .main_title {
+        font-size: 3.125rem;
       }
-      p{
-        font-size: 32px;
+      p {
+        font-size: 2rem;
       }
     }
   }
   @include max-desktop {
     height: 100vh;
     min-width: 100%;
+    padding-left: 6.25rem;
     &_elm {
-      top: 300px;
-      left: 100px;
       .main_title {
-        font-size: 96px;
-        margin-bottom: 14px;
+        font-size: 6rem;
+        margin-bottom: 0.875rem;
       }
       p {
-        font-size: 60px;
+        font-size: 3.75rem;
+      }
+    }
+  }
+  @include wide {
+    height: 75vh;
+    padding-left: 6.25rem;
+    &_elm {
+      .main_title {
+        font-size: 8rem;
+        margin-bottom: 0.875rem;
       }
     }
   }
 }
 
 .about_me {
+  font-family: var(--font-base);
   background-color: var(--beige);
-  padding: 40px 24px;
+  padding: 2.5rem 1.5rem;
   text-align: center;
   color: var(--black);
 
-  .about-text-container{
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-
-    &.in-view {
-      opacity: 1;
-      transform: translateY(0);
+  .about-text-container {
+    opacity: 1;
+    transform: none;
+    .js & {
+      opacity: 0;
+      transform: translateY(3.125rem);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      &.in-view {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   }
-  a{
-    background-color: var(--pink);
-    border-radius: 24px 0 24px 0;
 
+  a {
+    background-color: var(--pink);
+    border-radius: 1.5rem 0 1.5rem 0;
   }
-  @include max-tablet{
-    padding: 64px 24px;
+
+  @include max-tablet {
+    padding: 4rem 1.5rem;
+  }
+
+  @include wide {
+    padding: 5rem 1.5rem;
   }
 }
 
+
 .flower-stem-section {
   position: relative;
-  margin-bottom: 100px;
+  margin-bottom: 6.25rem;
 
   .flower_and_stem {
     position: absolute;
-    top: -200px;
+    top: -12.5rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 0;
@@ -98,31 +112,40 @@
     .flower {
       width: 90%;
       transition: width 0.6s ease-in-out;
+      @include wide{
+        width: 130%;
+      }
     }
-
     .stem{
       position: relative;
-      top: -60Px;
+      top: -3.75rem;
       left: 20%;
       width: 100%;
-      height: 800px;
+      height: 50rem;
       overflow: hidden;
       z-index: -10;
       svg {
-      width: auto;
+        width: auto;
       }
     }
     @include max-tablet{
-      top: -250px;
-      left: 170px;
-
+      top: -15.625rem;
+      left: 10.625rem;
       .flower{
         transform: rotate(30deg);
       }
       .stem{
-        height: 900px;
-        left: 50px;
-        top: -100px;
+        height: 56.25rem;
+        left: 3.125rem;
+        top: -6.25rem;
+      }
+    }
+    @include wide{
+      top: -20rem;
+      left: 15.6rem;
+      .stem{
+        height: 70em;
+        left: 8rem;
       }
     }
     @include tablet{
@@ -131,35 +154,36 @@
         justify-content: left;
       }
     }
+
   }
 
   .flower-stem-container {
-    margin: 150px 24px 0;
+    margin: 9.375rem 1.5rem 0;
     position: relative;
     z-index: 1;
     transition: margin-left 0.6s ease, transform 0.6s ease;
 
     @include max-tablet {
       .growth-step:nth-child(even) {
-        margin-left: 120px;
+        margin-left: 7.5rem;
       }
       .growth-step:nth-child(odd) {
-        margin-left: 70px;
+        margin-left: 4.375rem;
       }
     }
 
     .growth-step {
-      margin-top: 48px;
+      margin-top: 3rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 1.25rem;
 
       @include max-tablet {
-        margin-left: 64px;
+        margin-left: 4rem;
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 1.25rem;
 
         &:hover {
           .petal {
@@ -180,12 +204,11 @@
         svg {
           width: 80%;
         }
-
       }
     }
 
     .project-content {
-      border-radius: 32px 0;
+      border-radius: 2rem 0;
       overflow: hidden;
       transition: transform 0.3s ease;
 
@@ -202,10 +225,10 @@
           overflow: hidden;
           .overlay-bg {
             position: absolute;
-            bottom: -40px;
-            left: -40px;
-            width: 50px;
-            height: 50px;
+            bottom: -2.5rem;
+            left: -2.5rem;
+            width: 3.125rem;
+            height: 3.125rem;
             background-color: var(--pink);
             border-radius: 30%;
             z-index: 1;
@@ -223,13 +246,13 @@
             font-family: var(--font-base);
             white-space: nowrap;
             color: var(--white);
-            font-size: 24px;
+            font-size: 1.5rem;
             pointer-events: none;
             transition: all 0.4s ease;
             z-index: 2;
-              @include max-desktop{
-                font-size: 32px;
-              }
+            @include max-desktop{
+              font-size: 2rem;
+            }
           }
           &:hover .overlay-text {
             bottom: 50%;
@@ -247,9 +270,9 @@
         }
         @include max-tablet {
           width: 100%;
-          height: 260px;
-          border-radius: 52px 0;
-          max-width: 600px;
+          height: 16.25rem;
+          border-radius: 3.25rem 0;
+          max-width: 37.5rem;
         }
       }
     }
@@ -257,13 +280,13 @@
 .btn {
   display: inline-block;
   background-color: var(--pink);
-  margin-top: 24px;
-  padding: 16px 40px;
-  border-radius: 24px 0;
+  margin-top: 1.5rem;
+  padding: 1rem 2.5rem;
+  border-radius: 1.5rem 0;
   transition: 0.3s;
-  font-size: 12px;
+  font-size: 0.75rem;
   @include max-tablet{
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   &:hover {
@@ -274,6 +297,5 @@
 
 .see-more{
   text-align: center;
-  margin-bottom: 120px;
-
+  margin-bottom: 7.5rem;
 }

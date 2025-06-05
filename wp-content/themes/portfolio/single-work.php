@@ -58,23 +58,36 @@
 
         </div>
     </div>
-</section>
-
-<section class="other-works container">
-    <h2>Other works</h2>
-    <div class="other-works-links">
-        <article>
-            <a class="other-work-link" href="<?php echo get_permalink(get_page_by_path('work-1')); ?>">
-                View Work 1
-            </a>
-        </article>
-        <article>
-            <a class="other-work-link" href="<?php echo get_permalink(get_page_by_path('work-2')); ?>">
-                View Work 2
-            </a>
-        </article>
-
-    </div>
+    <?php
+    $current_post_id = get_the_ID();
+    $args = array(
+        'post_type' => 'work',
+        'posts_per_page' => 1,
+        'orderby' => 'date',
+        'order' => 'ASC',
+        'post__not_in' => array($current_post_id),
+        'date_query' => array(
+            array(
+                'after' => get_the_date('', $current_post_id),
+                'inclusive' => false,
+            ),
+        ),
+    );
+    $next_query = new WP_Query($args);
+    if ($next_query->have_posts()) :
+        while ($next_query->have_posts()) : $next_query->the_post(); ?>
+            <div class="other-work">
+                <span>Next project</span>
+                <div class="other-works-links">
+                    <a class="other-work-link btn" href="<?php the_permalink(); ?>">
+                        <?php the_title(); ?>
+                    </a>
+                </div>
+            </div>
+        <?php endwhile;
+        wp_reset_postdata();
+    endif;
+    ?>
 </section>
 
 <?php get_footer(); ?>

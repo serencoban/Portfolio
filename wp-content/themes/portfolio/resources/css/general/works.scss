@@ -1,6 +1,9 @@
 @import "../settings/breakpoints";
-
 .page-header {
+  display: flex;
+  align-items: center; // centré verticalement
+  justify-content: flex-start; // aligné à gauche
+  padding-left: 24px;
   background-image: url('/wp-content/themes/portfolio/resources/img/single-flower.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -8,49 +11,52 @@
   min-height: 300px;
   opacity: 0;
   animation: fadeIn 0.6s ease-in-out forwards;
-
   .header_work {
-    position: absolute;
-    top: 200px;
-    left: 24px;
     a {
       font-size: 12px;
       font-family: var(--font-title), serif;
     }
-    h2{
+    h2 {
       margin-bottom: 16px;
       font-size: 32px;
-      @include max-desktop{
+      @include max-desktop {
         font-size: 60px;
       }
     }
   }
-  @include tablet{
+  @include tablet {
     height: 50vh;
-    .header_work{
-      top: 240px;
-      left: 32px;
-      a{
+    padding-left: 32px;
+    .header_work {
+      a {
         font-size: 16px;
       }
     }
   }
   @include max-desktop {
-    background-size: cover;
     height: 100vh;
     min-width: 100%;
+    padding-left: 100px;
     .header_work {
-      top: 370px;
-      left: 100px;
       a {
         font-size: 20px;
       }
-      h2{
+      h2 {
         margin-bottom: 24px;
       }
     }
   }
+  @include wide {
+    height: 60vh;
+    .header_work {
+      padding-left: 14rem;
+      h2 {
+        font-size: 100px;
+      }
+    }
+  }
 }
+
 
 .works-list{
   color: var(--white);
@@ -106,6 +112,11 @@
       font-size: 20px;
       margin-bottom: 100px;
     }
+    @include wide {
+      max-width: 1200px;
+      margin: 0 auto;
+
+    }
 
   }
 
@@ -113,19 +124,25 @@
 .works-container {
   font-family: var(--font-base), sans-serif;
   max-width: 1200px;
-  margin: 0 auto 100px;
+  margin: 64px auto 100px;
 
   .work-item {
     display: grid;
     grid-template-columns: 1fr;
     gap: 1.5rem;
     margin-bottom: 56px;
-    opacity: 0;
-    transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    &.visible {
-      opacity: 1;
-      transform: translateY(0);
+    opacity: 1;
+    transform: none;
+    .js & {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+      &.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @include max-tablet {

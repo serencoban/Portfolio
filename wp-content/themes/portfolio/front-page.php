@@ -4,15 +4,15 @@
 
     <section class="header">
         <div class="header_elm">
-            <h2 class="main_title">SEREN COBAN</h2>
-            <p><?php echo get_field('sub_title') ?></p>
+            <h2 class="main_title" itemprop="name">SEREN COBAN</h2>
+            <p itemprop="jobTitle"><?php echo get_field('sub_title') ?></p>
         </div>
     </section>
 
     <section class="about_me">
         <h3 class="hidden">About me</h3>
         <div class="about-text-container">
-            <div class="about-me-text"><?php echo get_field('about_me'); ?></div>
+            <div itemprop="description" class="about-me-text"><?php echo get_field('about_me'); ?></div>
             <a class="btn"
                href="<?php echo get_permalink(pll_get_post(get_page_by_path('about')->ID)); ?>"
                title="<?php echo esc_attr(pll__('Learn more about me')); ?>">
@@ -21,7 +21,7 @@
         </div>
     </section>
 
-    <section class="flower-stem-section">
+    <section class="flower-stem-section" itemprop="knowsAbout" itemscope="" itemtype="https://schema.org/CreativeWork">
 
         <div class="flower_and_stem">
             <div class="flower_ctn">
@@ -52,13 +52,13 @@
                             <path d="M0 22.6961C10.2942 67.9019 55.3488 96.1901 100.632 85.8796L191 65.3036C180.705 20.0978 135.651 -8.19013 90.3671 2.12045L0 22.6961Z" fill="#898962"/>
                             <path d="M171 49.5C145.346 40.1383 118.688 50.1615 88.5002 51.5C43.2319 53.5072 22.8612 51.323 3.02718 24.2908" stroke="#EAE8C6" stroke-width="2" stroke-linecap="round"/>
                         </svg>
-                        <article class="project-content">
+                        <article class="project-content" itemprop="workExample">
                             <div class="overlay">
                                 <a href="<?= esc_url($link); ?>" title="Discover more information about <?= esc_attr($title); ?>" class="overlay-link">
                                     <?php if ($img): ?>
                                         <img src="<?= esc_url($img['url']); ?>" alt="<?= esc_attr($img['alt']); ?>">
                                     <?php endif; ?>
-                                    <span class="overlay-text"><?= esc_html($title); ?></span>
+                                    <span class="overlay-text" itemprop="name"><?= esc_html($title); ?></span>
                                     <span class="overlay-bg"></span>
                                 </a>
                             </div>
