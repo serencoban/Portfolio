@@ -60,34 +60,27 @@
     </div>
     <?php
     $current_post_id = get_the_ID();
-    $args = array(
-        'post_type' => 'work',
-        'posts_per_page' => 1,
-        'orderby' => 'date',
-        'order' => 'ASC',
-        'post__not_in' => array($current_post_id),
-        'date_query' => array(
-            array(
-                'after' => get_the_date('', $current_post_id),
-                'inclusive' => false,
-            ),
-        ),
-    );
-    $next_query = new WP_Query($args);
-    if ($next_query->have_posts()) :
-        while ($next_query->have_posts()) : $next_query->the_post(); ?>
-            <div class="other-work">
-                <span>Next project</span>
-                <div class="other-works-links">
-                    <a class="other-work-link btn" href="<?php the_permalink(); ?>">
-                        <?php the_title(); ?>
+    $prev_post = get_previous_post();
+    $next_post = get_next_post();
+
+    if ($prev_post || $next_post): ?>
+        <div class="other-work">
+            <span><?php _e('Other projects', 'portfolio'); ?></span>
+            <div class="other-works-links">
+                <?php if ($prev_post): ?>
+                    <a class="other-work-link btn" href="<?php echo get_permalink($prev_post); ?>">
+                        ← <?php echo get_the_title($prev_post); ?>
                     </a>
-                </div>
+                <?php endif; ?>
+
+                <?php if ($next_post): ?>
+                    <a class="other-work-link btn" href="<?php echo get_permalink($next_post); ?>">
+                        <?php echo get_the_title($next_post); ?> →
+                    </a>
+                <?php endif; ?>
             </div>
-        <?php endwhile;
-        wp_reset_postdata();
-    endif;
-    ?>
+        </div>
+    <?php endif; ?>
 </section>
 
 <?php get_footer(); ?>

@@ -3,7 +3,7 @@
 .mentions-container{
   margin: 0 auto;
   color: var(--white);
-  padding: 40px 32px;
+  padding: 120px 32px 40px;
   max-width: 900px;
   @include max-desktop{
     padding: 150px 50px;
@@ -12,6 +12,13 @@
     margin-top: 60px;
     h2{
       margin-bottom: 24px;
+    }
+  }
+  h1{
+    font-family: var(--font-title);
+    font-size: 60px;
+    @include mobile{
+      font-size: 32px;
     }
   }
 }

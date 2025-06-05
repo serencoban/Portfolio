@@ -80,20 +80,31 @@
     }
   }
 }
-.work-content{
+.work-content {
   max-width: 1000px;
   margin: 0 auto;
   padding: 20px;
-  .other-work{
+
+  .other-work {
     text-align: center;
-    span{
+
+    span {
       font-family: var(--font-base);
       color: var(--white);
       font-size: 24px;
+      display: block;
+      margin-bottom: 20px;
     }
 
+    .other-works-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
   }
+}
+
 .work-section {
    display: flex;
    flex-direction: column;

@@ -65,7 +65,11 @@
 
 <div class="footer_bottom">
     <p>2025 Seren COBAN. All right reserved. Made with love.</p>
-    <a href="">Legal information</a>
+    <?php
+    $legal_page_id = pll_get_post(263);
+    $legal_url = get_permalink($legal_page_id);
+    ?>
+    <a href="<?= esc_url($legal_url); ?>">Legal information</a>
 </div>
 
     </footer>

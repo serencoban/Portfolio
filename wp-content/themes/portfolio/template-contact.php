@@ -32,7 +32,7 @@
                             </div>
                             <div class="field">
                                 <label for="name" class="field__label">Nom et Prénom</label>
-                                <input placeholder="YOUR FULL NAME*" type="text" name="name" id="name" class="field__input">
+                                <input placeholder="YOUR FULL NAME*" type="text" name="name" id="name" class="field__input" maxlength="400" aria-required="true">
                                 <?php if(isset($errors['name'])): ?>
                                     <p class="field__error"><?= $errors['name']; ?></p>
                                 <?php endif; ?>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="field">
                                 <label for="email" class="field__label">Adresse mail</label>
-                                <input placeholder="YOUR MAIL ADRESS*" type="email" name="email" id="email" class="field__input">
+                                <input placeholder="YOUR MAIL ADRESS*" type="email" name="email" id="email" class="field__input" maxlength="400" aria-required="true">
                                 <?php if(isset($errors['email'])): ?>
                                     <p class="field__error"><?= $errors['email']; ?></p>
                                 <?php endif; ?>
@@ -57,7 +57,7 @@
                         </div>
                         <div class="field">
                             <label for="message" class="field__label">Message</label>
-                            <textarea placeholder="YOUR DESCRIPTION*" name="message" id="message" class="field__input"></textarea>
+                            <textarea placeholder="YOUR DESCRIPTION*" name="message" id="message" class="field__input" maxlength="400" aria-required="true"></textarea>
                             <?php if(isset($errors['message'])): ?>
                                 <p class="field__error"><?= $errors['message']; ?></p>
                             <?php endif; ?>
