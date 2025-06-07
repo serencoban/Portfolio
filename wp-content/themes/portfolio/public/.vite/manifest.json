@@ -1,12 +1,16 @@
 {
   "wp-content/themes/portfolio/resources/css/styles.scss": {
-    "file": "assets/css-CP5q8_vB.css",
+    "file": "assets/css-AKrsrJ_4.css",
     "src": "wp-content/themes/portfolio/resources/css/styles.scss",
     "isEntry": true
   },
   "wp-content/themes/portfolio/resources/fonts/Ethereal-Thin.otf": {
     "file": "assets/Ethereal-Thin-CH4U-63c.otf",
     "src": "wp-content/themes/portfolio/resources/fonts/Ethereal-Thin.otf"
+  },
+  "wp-content/themes/portfolio/resources/fonts/Poppins-Light.ttf": {
+    "file": "assets/Poppins-Light-Cycx--Ht.ttf",
+    "src": "wp-content/themes/portfolio/resources/fonts/Poppins-Light.ttf"
   },
   "wp-content/themes/portfolio/resources/fonts/Poppins-Regular.ttf": {
     "file": "assets/Poppins-Regular-D1nUktjN.ttf",
@@ -41,7 +45,7 @@
     "src": "wp-content/themes/portfolio/resources/img/single-flower.jpg"
   },
   "wp-content/themes/portfolio/resources/js/main.js": {
-    "file": "assets/js-BkB1NvFm.js",
+    "file": "assets/js-Dq385bpx.js",
     "name": "js",
     "src": "wp-content/themes/portfolio/resources/js/main.js",
     "isEntry": true

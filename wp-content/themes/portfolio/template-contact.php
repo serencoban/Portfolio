@@ -4,11 +4,10 @@
 <section class="header-contact">
     <div class="contact__wrapper">
         <div class="contact-title-ctn">
-            <h2 class="title_contact">Let's get in touch</h2>
+            <h2 role="heading" class="title_contact">Let's get in touch</h2>
         </div>
     </div>
 </section>
-
 <section class="contact">
     <div class="contact__wrapper">
     <div class="contact__container">
@@ -23,7 +22,7 @@
                 <p><?= $success; ?></p>
             </div>
         <?php else: ?>
-            <form action="<?= admin_url('admin-post.php'); ?>" method="POST" class="form">
+            <form action="<?= admin_url('admin-post.php'); ?>" method="post" class="form" aria-label="Contact form">
                 <fieldset class="form__fields">
                     <div class="form-text-ctn">
                         <div class="form__row">
@@ -32,7 +31,9 @@
                             </div>
                             <div class="field">
                                 <label for="name" class="field__label">Nom et Prénom</label>
-                                <input placeholder="YOUR FULL NAME*" type="text" name="name" id="name" class="field__input" maxlength="400" aria-required="true">
+                                <span data-name="fullname">
+                                    <input placeholder="YOUR FULL NAME*" type="text" name="name" id="name" class="field__input" maxlength="400" aria-required="true">
+                                </span>
                                 <?php if(isset($errors['name'])): ?>
                                     <p class="field__error"><?= $errors['name']; ?></p>
                                 <?php endif; ?>
@@ -44,7 +45,9 @@
                             </div>
                             <div class="field">
                                 <label for="email" class="field__label">Adresse mail</label>
-                                <input placeholder="YOUR MAIL ADRESS*" type="email" name="email" id="email" class="field__input" maxlength="400" aria-required="true">
+                                <span data-name="email">
+                                    <input placeholder="YOUR MAIL ADRESS*" type="email" name="email" id="email" class="field__input" maxlength="400" aria-required="true">
+                                </span>
                                 <?php if(isset($errors['email'])): ?>
                                     <p class="field__error"><?= $errors['email']; ?></p>
                                 <?php endif; ?>
@@ -57,7 +60,9 @@
                         </div>
                         <div class="field">
                             <label for="message" class="field__label">Message</label>
-                            <textarea placeholder="YOUR DESCRIPTION*" name="message" id="message" class="field__input" maxlength="400" aria-required="true"></textarea>
+                            <span data-name="message">
+                                <textarea placeholder="YOUR DESCRIPTION*" name="message" id="message" class="field__input" maxlength="400" aria-required="true"></textarea>
+                            </span>
                             <?php if(isset($errors['message'])): ?>
                                 <p class="field__error"><?= $errors['message']; ?></p>
                             <?php endif; ?>
@@ -65,12 +70,7 @@
                     </div>
                 </fieldset>
                 <div class="form__submit">
-                    <?php
-                    // ce champ "hidden" permet à WP d'identifier la requête et de la transmettre
-                    // à notre fonction définie dans functions.php via "add_action('admin_post_[nom-action]')"
-                    ?>
-                    <input type="hidden" name="action" value="dw_submit_contact_form">
-                    <button type="submit" class="btn">Envoyer</button>
+                    <p><input class="btn" type="submit" value="Envoyer"></p>
                 </div>
             </form>
         <?php endif; ?>

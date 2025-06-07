@@ -4,7 +4,7 @@
 
     <section class="header">
         <div class="header_elm">
-            <h2 class="main_title" itemprop="name">SEREN COBAN</h2>
+            <h2 class="main_title" itemprop="name" role="heading">SEREN COBAN</h2>
             <p itemprop="jobTitle"><?php echo get_field('sub_title') ?></p>
         </div>
     </section>
@@ -22,10 +22,9 @@
     </section>
 
     <section class="flower-stem-section" itemprop="knowsAbout" itemscope="" itemtype="https://schema.org/CreativeWork">
-
-        <div class="flower_and_stem">
+        <div class="flower_and_stem" aria-hidden="true" focusable="false">
             <div class="flower_ctn">
-                <img src="<?php echo get_template_directory_uri(); ?>/resources/img/flower.png" alt="Lilies" class="flower">
+                <img src="<?php echo get_template_directory_uri(); ?>/resources/img/flower.png" alt="Illustration of lily flower" class="flower">
             </div>
 
             <div class="stem">
@@ -56,7 +55,8 @@
                             <div class="overlay">
                                 <a href="<?= esc_url($link); ?>" title="Discover more information about <?= esc_attr($title); ?>" class="overlay-link">
                                     <?php if ($img): ?>
-                                        <img src="<?= esc_url($img['url']); ?>" alt="<?= esc_attr($img['alt']); ?>">
+                                        <img src="<?= esc_url($img['url']); ?>" alt="<?= esc_attr($img['alt'] ?: 'Image du projet ' . $title); ?>">
+
                                     <?php endif; ?>
                                     <span class="overlay-text" itemprop="name"><?= esc_html($title); ?></span>
                                     <span class="overlay-bg"></span>

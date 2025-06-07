@@ -25,10 +25,19 @@
 /* POPPINS (300) */
 @font-face {
   font-family: 'Poppins';
-  src: url('/wp-content/themes/portfolio/resources/fonts/Poppins-Thin.ttf') format('truetype');
+  src: url('/wp-content/themes/portfolio/resources/fonts/Poppins-Light.ttf') format('truetype');
   font-display: swap;
   font-style: normal;
   font-weight: 300;
+}
+
+/* POPPINS (100) */
+@font-face {
+  font-family: 'Poppins';
+  src: url('/wp-content/themes/portfolio/resources/fonts/Poppins-Thin.ttf') format('truetype');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 100;
 }
 
 /* NOTICA SERIF (100) */

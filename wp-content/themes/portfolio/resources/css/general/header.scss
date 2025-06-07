@@ -37,7 +37,6 @@ header {
       justify-content: flex-end;
       align-items: center;
       gap: 2rem;
-      margin-right: 6.25rem;
       ul {
         display: flex;
         gap: 2rem;
@@ -51,7 +50,7 @@ header {
       a {
         transition: 0.3s ease;
         font-family: var(--font-base);
-        font-weight: 100;
+        font-weight: 300;
       }
 
       .pll-parent-menu-item {
@@ -92,10 +91,7 @@ header {
       gap: 2rem;
       margin-bottom: auto;
       font-size: 20px;
-      a {
-        font-weight: 500;
-      }
-
+      margin-right: 6rem;
     }
   }
 }
@@ -179,11 +175,13 @@ header {
   }
 
   a {
-    font-size: 24px; // préservé tel quel
+    font-size: 24px;
     text-decoration: none;
   }
 }
-
+.pll-parent-menu-item > a {
+  display: none;
+}
 .sidenav__hide {
   opacity: 0;
   transform: translate(-100vw);
@@ -205,4 +203,16 @@ header {
   @include wide{
     padding-left: 20rem;
   }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

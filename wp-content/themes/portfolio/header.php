@@ -25,34 +25,38 @@
   <?php wp_head(); ?>
 </head>
 <body itemscope="" itemtype="https://schema.org/Person">
-<header role="banner">
-
+<header>
     <h1 class="hidden"><?php the_title(); ?></h1>
-    <nav class="nav_menu" role="navigation">
+    <nav class="nav_menu" role="navigation" aria-label="<?= esc_attr__('Main navigation', 'portfolio'); ?>">
         <h2 class="hidden"></h2>
-        <a class="nav__logo" href="<?= home_url() ?>" title="<?php echo esc_attr__('Go to Home', 'portfolio'); ?>">
-        <img class="logo" src="/wp-content/themes/portfolio/resources/img/logo.svg" aria-label="Vers la page d'accueil" alt="Vers la page d'accueil" height="100" width="65">
+        <a class="nav__logo" href="<?= home_url() ?>" title="<?php esc_attr_e('Go to Home', 'portfolio'); ?>">
+            <img class="logo" src="<?= get_template_directory_uri(); ?>/resources/img/logo.svg"
+                 alt="<?php esc_attr_e("Home", "portfolio"); ?>" width="65" height="100">
         </a>
-
         <div id="menuToggle">
-            <label for="menuCheckbox"></label>
-            <input type="checkbox" id="menuCheckbox">
-                <span></span>
-                <span></span>
-                <span></span>
-            <div class="sidenav">
+            <label for="menuCheckbox" class="visually-hidden">
+                <?php esc_html_e('Toggle mobile menu', 'portfolio'); ?>
+            </label>
+            <input type="checkbox"
+                   id="menuCheckbox"
+                   aria-controls="mobileMenu"
+                   aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+            <div id="mobileMenu" class="sidenav" aria-hidden="true" inert>
                 <?php wp_nav_menu([
-                    'theme_location' => '', // pas besoin ici
                     'container' => false,
-                    'menu' => pll_current_language() === 'en' ? 'Header en' : (pll_current_language() === 'fr' ? 'Header fr' : 'Header tr'),
+                    'menu' => pll_current_language() === 'en' ? 'Header en' :
+                        (pll_current_language() === 'fr' ? 'Header fr' : 'Header tr'),
                 ]); ?>
             </div>
         </div>
         <div class="menu-desktop">
             <?php wp_nav_menu([
-                'theme_location' => '', // pas besoin ici
                 'container' => false,
-                'menu' => pll_current_language() === 'en' ? 'Header en' : (pll_current_language() === 'fr' ? 'Header fr' : 'Header tr'),
+                'menu' => pll_current_language() === 'en' ? 'Header en' :
+                    (pll_current_language() === 'fr' ? 'Header fr' : 'Header tr'),
             ]); ?>
         </div>
     </nav>

@@ -2,7 +2,6 @@
 /* Template Name: Page "About me" */
 get_header();
 ?>
-
 <section class="description-section">
     <div class="container">
         <div class="description-content">
@@ -10,9 +9,10 @@ get_header();
                     src="<?php echo esc_url(get_template_directory_uri()); ?>/resources/img/flower.png"
                     alt="<?php echo esc_attr__('Lily Flower', 'portfolio'); ?>"
                     class="description-image"
+                    itemprop="image"
             />
             <div class="description-text-group">
-                <h2 class="section-title">
+                <h2 class="section-title"role="heading">
                     <?php the_title(); ?>
                 </h2>
                 <p class="description-text" itemprop="description">
@@ -22,8 +22,6 @@ get_header();
         </div>
     </div>
 </section>
-
-
 <section class="studies-section">
     <div class="container">
         <h2 class="section-title"><?php echo get_field('studies') ?></h2>
@@ -39,7 +37,7 @@ get_header();
                     <time datetime="2016">2016</time>
                     <div class="studies">
                         <p>Economics and Foreign Languages</p>
-                        <p itemprop="alumni">Athénée Royal de Herstal</p>
+                        <p itemprop="name">Athénée Royal de Herstal</p>
                     </div>
                 </div>
             </li>
@@ -90,9 +88,9 @@ get_header();
                 $others_label => ['WordPress', 'Capcut']
             ];
             foreach ($skills as $category => $items): ?>
-                <div class="skill-card no-js" itemprop="knowsAbout" itemscope itemtype="https://schema.org/Thing">
-                <h3 class="skill-title" itemprop="name"><?php echo esc_html($category); ?></h3>
-                    <ul class="skill-list">
+                <div class="skill-card no-js" itemscope itemtype="https://schema.org/Thing">
+                    <h3 class="skill-title" itemprop="name"><?php echo esc_html($category); ?></h3>
+                    <ul class="skill-list" itemprop="knowsAbout">
                         <?php foreach ($items as $skill): ?>
                             <li><?php echo esc_html($skill); ?></li>
                         <?php endforeach; ?>
@@ -102,5 +100,4 @@ get_header();
         </div>
     </div>
 </section>
-
 <?php get_footer(); ?>
