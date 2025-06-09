@@ -6,9 +6,22 @@
   margin: 0 auto;
   color: var(--white);
   padding: 0 32px 72px;
-
-  @include desktop{
+  @include max-desktop{
     padding: 0 100px 100px;
+  }
+  @include wide{
+    padding: 0 100px 180px;
+  }
+
+  .section-title {
+    margin-bottom: 8px;
+
+    @include max-tablet {
+      margin-bottom: 48px;
+    }
+    @include max-desktop{
+      font-size: 60px;
+    }
   }
 }
 
@@ -52,22 +65,13 @@
     .description-text-group {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
+      align-self: flex-end;
 
       .description-text {
         line-height: 20px;
 
         @include max-tablet {
           line-height: 32px;
-        }
-      }
-
-      .section-title {
-        margin-bottom: 8px;
-
-        @include max-tablet {
-          margin-bottom: 48px;
         }
       }
     }
@@ -81,7 +85,7 @@
         flex-shrink: 0;
         width: 200px;
 
-        @include desktop {
+        @include max-desktop {
           width: 300px;
         }
       }
@@ -107,7 +111,7 @@
     margin-top: 16px;
     display: flex;
     flex-direction: column;
-    @include desktop {
+    @include max-desktop {
       gap: 24px;
     }
 
@@ -128,21 +132,18 @@
           transform: translateX(0);
         }
       }
-
-      @include desktop {
+      @include max-desktop {
         padding: 48px 0;
       }
-
       .studies-timeline li:not(:last-child) {
         margin-bottom: 48px;
       }
-
       .placement {
         display: flex;
         flex-direction: column;
         gap: 16px;
 
-        @include desktop {
+        @include max-desktop {
           flex-direction: row;
           gap: 32px;
         }
@@ -184,7 +185,7 @@
       @include tablet {
         font-size: 48px;
       }
-      @include desktop {
+      @include max-desktop {
         font-size: 64px;
       }
     }
@@ -270,7 +271,7 @@
     max-width: 1000px;
     margin: 40px auto;
     text-align: center;
-    @include desktop {
+    @include max-desktop {
       grid-template-columns: repeat(2, 1fr);
     }
 
@@ -320,7 +321,7 @@
         }
       }
 
-      @include desktop {
+      @include max-desktop {
         padding: 40px 20px;
         border-radius: 72px 0;
 

@@ -27,6 +27,7 @@
 <body itemscope="" itemtype="https://schema.org/Person">
 <header>
     <h1 class="hidden"><?php the_title(); ?></h1>
+    <div class="header__container">
     <nav class="nav_menu" role="navigation" aria-label="<?= esc_attr__('Main navigation', 'portfolio'); ?>">
         <h2 class="hidden"></h2>
         <a class="nav__logo" href="<?= home_url() ?>" title="<?php esc_attr_e('Go to Home', 'portfolio'); ?>">
@@ -60,5 +61,6 @@
             ]); ?>
         </div>
     </nav>
+    </div>
 </header>
 <main>

@@ -12,7 +12,7 @@ get_header();
                     itemprop="image"
             />
             <div class="description-text-group">
-                <h2 class="section-title"role="heading">
+                <h2 class="section-title" role="heading">
                     <?php the_title(); ?>
                 </h2>
                 <p class="description-text" itemprop="description">

@@ -33,7 +33,7 @@ $wide-min: 1600px;          // ≥ 1600px
   }
 }
 
-// Desktop : entre 1024px et 1599px
+// Desktop : à partir de 1599
 @mixin max-desktop {
   @media (min-width: #{$desktop-min}) {
     @content;

@@ -70,7 +70,7 @@
 
   .order_work{
     font-size: 16px;
-    margin-bottom: 56px;
+    margin: 56px 0;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -83,20 +83,15 @@
       border-radius: 50px;
       padding:  16px;
       transition: background-color 0.3s ease, color 0.3s ease;
-
       &:hover {
         background-color: var(--white);
         color: var(--black);
       }
-
       &.active {
         background-color: var(--white);
         color: var(--black);
       }
-
-
     }
-
     @include max-tablet {
       font-size: 20px;
       display: flex;
@@ -106,11 +101,9 @@
         flex: 1;
         max-width: 160px;
       }
-
     }
     @include max-desktop{
       font-size: 20px;
-      margin-bottom: 100px;
     }
     @include wide {
       max-width: 1200px;

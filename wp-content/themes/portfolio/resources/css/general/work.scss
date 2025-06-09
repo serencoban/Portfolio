@@ -108,8 +108,8 @@
 .work-section {
    display: flex;
    flex-direction: column;
-   gap: 1.5rem;
-   margin-bottom: 5rem;
+   gap: 32px;
+   margin: 100px 0;
    font-family: var(--font-base);
    color: var(--white);
 
@@ -130,35 +130,28 @@
     margin-bottom: 24px;
     font-size: 24px;
   }
-
    @include max-desktop {
      flex-direction: row;
      align-items: center;
      justify-content: space-between;
-
      .work-text,
      .work-image {
        width: 48%;
      }
-
      .work-text {
        max-width: 500px;
        line-height: 1.5;
        padding-left: 2rem;
      }
-
      .work-image {
        padding-right: 2rem;
      }
-
      &:nth-child(even) {
        flex-direction: row-reverse;
-
        .work-text {
          padding-left: 0;
          padding-right: 2rem;
        }
-
        .work-image {
          padding-left: 2rem;
          padding-right: 0;
