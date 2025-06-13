@@ -292,17 +292,6 @@ function remove_current_lang_from_menu($menu) {
 }
 
 add_filter('wp_nav_menu', 'remove_current_lang_from_menu');
-// Ajoute dynamiquement la classe `js` à <html> si JavaScript est activé
-function dw_add_js_class_script(): void
-{
-    echo <<<HTML
-<script>
-    document.documentElement.classList.remove('no-js');
-    document.documentElement.classList.add('js');
-</script>
-HTML;
-}
-add_action('wp_head', 'dw_add_js_class_script', 0);
 
 
 add_action('acf/init', 'create_site_options_page');

@@ -2,7 +2,7 @@
 </main>
 <footer role="contentinfo" aria-label="Pied de page du site">
     <div class="footer-container">
-        <h2 class="sro">Footer</h2>
+        <h2 class="sro" aria-hidden="true">Footer</h2>
 <div class="footer_top">
     <div class="left_footer">
         <p>Let your projects flourish&nbsp;!</p>

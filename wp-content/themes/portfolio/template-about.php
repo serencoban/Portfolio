@@ -58,7 +58,7 @@ get_header();
                 </div>
             </li>
             <li>
-            <div  class="svg-wrapper">
+                <div class="svg-wrapper">
                     <svg class="petal-about"  xmlns="http://www.w3.org/2000/svg" width="91" height="42" viewBox="0 0 91 42" fill="none">
                         <path d="M0 10.8322C4.90455 32.4077 26.3704 45.9089 47.9452 40.988L91 31.1676C86.095 9.59214 64.6296 -3.90893 43.0545 1.01203L0 10.8322Z" fill="#898962"/>
                         <path d="M81.4712 23.625C69.2487 19.1569 56.5475 23.9407 42.165 24.5795C20.5974 25.5375 10.892 24.495 1.44225 11.5933" stroke="#EAE8C6" stroke-width="2" stroke-linecap="round"/>
@@ -88,7 +88,7 @@ get_header();
                 $others_label => ['WordPress', 'Capcut']
             ];
             foreach ($skills as $category => $items): ?>
-                <div class="skill-card no-js" itemscope itemtype="https://schema.org/Thing">
+                <div class="skill-card" itemscope itemtype="https://schema.org/Thing">
                     <h3 class="skill-title" itemprop="name"><?php echo esc_html($category); ?></h3>
                     <ul class="skill-list" itemprop="knowsAbout">
                         <?php foreach ($items as $skill): ?>

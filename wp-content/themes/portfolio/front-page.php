@@ -8,7 +8,6 @@
             <p itemprop="jobTitle"><?php echo get_field('sub_title') ?></p>
         </div>
     </section>
-
     <section class="about_me">
         <h3 class="sro">About me</h3>
         <div class="about-text-container">

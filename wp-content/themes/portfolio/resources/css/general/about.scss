@@ -145,17 +145,21 @@
       gap: 56px;
       padding: 32px 0;
       border-bottom: 1px solid var(--white);
-      opacity: 1; // Visible par défaut
-      transform: translateX(0);
       transition: opacity 0.8s ease, transform 0.8s ease;
-      &.js-animate { // utilisé uniquement si JS est activé
+      opacity: 1;
+      transform: none;
+
+      .js & {
         opacity: 0;
-        transform: translateX(-50px);
-        &.visible {
+        transform: translateY(2rem);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+
+        &.in-view {
           opacity: 1;
-          transform: translateX(0);
+          transform: translateY(0);
         }
       }
+
       @include max-desktop {
         padding: 48px 0;
       }
@@ -308,14 +312,18 @@
       transform: translateX(0);
       transition: background-color 0.3s ease-in-out, transform 0.6s ease-out, opacity 0.6s ease-out;
 
-      &.js-animate {
+      .js & {
         opacity: 0;
+        transition: opacity 0.6s ease, transform 0.6s ease;
+
         &.from-left {
-          transform: translateX(-100px);
+          transform: translateX(-3rem);
         }
+
         &.from-right {
-          transform: translateX(100px);
+          transform: translateX(3rem);
         }
+
         &.in-view {
           opacity: 1;
           transform: translateX(0);

@@ -52,31 +52,33 @@
       font-size: 90px;
     }
 }
-}
-.form-text-ctn{
-  display: flex;
-  flex-direction: column;
-  @include tablet{
-    flex-direction: column;
-  }
-  @include max-desktop{
-    flex-direction: row;
-  }
-}
+}.form-text-ctn {
+   display: flex;
+   flex-direction: column;
+   opacity: 0;
+   transform: translateX(-40px);
+   animation: slideInLeft 0.8s ease-out forwards;
+   animation-delay: 0.1s;
+   @media (min-width: 1300px){
+     flex-direction: row;
+   }
+ }
 .form__fields {
   font-family: var(--font-base);
-
   .form__row {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 16px;
+
     @include max-desktop {
       margin-bottom: 32px;
     }
+
     .field {
       flex: 1;
+
       &__input {
         border: none;
         border-bottom: 1px solid gray;
@@ -87,14 +89,7 @@
         width: 100%;
         transition: all 0.3s ease;
 
-        &:focus {
-          outline: none;
-          border-bottom: none;
-          background-color: #333;
-          padding: 8px;
-          border-radius: 4px;
-        }
-
+        &:focus,
         &:hover {
           outline: none;
           border-bottom: none;
@@ -108,6 +103,10 @@
     &--full {
       flex-direction: column;
       align-items: stretch;
+      opacity: 0;
+      transform: translateX(40px);
+      animation: slideInRight 0.8s ease-out forwards;
+      animation-delay: 0.2s;
 
       .field__input {
         width: 100%;
@@ -116,7 +115,7 @@
   }
 
   .form__row_mail {
-    @include max-desktop {
+    @media (min-width: 1300px) {
       margin-left: 30px;
     }
   }
@@ -124,45 +123,32 @@
   .form__submit {
     display: flex;
     justify-content: flex-end;
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    /* Animation de la droite */
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(100px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    .animate-from-left {
-      animation: slideInLeft 0.8s ease-out forwards;
-    }
-
-    .animate-from-right {
-      animation: slideInRight 0.8s ease-out forwards;
-    }
-  }
-  .field-error {
-    border: 2px solid red;
   }
 
   .form__confirmation {
     margin-top: 16px;
     font-weight: bold;
     font-size: 1rem;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
