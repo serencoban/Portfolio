@@ -1,58 +1,54 @@
 @import "../settings/breakpoints";
-
 .mentions-container {
   margin: 0 auto;
   color: var(--white);
-  padding: 120px 32px 40px;
-  max-width: 900px;
+  padding: 7.5rem 2rem 2.5rem;
+  max-width: 56.25rem;
   @include max-desktop {
-    padding: 150px 50px;
+    padding: 9.375rem 3.125rem;
   }
-
-  p, li {
+  p,
+  li {
     font-family: var(--font-base);
-    font-size: 18px;
-    line-height: 24px;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+
     @include mobile {
-      font-size: 16px;
+      font-size: 1rem;
     }
   }
-
   .mentions-ctn {
-    margin-top: 60px;
-
+    margin-top: 3.75rem;
     h2 {
-      margin-bottom: 24px;
+      margin-bottom: 1.5rem;
     }
   }
-
   h1 {
     font-family: var(--font-title);
-    font-size: 60px;
+    font-size: 3.75rem;
     @include mobile {
-      font-size: 32px;
+      font-size: 2rem;
     }
   }
-  .mentions-flower img{
+  .mentions-flower img {
     display: none;
   }
-@include max-desktop{
-  .mentions-flower img {
-    float: right;
-    width: 270px;
-    margin-left: 20px;
-    animation: float-up-down 4s ease-in-out infinite;
-    display: block;
-  }
-
-  @keyframes float-up-down {
-    0%, 100% {
-      transform: translateY(0);
+  @include max-desktop {
+    .mentions-flower img {
+      float: right;
+      width: 16.875rem;
+      margin-left: 1.25rem;
+      animation: float-up-down 4s ease-in-out infinite;
+      display: block;
     }
-    50% {
-      transform: translateY(-20px);
+    @keyframes float-up-down {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-1.25rem);
+      }
     }
   }
-}
-
 }

@@ -1,132 +1,124 @@
 @import "../settings/breakpoints";
-
-.contact__wrapper{
-  @include wide{
-    max-width: 1200px;
+.contact__wrapper {
+  @include wide {
+    max-width: 75rem;
     margin: 0 auto;
   }
 }
-.contact{
-  padding: 0 50px 96px;
+.contact {
+  padding: 0 3.125rem 6rem;
   color: var(--white);
-  p{
-    font-size: 16px;
-    @include max-desktop{
-      font-size: 32px;
+  p {
+    font-size: 1rem;
+    @include tablet {
+      font-size: 1.5rem;
     }
-    @include tablet{
-      font-size: 24px;
+    @include max-desktop {
+      font-size: 2rem;
     }
   }
-  label{
+  label {
     display: none;
   }
-  input, textarea{
-    &::placeholder{
+  input,
+  textarea {
+    &::placeholder {
       font-family: var(--font-base);
     }
   }
 }
-.header-contact{
+.header-contact {
   background-image: url('/wp-content/themes/portfolio/resources/img/sakura.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  min-height: 300px;
-  margin-bottom: 48px;
+  min-height: 18.75rem;
+  margin-bottom: 3rem;
   opacity: 0;
   animation: fadeIn 0.6s ease-in-out forwards;
   display: flex;
   align-items: center;
-  padding-left: 50px;
-  .title_contact{
-    margin-top: 40px;
+  padding-left: 3.125rem;
+  .title_contact {
+    margin-top: 2.5rem;
   }
-  @include tablet{
+  @include tablet {
     height: 50vh;
   }
   @include max-desktop {
     height: 60vh;
     min-width: 100%;
-    .title_contact{
-      font-size: 90px;
+    .title_contact {
+      font-size: 5.625rem;
     }
+  }
 }
-}.form-text-ctn {
-   display: flex;
-   flex-direction: column;
-   opacity: 0;
-   transform: translateX(-40px);
-   animation: slideInLeft 0.8s ease-out forwards;
-   animation-delay: 0.1s;
-   @media (min-width: 1300px){
-     flex-direction: row;
-   }
- }
+.form-text-ctn {
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateX(-2.5rem);
+  animation: slideInLeft 0.8s ease-out forwards;
+  animation-delay: 0.1s;
+  @media (min-width: 1300px) {
+    flex-direction: row;
+  }
+}
 .form__fields {
   font-family: var(--font-base);
   .form__row {
     display: flex;
     align-items: baseline;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 16px;
-
+    gap: 0.5rem;
+    margin-bottom: 1rem;
     @include max-desktop {
-      margin-bottom: 32px;
+      margin-bottom: 2rem;
     }
-
     .field {
       flex: 1;
-
       &__input {
         border: none;
         border-bottom: 1px solid gray;
         background: transparent;
-        font-size: 18px;
+        font-size: 1.125rem;
         color: white;
-        padding: 8px;
+        padding: 0.5rem;
         width: 100%;
         transition: all 0.3s ease;
-
         &:focus,
         &:hover {
           outline: none;
           border-bottom: none;
           background-color: #333;
-          padding: 8px;
-          border-radius: 4px;
+          padding: 0.5rem;
+          border-radius: 0.25rem;
         }
       }
     }
-
     &--full {
       flex-direction: column;
       align-items: stretch;
       opacity: 0;
-      transform: translateX(40px);
+      transform: translateX(2.5rem);
       animation: slideInRight 0.8s ease-out forwards;
       animation-delay: 0.2s;
-
       .field__input {
         width: 100%;
       }
     }
   }
-
   .form__row_mail {
     @media (min-width: 1300px) {
-      margin-left: 30px;
+      margin-left: 1.875rem;
     }
   }
-
   .form__submit {
     display: flex;
     justify-content: flex-end;
   }
-
   .form__confirmation {
-    margin-top: 16px;
+    margin-top: 1rem;
     font-weight: bold;
     font-size: 1rem;
   }
@@ -134,18 +126,17 @@
 @keyframes slideInLeft {
   from {
     opacity: 0;
-    transform: translateX(-40px);
+    transform: translateX(-2.5rem);
   }
   to {
     opacity: 1;
     transform: translateX(0);
   }
 }
-
 @keyframes slideInRight {
   from {
     opacity: 0;
-    transform: translateX(40px);
+    transform: translateX(2.5rem);
   }
   to {
     opacity: 1;

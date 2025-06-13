@@ -59,12 +59,11 @@
   }
   @include wide {
     height: 80vh;
-    &_elm{
+    &_elm {
       padding-left: 12.25rem;
     }
   }
 }
-
 .about_me {
   font-family: var(--font-base);
   background-color: var(--beige);
@@ -72,15 +71,13 @@
   text-align: center;
   color: var(--black);
   .about-text-container {
-    font-size: 16px;
+    font-size: 1rem;
     opacity: 1;
     transform: none;
-
     .js & {
       opacity: 0;
       transform: translateY(3.125rem);
       transition: opacity 0.6s ease, transform 0.6s ease;
-
       &.in-view {
         opacity: 1;
         transform: translateY(0);
@@ -111,24 +108,23 @@
     .flower {
       width: 80%;
       transition: width 0.6s ease-in-out;
-      @include wide{
+      @include wide {
         width: 130%;
       }
     }
-    @media (max-width: 599px){
+    @media (max-width: 599px) {
       .flower,
-      .stem{
+      .stem {
         display: none;
       }
     }
-
-    @include max-tablet{
+    @include max-tablet {
       top: -15.625rem;
       left: 10.625rem;
-      .flower{
+      .flower {
         transform: rotate(30deg);
       }
-      .stem{
+      .stem {
         height: 56.25rem;
         left: 3.125rem;
         top: -6.25rem;
@@ -141,23 +137,21 @@
         }
       }
     }
-    @include wide{
+    @include wide {
       top: -20rem;
       left: 15.6rem;
-      .stem{
+      .stem {
         height: 70em;
         left: 8rem;
       }
     }
-    @include tablet{
-      .stem{
+    @include tablet {
+      .stem {
         display: flex;
         justify-content: left;
       }
     }
-
   }
-
   .flower-stem-container {
     margin: 0 1.5rem;
     position: relative;
@@ -172,20 +166,15 @@
         margin-left: 4.375rem;
       }
     }
-
     .growth-step {
       margin-top: 3rem;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 1.25rem;
-
       @include max-tablet {
         margin-left: 4rem;
-        display: flex;
-        align-items: center;
         gap: 1.25rem;
-
         &:hover {
           .petal {
             transform: rotate(10deg);
@@ -193,31 +182,25 @@
         }
       }
     }
-
     .petal {
       display: none;
-
       @include max-tablet {
         display: flex;
         transition: transform 0.6s;
         transform-origin: left center;
-
         svg {
           width: 80%;
         }
       }
     }
-
     .project-content {
       border-radius: 2rem 0;
       overflow: hidden;
       transition: transform 0.3s ease;
-
       .overlay {
         position: relative;
         width: 100%;
         height: 100%;
-
         .overlay-link {
           display: block;
           width: 100%;
@@ -239,7 +222,7 @@
           &:hover .overlay-bg {
             transform: scale(25);
           }
-          .overlay-text{
+          .overlay-text {
             position: absolute;
             bottom: 5%;
             left: 5%;
@@ -251,7 +234,7 @@
             pointer-events: none;
             transition: all 0.4s ease;
             z-index: 2;
-            @include max-desktop{
+            @include max-desktop {
               font-size: 2rem;
             }
           }
@@ -277,28 +260,29 @@
         }
       }
     }
-  }}
+  }
+}
 .btn {
   display: inline-block;
   background-color: var(--pink);
   margin-top: 1.5rem;
-  padding: 12px 32px;
-  border-radius: 16px 0;
+  padding: 0.75rem 2rem;
+  border-radius: 1rem 0;
   transition: 0.3s;
   font-size: 0.75rem;
   border: none;
-  @include max-tablet{
-    font-size: 14px;
+  @include max-tablet {
+    font-size: 0.875rem;
   }
-  @include max-desktop{
+  @include max-desktop {
     padding: 1rem 2.5rem;
-    border-radius: 24px 0;
+    border-radius: 1.5rem 0;
   }
   &:hover {
     background-color: var(--pink2);
   }
 }
-.see-more{
+.see-more {
   text-align: center;
   margin-bottom: 2rem;
 }
