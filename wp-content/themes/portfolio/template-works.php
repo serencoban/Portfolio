@@ -11,14 +11,13 @@ get_header();
     </div>
 </section>
 <section class="works-list">
+    <h3 class="sro">My works</h3>
     <div class="order_work" aria-label="Filtrer les projets par type">
             <?php
             $base_url = get_post_type_archive_link('work');
             $current_filter = $_GET['type_work'] ?? '';
             $page_url = get_permalink();
-
             echo '<a class="filtered_item' . (empty($current_filter) ? ' active' : '') . '" href="' . esc_url($page_url) . '">' . __('All', 'hepl-trad') . '</a>';
-
             $terms = get_terms([
                 'taxonomy' => 'type_work',
                 'hide_empty' => false,
@@ -26,24 +25,20 @@ get_header();
         foreach ($terms as $term) {
             $term_url = add_query_arg('type_work', $term->slug, $page_url);
             $active = ($current_filter === $term->slug) ? ' active' : '';
-            // Aria-label personnalisé pour chaque filtre
             $aria_label = sprintf(__('Afficher les projets %s', 'hepl-trad'), $term->name);
             echo '<a class="filtered_item' . $active . '" href="' . esc_url($term_url) . '" aria-label="' . esc_attr($aria_label) . '">' . esc_html($term->name) . '</a>';
         }
-
         ?>
     </div>
     <div class="works-container">
         <?php
         $current_filter = $_GET['type_work'] ?? '';
-
         $args = [
             'post_type'      => 'work',
             'posts_per_page' => -1,
             'orderby'        => 'date',
             'order'          => 'DESC',
         ];
-
         if (!empty($current_filter)) {
             $args['tax_query'] = [
                 [
@@ -53,9 +48,7 @@ get_header();
                 ]
             ];
         }
-
         $works = new WP_Query($args);
-
         if ($works->have_posts()) :
             while ($works->have_posts()) : $works->the_post();
 

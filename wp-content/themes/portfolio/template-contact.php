@@ -4,11 +4,12 @@
 <section class="header-contact">
     <div class="contact__wrapper">
         <div class="contact-title-ctn">
-            <h2 role="heading" class="title_contact">Let's get in touch</h2>
+            <h2 role="heading" class="title_contact">Let's get in touch&nbsp;!</h2>
         </div>
     </div>
 </section>
 <section class="contact">
+    <h3 class="sro">Contact me</h3>
     <div class="contact__wrapper">
     <div class="contact__container">
         <?php
@@ -22,8 +23,9 @@
                 <p><?= $success; ?></p>
             </div>
         <?php else: ?>
-            <form action="<?= admin_url('admin-post.php'); ?>" method="post" class="form" aria-label="Contact form">
+            <form action="<?= admin_url('admin-post.php'); ?>" method="post" class="form" novalidate="">
                 <fieldset class="form__fields">
+                    <legend class="sro">Contact form</legend>
                     <div class="form-text-ctn">
                         <div class="form__row">
                             <div class="form-text">
@@ -56,7 +58,7 @@
                     </div>
                     <div class="form__row form__row--full">
                         <div class="form-text">
-                            <p>I would love to talk about :</p>
+                            <p>I would love to talk about&nbsp;:</p>
                         </div>
                         <div class="field">
                             <label for="message" class="field__label">Message</label>
@@ -70,7 +72,8 @@
                     </div>
                 </fieldset>
                 <div class="form__submit">
-                    <p><input class="btn" type="submit" value="Envoyer"></p>
+                    <input type="hidden" name="action" value="dw_submit_contact_form">
+                    <button class="btn" type="submit">Send</button>
                 </div>
             </form>
         <?php endif; ?>

@@ -15,6 +15,7 @@ get_header();
                 <h2 class="section-title" role="heading">
                     <?php the_title(); ?>
                 </h2>
+                <h3 class="sro">Description of me</h3>
                 <p class="description-text" itemprop="description">
                     <?php echo get_field('about_desc'); ?>
                 </p>
@@ -36,7 +37,7 @@ get_header();
                 <div class="placement" data-year="2016">
                     <time datetime="2016">2016</time>
                     <div class="studies">
-                        <p>Economics and Foreign Languages</p>
+                        <h3>Economics and Foreign Languages</h3>
                         <p itemprop="name">Athénée Royal de Herstal</p>
                     </div>
                 </div>
@@ -51,7 +52,7 @@ get_header();
                 <div class="placement" data-year="2022">
                     <time datetime="2022">2022</time>
                     <div class="studies">
-                        <p>Architecture</p>
+                        <h3>Architecture</h3>
                         <p itemprop="alumni">University of Liège</p>
                     </div>
                 </div>
@@ -66,7 +67,7 @@ get_header();
                 <div class="placement" data-year="2023">
                     <time datetime="2023">2023</time>
                     <div class="studies">
-                        <p>Web development and design</p>
+                        <h3>Web development and design</h3>
                         <p itemprop="alumni">Haute École de la Province de Liège</p>
                     </div>
                 </div>
@@ -74,7 +75,6 @@ get_header();
         </ul>
     </div>
 </section>
-
 <section class="skills-section">
     <div class="container">
         <h2 class="section-title"><?php echo get_field('skills') ?></h2>

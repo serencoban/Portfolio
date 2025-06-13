@@ -4,8 +4,11 @@
     <div class="work_title">
         <h2 itemprop="headline"><?php the_title(); ?></h2>
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <a href="<?php echo get_permalink(get_page_by_path('works')); ?>">Go back to other works</a>
+            <a class="back-btn" href="<?php echo get_permalink(get_page_by_path('works')); ?>">Go back to other works</a>
         <?php endwhile; endif; ?>
+        <div>
+            <a href="https://le-vieux-moulin.cobanseren.fr/" class="btn" title="Discover more about this project">See the project</a>
+        </div>
     </div>
 </section>
 
@@ -20,7 +23,7 @@
 
     <meta itemprop="name" content="<?php the_title(); ?>">
 
-    <div class="work-section">
+    <div class="work-section resume">
         <div class="work-text">
             <?php if ($title = get_field('resume')) : ?>
                 <h3 itemprop="abstract"><?php echo $title; ?></h3>
@@ -39,7 +42,7 @@
         </div>
     </div>
 
-    <div class="work-section">
+    <div class="work-section objectif" >
         <div class="work-text">
             <h3 itemprop="about"><?php echo get_field('objectif'); ?></h3>
             <p itemprop="text"><?php echo get_field('objectif_desc'); ?></p>
@@ -52,7 +55,7 @@
         </div>
     </div>
 
-    <div class="work-section">
+    <div class="work-section weakness">
         <div class="work-text">
             <h3 itemprop="keywords"><?php echo get_field('weakness'); ?></h3>
             <p itemprop="text"><?php echo get_field('weakness_desc'); ?></p>
@@ -70,7 +73,7 @@
     $next_post = get_next_post();
     if ($prev_post || $next_post): ?>
         <div class="other-work" itemprop="isPartOf" itemscope itemtype="https://schema.org/CollectionPage">
-            <span><?php _e('Other projects', 'portfolio'); ?></span>
+            <h2><?php _e('Other projects', 'portfolio'); ?></h2>
             <div class="other-works-links">
                 <?php if ($prev_post): ?>
                     <a class="other-work-link btn" href="<?php echo get_permalink($prev_post); ?>" itemprop="relatedLink">

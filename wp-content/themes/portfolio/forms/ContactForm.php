@@ -135,9 +135,3 @@ class ContactForm
     }
 
 }
-
-
-
-
-
-

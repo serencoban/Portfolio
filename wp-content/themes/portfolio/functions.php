@@ -286,7 +286,12 @@ function create_site_options_page(): void
         }
     }
 }
+function remove_current_lang_from_menu($menu) {
+    // Supprime les <li> contenant 'current-lang'
+    return preg_replace('/<li[^>]*class="[^"]*current-lang[^"]*"[^>]*>.*?<\/li>/s', '', $menu);
+}
 
+add_filter('wp_nav_menu', 'remove_current_lang_from_menu');
 // Ajoute dynamiquement la classe `js` à <html> si JavaScript est activé
 function dw_add_js_class_script(): void
 {

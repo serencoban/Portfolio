@@ -72,14 +72,3 @@ const App = {
         });
     }
 };
-
-document.addEventListener('DOMContentLoaded', () => App.init());
-const checkbox = document.getElementById('menuCheckbox');
-const mobileMenu = document.getElementById('mobileMenu');
-
-checkbox.addEventListener('change', () => {
-    const isOpen = checkbox.checked;
-    mobileMenu.setAttribute('aria-hidden', !isOpen);
-    mobileMenu.toggleAttribute('inert', !isOpen);
-    checkbox.setAttribute('aria-expanded', isOpen);
-});

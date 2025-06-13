@@ -44,6 +44,30 @@
     flex-direction: row;
     align-items: center;
     gap: 16px;
+    @keyframes popSlideRotate {
+      0% {
+        opacity: 0;
+        transform: translateX(-80px) scale(0.95) rotate(-3deg);
+        filter: blur(2px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0) scale(1) rotate(0);
+        filter: blur(0);
+      }
+    }
+
+    .description-text-group {
+      p {
+        background-color: var(--green2);
+        padding: 32px;
+        border-radius: 32px 0;
+        opacity: 0;
+        animation: popSlideRotate 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+      }
+    }
+
 
     .description-image {
       width: 100px;
@@ -98,7 +122,7 @@
 }
 
 .studies-section {
-  p {
+  h3,p {
     font-family: var(--font-base), sans-serif;
     font-size: 12px;
     line-height: 24px;
