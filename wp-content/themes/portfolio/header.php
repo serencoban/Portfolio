@@ -22,27 +22,26 @@
   <?php wp_head(); ?>
 </head>
 <body itemscope="" itemtype="https://schema.org/Person">
-<header class="site-header">
-    <h1 class="sro"><?php the_title(); ?></h1>
+<header class="site-header" role="banner">
+    <h1 class="sro" aria-level="1"><?php the_title(); ?></h1>
     <div class="header__container">
-    <nav class="nav_menu" role="navigation" aria-label="<?= esc_attr__('Main navigation', 'portfolio'); ?>">
-        <h2 class="sro">Main Navigation</h2>
-        <a class="nav__logo" href="<?= home_url() ?>" title="<?php esc_attr_e('Go to Home', 'portfolio'); ?>">
+    <nav class="nav_menu" role="navigation" aria-label="<?= esc_attr__('Main navigation', 'hepl-trad'); ?>">
+        <h2 class="sro" aria-level="2"> <?php esc_html_e('Main navigation', 'hepl-trad'); ?></h2>
+        <a class="nav__logo" href="<?= home_url() ?>" title="<?php esc_attr_e('Go to Home', 'hepl-trad'); ?>" aria-label="<?php esc_attr_e('Go to Home', 'portfolio'); ?>">
             <img class="logo" src="<?= get_template_directory_uri(); ?>/resources/img/logo.svg"
-                 alt="<?php esc_attr_e("Home", "portfolio"); ?>" width="65" height="100">
+                 alt="<?php esc_attr_e("Home", "hepl-trad"); ?>" width="65" height="100">
         </a>
         <div id="menuToggle">
             <label for="menuCheckbox" class="visually-hidden">
-                <?php esc_html_e('Toggle mobile menu', 'portfolio'); ?>
+                <?php esc_html_e('Toggle mobile menu', 'hepl-trad'); ?>
             </label>
             <input type="checkbox"
                    id="menuCheckbox"
-                   aria-controls="mobileMenu"
-                   aria-expanded="false">
+                   aria-hidden="true">
             <span></span>
             <span></span>
             <span></span>
-            <div id="mobileMenu" class="sidenav" aria-hidden="true" inert>
+            <div id="mobileMenu" class="sidenav" aria-hidden="true">
                 <?php wp_nav_menu([
                     'container' => false,
                     'menu' => pll_current_language() === 'en' ? 'Header en' :

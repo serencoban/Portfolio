@@ -37,7 +37,7 @@ get_header();
                 <div class="placement" data-year="2016">
                     <time datetime="2016">2016</time>
                     <div class="studies">
-                        <h3>Economics and Foreign Languages</h3>
+                        <h3><?php echo get_field('study_name_1'); ?></h3>
                         <p itemprop="name">Athénée Royal de Herstal</p>
                     </div>
                 </div>
@@ -52,7 +52,7 @@ get_header();
                 <div class="placement" data-year="2022">
                     <time datetime="2022">2022</time>
                     <div class="studies">
-                        <h3>Architecture</h3>
+                        <h3><?php echo get_field('study_name_2'); ?></h3>
                         <p itemprop="alumni">University of Liège</p>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ get_header();
                 <div class="placement" data-year="2023">
                     <time datetime="2023">2023</time>
                     <div class="studies">
-                        <h3>Web development and design</h3>
+                        <h3><?php echo get_field('study_name_3'); ?></h3>
                         <p itemprop="alumni">Haute École de la Province de Liège</p>
                     </div>
                 </div>

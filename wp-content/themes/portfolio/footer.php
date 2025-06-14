@@ -5,10 +5,11 @@
         <h2 class="sro" aria-hidden="true">Footer</h2>
 <div class="footer_top">
     <div class="left_footer">
-        <p>Let your projects flourish&nbsp;!</p>
+        <p><?php echo esc_html__('Let your projects flourish!', 'hepl-trad'); ?></p>
     </div>
     <div class="middle_footer">
-        <h3>Navigation</h3>
+        <h3><?php echo esc_html__('Navigation', 'hepl-trad'); ?></h3>
+
         <?php wp_nav_menu([
             'theme_location' => '',
             'container' => false,
@@ -16,7 +17,7 @@
         ]); ?>
     </div>
     <div class="right_footer">
-        <h3>Find me</h3>
+        <h3><?php echo esc_html__('Find me', 'hepl-trad'); ?></h3>
         <nav class="socials" aria-label="Link to my social media">
             <ul>
                 <li class="insta">
@@ -40,15 +41,18 @@
 </div>
 
 <div class="footer_bottom">
-    <p>©2025 Seren COBAN&nbsp;. All right reserved&nbsp;. Made with love&nbsp;.</p>
+    <p><?php echo esc_html__('©2025 Seren COBAN. All right reserved. Made with love.', 'hepl-trad'); ?></p>
     <?php
     $legal_page_id = pll_get_post(263);
     $legal_url = get_permalink($legal_page_id);
     ?>
-    <a href="<?= esc_url($legal_url); ?>">Legal information</a>
+    <a href="<?= esc_url($legal_url); ?>"
+       title="<?= esc_attr__('View legal information page', 'hepl-trad'); ?>">
+        <?= esc_html__('Legal information', 'hepl-trad'); ?>
+    </a>
+
 </div>
 
 </footer>
-</div>
 </body>
 </html>

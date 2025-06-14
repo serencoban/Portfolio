@@ -32,10 +32,9 @@ class ContactForm
     public function handle(array $data): void
     {
         // Valider les données envoyées.
-        if(is_array($errors = $this->validate($data))) {
-            // Mettre les erreurs de validation en session pour pouvoir les afficher sur la page suivante :
+        if (is_array($errors = $this->validate($data))) {
             $_SESSION['contact_form_errors'] = $errors;
-            // Retourner à la page précédente pour afficher les erreurs de validation :
+            $_SESSION['contact_form_old'] = $data;
             wp_safe_redirect($_SERVER['HTTP_REFERER']);
             exit();
         }
@@ -60,7 +59,10 @@ class ContactForm
 
         // Retourner à la page précédente pour afficher un message de succès.
         // Mettre un message de succès en session pour pouvoir l'afficher sur la page suivante :
-        $_SESSION['contact_form_success'] = 'Thank you '.$data['name'].'! Your message has been sent successfully..';
+        $_SESSION['contact_form_success'] = sprintf(
+            __('Thank you! Your message has been sent successfully.', 'hepl-trad'),
+            $data['name']
+        );
         // Retourner à la page précédente pour afficher les erreurs de validation :
         wp_safe_redirect($_SERVER['HTTP_REFERER']);
         exit();
@@ -89,7 +91,8 @@ class ContactForm
             return true;
         }
 
-        return 'Please complete this field.';
+        return __('Please complete this field.', 'hepl-trad');
+
     }
 
     protected function check_email(string $field, mixed $value): bool|string
@@ -98,22 +101,20 @@ class ContactForm
             return true;
         }
 
-        return 'mail adresse invalide.';
+        return __('Invalid email address.', 'hepl-trad');
     }
-
     protected function check_no_test(string $field, mixed $value): bool|string
     {
-        if(! is_string($value)) {
+        if (!is_string($value)) {
             return true;
         }
 
-        if(strpos($value, 'test') === false) {
+        if (strpos($value, 'test') === false) {
             return true;
         }
 
-        return 'Ce champ ne peut pas contenir le mot "test".';
+        return __('This field cannot contain the word "test".', 'hepl-trad');
     }
-
     protected function cleanData(array $data): array
     {
         $cleaned = [];

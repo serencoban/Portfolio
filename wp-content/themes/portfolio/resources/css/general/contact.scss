@@ -143,3 +143,8 @@
     transform: translateX(0);
   }
 }
+.field__error {
+  color: var(--pink);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}

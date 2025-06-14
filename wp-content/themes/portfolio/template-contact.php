@@ -4,12 +4,12 @@
 <section class="header-contact">
     <div class="contact__wrapper">
         <div class="contact-title-ctn">
-            <h2 role="heading" class="title_contact">Let's get in touch&nbsp;!</h2>
+            <h2 role="heading" class="title_contact"><?php esc_html_e('Let’s get in touch !', 'hepl-trad'); ?></h2>
         </div>
     </div>
 </section>
 <section class="contact">
-    <h3 class="sro">Contact me</h3>
+    <h3 class="sro"><?php esc_html_e('Contact me', 'hepl-trad'); ?></h3>
     <div class="contact__wrapper">
     <div class="contact__container">
         <?php
@@ -17,63 +17,100 @@
         unset($_SESSION['contact_form_errors']);
         $success = $_SESSION['contact_form_success'] ?? false;
         unset($_SESSION['contact_form_success']);
+        $old = $_SESSION['contact_form_old'] ?? [];
+        unset($_SESSION['contact_form_old']);
+
 
         if($success): ?>
             <div class="contact__success">
-                <p><?= $success; ?></p>
+                <p><?= esc_html($success); ?></p>
             </div>
         <?php else: ?>
             <form action="<?= admin_url('admin-post.php'); ?>" method="post" class="form" novalidate="">
                 <fieldset class="form__fields">
-                    <legend class="sro">Contact form</legend>
+                    <legend class="sro"><?php esc_html_e('Contact form', 'hepl-trad'); ?></legend>
+
                     <div class="form-text-ctn">
                         <div class="form__row">
                             <div class="form-text">
-                                <p>Hello, my name is</p>
+                                <p><?php esc_html_e('Hello, my name is', 'hepl-trad'); ?></p>
                             </div>
                             <div class="field">
-                                <label for="name" class="field__label">Nom et Prénom</label>
+                                <label for="name" class="field__label">
+                                    <?php esc_html_e('Full name', 'hepl-trad'); ?>
+                                </label>
                                 <span data-name="fullname">
-                                    <input placeholder="YOUR FULL NAME*" type="text" name="name" id="name" class="field__input" maxlength="400" aria-required="true">
-                                </span>
-                                <?php if(isset($errors['name'])): ?>
-                                    <p class="field__error"><?= $errors['name']; ?></p>
+                            <input
+                                    placeholder="<?= esc_attr__('Your full name*', 'hepl-trad'); ?>"
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    class="field__input"
+                                    maxlength="400"
+                                    aria-required="true"
+                                    value="<?= esc_attr($old['name'] ?? '') ?>"
+                            >
+                        </span>
+                                <?php if (isset($errors['name'])): ?>
+                                    <p class="field__error"><?= esc_html($errors['name']); ?></p>
                                 <?php endif; ?>
                             </div>
                         </div>
                         <div class="form__row form__row_mail">
                             <div class="form-text">
-                                <p>and here is my e-mail</p>
+                                <p><?php esc_html_e('And here is my e-mail', 'hepl-trad'); ?></p>
                             </div>
                             <div class="field">
-                                <label for="email" class="field__label">Adresse mail</label>
+                                <label for="email" class="field__label">
+                                    <?php esc_html_e('Email address', 'hepl-trad'); ?>
+                                </label>
                                 <span data-name="email">
-                                    <input placeholder="YOUR MAIL ADRESS*" type="email" name="email" id="email" class="field__input" maxlength="400" aria-required="true">
-                                </span>
-                                <?php if(isset($errors['email'])): ?>
-                                    <p class="field__error"><?= $errors['email']; ?></p>
+                            <input
+                                    placeholder="<?= esc_attr__('Your email address*', 'hepl-trad'); ?>"
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    class="field__input"
+                                    maxlength="400"
+                                    aria-required="true"
+                                    value="<?= esc_attr($old['email'] ?? '') ?>"
+                            >
+                        </span>
+                                <?php if (isset($errors['email'])): ?>
+                                    <p class="field__error"><?= esc_html($errors['email']); ?></p>
                                 <?php endif; ?>
                             </div>
                         </div>
                     </div>
                     <div class="form__row form__row--full">
                         <div class="form-text">
-                            <p>I would love to talk about&nbsp;:</p>
+                            <p><?php esc_html_e('I would love to talk about:', 'hepl-trad'); ?></p>
                         </div>
                         <div class="field">
-                            <label for="message" class="field__label">Message</label>
+                            <label for="message" class="field__label">
+                                <?php esc_html_e('Message', 'hepl-trad'); ?>
+                            </label>
                             <span data-name="message">
-                                <textarea placeholder="YOUR DESCRIPTION*" name="message" id="message" class="field__input" maxlength="400" aria-required="true"></textarea>
-                            </span>
-                            <?php if(isset($errors['message'])): ?>
-                                <p class="field__error"><?= $errors['message']; ?></p>
+                        <textarea
+                                placeholder="<?= esc_attr__('Your message*', 'hepl-trad'); ?>"
+                                name="message"
+                                id="message"
+                                class="field__input"
+                                maxlength="400"
+                                aria-required="true"
+                        ><?= esc_textarea($old['message'] ?? '') ?></textarea>
+                    </span>
+                            <?php if (isset($errors['message'])): ?>
+                                <p class="field__error"><?= esc_html($errors['message']); ?></p>
                             <?php endif; ?>
                         </div>
                     </div>
                 </fieldset>
                 <div class="form__submit">
                     <input type="hidden" name="action" value="dw_submit_contact_form">
-                    <button class="btn" type="submit">Send</button>
+                    <button class="btn" type="submit">
+                        <?php esc_html_e('Send', 'hepl-trad'); ?>
+                    </button>
                 </div>
             </form>
         <?php endif; ?>

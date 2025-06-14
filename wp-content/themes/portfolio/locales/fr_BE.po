@@ -1,31 +1,230 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-03-17 14:36+0100\n"
-"PO-Revision-Date: 2025-03-17 14:44+0100\n"
+"POT-Creation-Date: 2025-06-14 22:44+0200\n"
+"PO-Revision-Date: 2025-06-14 22:48+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_BE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-KeywordsList: __hepl\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: front-page.php:80
-msgid "Bienvenue sur mon site&nbsp;!"
-msgstr "Bienvenue sur mon site&nbsp;!"
+#: footer.php:8
+msgid "Let your projects flourish!"
+msgstr "Faites fleurir vos projets !"
 
-#: header.php:14
-msgid "Navigation principale"
+#: footer.php:11
+msgid "Navigation"
+msgstr "Navigation"
+
+#: footer.php:20
+msgid "Find me"
+msgstr "Retrouvez moi"
+
+#: footer.php:44
+msgid "©2025 Seren COBAN. All right reserved. Made with love."
+msgstr "©2025 Seren COBAN. Tous droits réservés. Fait avec amour."
+
+#: footer.php:50
+msgid "View legal information page"
+msgstr "Voir la page des mentions légales"
+
+#: footer.php:51
+msgid "Legal information"
+msgstr "Mentions légales"
+
+#: forms/ContactForm.php:63
+msgid "Thank you! Your message has been sent successfully."
+msgstr "Merci ! Votre message a été envoyé avec succès."
+
+#: forms/ContactForm.php:94
+msgid "Please complete this field."
+msgstr "Veuillez compléter ce champ."
+
+#: forms/ContactForm.php:104
+msgid "Invalid email address."
+msgstr "Adresse mail."
+
+#: front-page.php:14
+msgid "About me"
+msgstr "À propos de moi"
+
+#: front-page.php:21 front-page.php:22
+msgid "Learn more about me"
+msgstr "En savoir plus sur moi"
+
+#: front-page.php:29 template-works.php:18
+msgid "My works"
+msgstr "Mes projets"
+
+#: front-page.php:69 front-page.php:71
+msgid "Discover more information about "
+msgstr "Découvrir plus d’informations sur "
+
+#: front-page.php:87
+msgid "There are no projects to show."
+msgstr "Aucun projet à afficher."
+
+#: front-page.php:94 front-page.php:95
+msgid "Discover more works"
+msgstr "Découvrir d'autres projets"
+
+#: functions.php:280 functions.php:281
+#, php-format
+msgid "Options du site %s"
+msgstr ""
+
+#: header.php:28 header.php:29
+msgid "Main navigation"
 msgstr "Navigation principale"
 
-#: single-recipe.php:48
-msgid "Ingrédients"
-msgstr "Ingrédients"
+#: header.php:30
+msgid "Go to Home"
+msgstr "Aller à l’accueil"
 
-#: single-recipe.php:49
-msgid "À compléter"
-msgstr "À compléter"
+#: header.php:32
+msgid "Home"
+msgstr "Accueil"
+
+#: header.php:36
+msgid "Toggle mobile menu"
+msgstr "Ouvrir/fermer le menu mobile"
+
+#: single-work.php:9 single-work.php:10
+msgid "Go back to other works"
+msgstr "Retour aux autres projets"
+
+#: single-work.php:16
+msgid "Discover more about this project"
+msgstr "En savoir plus sur ce projet"
+
+#: single-work.php:17
+msgid "See the project"
+msgstr "Voir le projet"
+
+#: single-work.php:24
+msgid "Work content"
+msgstr "Contenu du projet"
+
+#: single-work.php:48
+msgid "Illustration of project summary"
+msgstr "Illustration du résumé du projet"
+
+#: single-work.php:65
+msgid "Illustration of project goal"
+msgstr "Illustration de l’objectif du projet"
+
+#: single-work.php:82
+msgid "Illustration of project weaknesses"
+msgstr "Illustration des points faibles du projet"
+
+#: single-work.php:94
+msgid "Other projects"
+msgstr "Autres projets"
+
+#: single-work.php:100
+msgid "Previous project"
+msgstr "Projet précédent"
+
+#: single-work.php:108
+msgid "Next project"
+msgstr "Projet suivant"
+
+#: template-about.php:10 template-mention.php:9
+msgid "Lily Flower"
+msgstr "Fleur de lys"
+
+#: template-contact.php:7
+msgid "Let’s get in touch !"
+msgstr "Entrons en contact !"
+
+#: template-contact.php:12
+msgid "Contact me"
+msgstr "Contactez moi"
+
+#: template-contact.php:30
+msgid "Contact form"
+msgstr "Formulaire de contact"
+
+#: template-contact.php:35
+msgid "Hello, my name is"
+msgstr "Salut, je suis"
+
+#: template-contact.php:39
+msgid "Full name"
+msgstr "Nom complet"
+
+#: template-contact.php:43
+msgid "Your full name*"
+msgstr "Nom complet*"
+
+#: template-contact.php:60
+msgid "And here is my e-mail"
+msgstr "Et voici mon e-mail"
+
+#: template-contact.php:64
+msgid "Email address"
+msgstr "Adresse mail"
+
+#: template-contact.php:68
+msgid "Your email address*"
+msgstr "Adresse mail*"
+
+#: template-contact.php:86
+msgid "I would love to talk about:"
+msgstr "J’aimerais bien parler à propos de :"
+
+#: template-contact.php:90
+msgid "Message"
+msgstr "Message"
+
+#: template-contact.php:94
+msgid "Your message*"
+msgstr "Votre message*"
+
+#: template-contact.php:111
+msgid "Send"
+msgstr "Envoyer"
+
+#: template-works.php:10
+msgid "View subtitle details"
+msgstr "Voir les détails du sous titre"
+
+#: template-works.php:20
+msgid "Filter projects by type"
+msgstr "Filtrer les projets par type"
+
+#: template-works.php:29
+msgid "Show all projects"
+msgstr "Afficher tous les projets"
+
+#: template-works.php:30
+msgid "All"
+msgstr "Tous"
+
+#: template-works.php:42
+#, php-format
+msgid "Show projects of type %s"
+msgstr ""
+
+#: template-works.php:86
+msgid "Decorative flower"
+msgstr "Fleur décorative"
+
+#: template-works.php:90 template-works.php:102
+msgid "View project details"
+msgstr "Voir les détails du projet"
+
+#: template-works.php:93
+#, php-format
+msgid "Image of %s"
+msgstr ""
+
+#: template-works.php:112
+msgid "No projects found."
+msgstr "Aucun projet trouvé."
