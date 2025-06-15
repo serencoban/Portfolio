@@ -4,44 +4,36 @@ $tablet-max: 1023px;        // Jusqu’à 1023px
 $desktop-min: 1024px;       // 1024px
 $desktop-max: 1799px;       // Jusqu’à 1599px
 $wide-min: 1800px;          // ≥ 1600px
-
 // Mobile : en dessous de 480px
 @mixin mobile {
   @media (max-width: #{$mobile-max}) {
     @content;
   }
 }
-
 // Tablet : entre 480px et 1023px
 @mixin tablet {
   @media (min-width: #{$tablet-min}) and (max-width: #{$tablet-max}) {
     @content;
   }
 }
-
 // Max-Tablet : à partir de 600
 @mixin max-tablet {
   @media (min-width: #{$tablet-min}) {
     @content;
   }
 }
-
 // Desktop : entre 1024px et 1799px
 @mixin desktop {
   @media (min-width: #{$desktop-min}) and (max-width: #{$desktop-max}) {
     @content;
   }
 }
-
 // Desktop : à partir de 1024
 @mixin max-desktop {
   @media (min-width: #{$desktop-min}) {
     @content;
   }
 }
-
-
-
 // Wide : à partir de 1800px
 @mixin wide {
   @media (min-width: #{$wide-min}) {

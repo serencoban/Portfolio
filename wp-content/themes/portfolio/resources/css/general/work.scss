@@ -70,7 +70,8 @@
     height: 70vh;
     padding-left: 6.25rem;
     .work_title {
-      padding-left: 14rem;
+      margin: 0 auto;
+      text-align: center;
       h2 {
         font-size: 6.25rem;
       }
@@ -119,7 +120,7 @@
     width: 100%;
   }
   .work-text {
-    line-height: 1.5rem;
+    line-height: 24px;
     p {
       font-size: 0.85rem;
     }

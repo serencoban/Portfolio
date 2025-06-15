@@ -25,6 +25,10 @@
         font-size: 3.75rem;
       }
     }
+    @include wide{
+      margin: 0 auto;
+      text-align: center;
+    }
   }
   @include tablet {
     height: 50vh;
@@ -52,7 +56,6 @@
   @include wide {
     height: 60vh;
     .header_work {
-      padding-left: 14rem;
       h2 {
         font-size: 6.25rem;
       }

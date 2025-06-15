@@ -116,6 +116,9 @@
     transition: all 0.6s ease-in-out;
     .flower {
       animation: float-up-down 3s ease-in-out infinite;
+      @include wide{
+        width: 150%;
+      }
     }
     @keyframes float-up-down {
       0%,
