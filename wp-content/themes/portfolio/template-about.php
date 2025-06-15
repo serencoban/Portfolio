@@ -26,7 +26,7 @@ get_header();
 <section class="studies-section">
     <div class="container">
         <h2 class="section-title"><?php echo get_field('studies') ?></h2>
-        <ul class="studies-timeline no-js" itemprop="alumniOf" itemscope="" itemtype="https://schema.org/EducationalOrganization">
+        <ol class="studies-timeline no-js" itemprop="alumniOf" itemscope="" itemtype="https://schema.org/EducationalOrganization">
             <li>
             <div class="svg-wrapper">
                     <svg class="petal-about" xmlns="http://www.w3.org/2000/svg" width="91" height="42" viewBox="0 0 91 42" fill="none">
@@ -38,7 +38,7 @@ get_header();
                     <time datetime="2016">2016</time>
                     <div class="studies">
                         <h3><?php echo get_field('study_name_1'); ?></h3>
-                        <p itemprop="name">Athénée Royal de Herstal</p>
+                        <p itemprop="name" lang="fr">Athénée Royal de Herstal</p>
                     </div>
                 </div>
             </li>
@@ -53,7 +53,7 @@ get_header();
                     <time datetime="2022">2022</time>
                     <div class="studies">
                         <h3><?php echo get_field('study_name_2'); ?></h3>
-                        <p itemprop="alumni">University of Liège</p>
+                        <p itemprop="name" lang="fr">Université de Liège</p>
                     </div>
                 </div>
             </li>
@@ -68,11 +68,11 @@ get_header();
                     <time datetime="2023">2023</time>
                     <div class="studies">
                         <h3><?php echo get_field('study_name_3'); ?></h3>
-                        <p itemprop="alumni">Haute École de la Province de Liège</p>
+                        <p itemprop="name" lang="fr">Haute École de la Province de Liège</p>
                     </div>
                 </div>
             </li>
-        </ul>
+        </ol>
     </div>
 </section>
 <section class="skills-section">

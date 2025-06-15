@@ -8,6 +8,9 @@
 .contact {
   padding: 0 3.125rem 6rem;
   color: var(--white);
+  @include mobile{
+    padding: 0 1.2rem 6rem;
+  }
   label {
     display: none;
   }
@@ -68,12 +71,15 @@
   }
   .form__row {
     display: flex;
-    align-items: baseline;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: 1rem;
-    @include max-desktop {
+    flex-direction: column;
+    align-items: stretch;
+    @include max-tablet {
       margin-bottom: 2rem;
+      flex-direction: row;
+      align-items: stretch;
     }
     .field {
       flex: 1;
@@ -81,7 +87,7 @@
         border: none;
         border-bottom: 1px solid gray;
         background: transparent;
-        font-size: 1.125rem;
+        font-size: 1rem;
         color: white;
         padding: 0.5rem;
         width: 100%;

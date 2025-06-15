@@ -16,7 +16,7 @@
       margin-bottom: 3rem;
     }
     @include max-desktop{
-      font-size: 3.75rem;
+      font-size: 4rem;
     }
   }
 }
@@ -50,6 +50,9 @@
         filter: blur(0);
       }
     }
+    @include mobile{
+      flex-direction: column;
+    }
     .description-text-group {
       p {
         background-color: var(--green2);
@@ -57,6 +60,9 @@
         border-radius: 2rem 0;
         opacity: 0;
         animation: popSlideRotate 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        @include mobile{
+          padding: 1rem;
+        }
       }
     }
     .description-image {
@@ -80,7 +86,6 @@
       align-self: flex-end;
       .description-text {
         line-height: 1.25rem;
-
         @include max-tablet {
           line-height: 2rem;
         }
@@ -272,10 +277,10 @@
       grid-template-columns: repeat(2, 1fr);
     }
     .skill-card {
-      background-color: var(--beige);
+      background-color: var(--green2);
       padding: 24px;
       border-radius: 56px 0;
-      color: var(--black);
+      color: var(--white);
       opacity: 1;
       transform: translateX(0);
       transition: background-color 0.3s ease-in-out, transform 0.6s ease-out, opacity 0.6s ease-out;
@@ -294,8 +299,10 @@
         }
       }
       &:hover {
+        color: var(--green2);
         transform: scale(1.03);
-        background-color: var(--green);
+        background-color: var(--beige);
+        transition: all 0.3s ease-in-out;
       }
       .skill-list {
         padding-top: 20px;
@@ -306,6 +313,8 @@
       }
       .skill-title {
         font-size: 24px;
+        font-weight: 500;
+        text-decoration: underline;
         position: relative;
         display: inline-block;
         @include mobile{

@@ -16,8 +16,6 @@ get_header();
         $base_url = get_post_type_archive_link('work');
         $current_filter = $_GET['type_work'] ?? '';
         $page_url = get_permalink();
-
-        // Lien "All"
         $all_label = esc_html__('All', 'hepl-trad');
         echo '<a class="filtered_item' . (empty($current_filter) ? ' active' : '') . '"
              href="' . esc_url($page_url) . '" 
@@ -65,7 +63,7 @@ get_header();
                 $description = get_field('work_desc');
                 $image       = get_field('work_img');
                 ?>
-                <article class="work-item" tabindex="0" role="region" aria-labelledby="work-title-<?php the_ID(); ?>" aria-describedby="work-desc-<?php the_ID(); ?>">
+                <article class="work-item" itemscope itemtype="https://schema.org/CreativeWork">
                     <div class="work-text">
                         <h3 id="work-title-<?php the_ID(); ?>"><?php the_title(); ?></h3>
                         <?php if ($description) : ?>
