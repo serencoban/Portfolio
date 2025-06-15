@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2025-06-14 22:44+0200\n"
-"PO-Revision-Date: 2025-06-14 22:48+0200\n"
+"POT-Creation-Date: 2025-06-15 20:19+0200\n"
+"PO-Revision-Date: 2025-06-15 20:20+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_BE\n"
@@ -14,27 +14,31 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: footer.php:8
-msgid "Let your projects flourish!"
-msgstr "Faites fleurir vos projets !"
+#: footer.php:9
+msgid "Let your projects"
+msgstr "Laisser vos projets"
 
-#: footer.php:11
+#: footer.php:10
+msgid "flourish"
+msgstr "fleurir"
+
+#: footer.php:14
 msgid "Navigation"
 msgstr "Navigation"
 
-#: footer.php:20
+#: footer.php:23
 msgid "Find me"
 msgstr "Retrouvez moi"
 
-#: footer.php:44
+#: footer.php:47
 msgid "©2025 Seren COBAN. All right reserved. Made with love."
 msgstr "©2025 Seren COBAN. Tous droits réservés. Fait avec amour."
 
-#: footer.php:50
+#: footer.php:53
 msgid "View legal information page"
 msgstr "Voir la page des mentions légales"
 
-#: footer.php:51
+#: footer.php:54
 msgid "Legal information"
 msgstr "Mentions légales"
 
@@ -50,27 +54,31 @@ msgstr "Veuillez compléter ce champ."
 msgid "Invalid email address."
 msgstr "Adresse mail."
 
-#: front-page.php:14
+#: forms/ContactForm.php:116
+msgid "This field cannot contain the word \"test\"."
+msgstr "Ce champ ne peut pas contenir le mot « test »."
+
+#: front-page.php:10
 msgid "About me"
 msgstr "À propos de moi"
 
-#: front-page.php:21 front-page.php:22
+#: front-page.php:17 front-page.php:18
 msgid "Learn more about me"
 msgstr "En savoir plus sur moi"
 
-#: front-page.php:29 template-works.php:18
+#: front-page.php:24 template-works.php:13
 msgid "My works"
 msgstr "Mes projets"
 
-#: front-page.php:69 front-page.php:71
+#: front-page.php:67 front-page.php:69
 msgid "Discover more information about "
 msgstr "Découvrir plus d’informations sur "
 
-#: front-page.php:87
+#: front-page.php:85
 msgid "There are no projects to show."
 msgstr "Aucun projet à afficher."
 
-#: front-page.php:94 front-page.php:95
+#: front-page.php:91 front-page.php:92
 msgid "Discover more works"
 msgstr "Découvrir d'autres projets"
 
@@ -95,136 +103,147 @@ msgstr "Accueil"
 msgid "Toggle mobile menu"
 msgstr "Ouvrir/fermer le menu mobile"
 
-#: single-work.php:9 single-work.php:10
+#: single-work.php:8
 msgid "Go back to other works"
 msgstr "Retour aux autres projets"
 
-#: single-work.php:16
+#: single-work.php:9
+msgid " ← Go back to other works"
+msgstr " ← Retour aux autres projets"
+
+#: single-work.php:15
 msgid "Discover more about this project"
 msgstr "En savoir plus sur ce projet"
 
-#: single-work.php:17
+#: single-work.php:16
 msgid "See the project"
 msgstr "Voir le projet"
 
-#: single-work.php:24
+#: single-work.php:22
 msgid "Work content"
 msgstr "Contenu du projet"
 
-#: single-work.php:48
+#: single-work.php:43
 msgid "Illustration of project summary"
 msgstr "Illustration du résumé du projet"
 
-#: single-work.php:65
+#: single-work.php:59
 msgid "Illustration of project goal"
 msgstr "Illustration de l’objectif du projet"
 
-#: single-work.php:82
+#: single-work.php:75
 msgid "Illustration of project weaknesses"
 msgstr "Illustration des points faibles du projet"
 
-#: single-work.php:94
+#: single-work.php:86
 msgid "Other projects"
 msgstr "Autres projets"
 
-#: single-work.php:100
-msgid "Previous project"
-msgstr "Projet précédent"
+#: single-work.php:92 single-work.php:100
+#, php-format
+msgid "Discover %s"
+msgstr "Découvrir %s"
 
-#: single-work.php:108
-msgid "Next project"
-msgstr "Projet suivant"
-
-#: template-about.php:10 template-mention.php:9
+#: template-about.php:10
 msgid "Lily Flower"
 msgstr "Fleur de lys"
 
-#: template-contact.php:7
+#: template-contact.php:6
 msgid "Let’s get in touch !"
 msgstr "Entrons en contact !"
 
-#: template-contact.php:12
+#: template-contact.php:11
 msgid "Contact me"
 msgstr "Contactez moi"
 
-#: template-contact.php:30
+#: template-contact.php:28
 msgid "Contact form"
 msgstr "Formulaire de contact"
 
-#: template-contact.php:35
+#: template-contact.php:32
 msgid "Hello, my name is"
 msgstr "Salut, je suis"
 
-#: template-contact.php:39
+#: template-contact.php:36
 msgid "Full name"
 msgstr "Nom complet"
 
-#: template-contact.php:43
+#: template-contact.php:40
 msgid "Your full name*"
 msgstr "Nom complet*"
 
-#: template-contact.php:60
+#: template-contact.php:57
 msgid "And here is my e-mail"
 msgstr "Et voici mon e-mail"
 
-#: template-contact.php:64
+#: template-contact.php:61
 msgid "Email address"
 msgstr "Adresse mail"
 
-#: template-contact.php:68
+#: template-contact.php:65
 msgid "Your email address*"
 msgstr "Adresse mail*"
 
-#: template-contact.php:86
+#: template-contact.php:83
 msgid "I would love to talk about:"
 msgstr "J’aimerais bien parler à propos de :"
 
-#: template-contact.php:90
+#: template-contact.php:87
 msgid "Message"
 msgstr "Message"
 
-#: template-contact.php:94
+#: template-contact.php:91
 msgid "Your message*"
 msgstr "Votre message*"
 
-#: template-contact.php:111
+#: template-contact.php:108
 msgid "Send"
 msgstr "Envoyer"
 
-#: template-works.php:10
-msgid "View subtitle details"
-msgstr "Voir les détails du sous titre"
-
-#: template-works.php:20
+#: template-works.php:14
 msgid "Filter projects by type"
 msgstr "Filtrer les projets par type"
 
-#: template-works.php:29
-msgid "Show all projects"
-msgstr "Afficher tous les projets"
-
-#: template-works.php:30
+#: template-works.php:21
 msgid "All"
-msgstr "Tous"
+msgstr "Tout"
 
-#: template-works.php:42
-#, php-format
-msgid "Show projects of type %s"
-msgstr ""
+#: template-works.php:24
+msgid "Filter projects by All"
+msgstr "Afficher tout les projets"
 
-#: template-works.php:86
+#: template-works.php:41
+msgid "Filter projects by "
+msgstr "Filtrer les projets par "
+
+#: template-works.php:78
 msgid "Decorative flower"
 msgstr "Fleur décorative"
 
-#: template-works.php:90 template-works.php:102
-msgid "View project details"
-msgstr "Voir les détails du projet"
-
-#: template-works.php:93
+#: template-works.php:83 template-works.php:95
 #, php-format
-msgid "Image of %s"
-msgstr ""
+msgid "View project details about %s"
+msgstr "Voir les détails du projet %s"
 
-#: template-works.php:112
+#: template-works.php:86
+msgid "Image of "
+msgstr "L’image de "
+
+#: template-works.php:105
 msgid "No projects found."
 msgstr "Aucun projet trouvé."
+
+#~ msgid "Previous project"
+#~ msgstr "Projet précédent"
+
+#~ msgid "Next project"
+#~ msgstr "Projet suivant"
+
+#~ msgid "Show all projects"
+#~ msgstr "Afficher tous les projets"
+
+#~ msgid "Show projects of type "
+#~ msgstr "Filtrer les projets par type "
+
+#~ msgid "View subtitle details"
+#~ msgstr "Voir les détails du sous titre"

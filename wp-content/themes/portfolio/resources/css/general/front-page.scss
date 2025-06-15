@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: flex-start;
   padding-left: 2rem;
-  background-image: url('/wp-content/themes/portfolio/resources/img/main-flower.jpg');
+  background-image: url('/wp-content/themes/portfolio/resources/img/main-flower-min.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -115,10 +115,23 @@
     z-index: 0;
     transition: all 0.6s ease-in-out;
     .flower {
-      width: 80%;
-      transition: width 0.6s ease-in-out;
-      @include wide {
-        width: 130%;
+      animation: float-up-down 3s ease-in-out infinite;
+    }
+    @keyframes float-up-down {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-1.25rem);
+      }
+      @include max-tablet{
+        width: 120%;
+        height: 120%;
+      }
+      @include max-desktop {
+        width: 174%;
+        height: 120%;
       }
     }
     @media (max-width: 599px) {
@@ -129,10 +142,7 @@
     }
     @include max-tablet {
       top: -15.625rem;
-      left: 10.625rem;
-      .flower {
-        transform: rotate(30deg);
-      }
+      left: 7rem;
       .stem {
         height: 56.25rem;
         left: 3.125rem;
@@ -153,7 +163,7 @@
     }
     @include wide {
       top: -20rem;
-      left: 15.6rem;
+      left: 28rem;
       .stem {
         height: 70em;
         left: 8rem;
@@ -245,7 +255,7 @@
             transition: transform 0.8s ease;
           }
           &:hover .overlay-bg {
-            transform: scale(25);
+            transform: scale(25)
           }
           .overlay-text {
             position: absolute;

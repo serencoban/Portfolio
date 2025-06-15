@@ -1,5 +1,4 @@
 <?php /* Template Name: Page "Contact" */ ?>
-
 <?php get_header(); ?>
 <section class="header-contact">
     <div class="contact__wrapper">
@@ -19,17 +18,15 @@
         unset($_SESSION['contact_form_success']);
         $old = $_SESSION['contact_form_old'] ?? [];
         unset($_SESSION['contact_form_old']);
-
-
         if($success): ?>
             <div class="contact__success">
                 <p><?= esc_html($success); ?></p>
             </div>
         <?php else: ?>
+        <p class="require_field"><?php echo get_field('required'); ?></p>
             <form action="<?= admin_url('admin-post.php'); ?>" method="post" class="form" novalidate="">
                 <fieldset class="form__fields">
                     <legend class="sro"><?php esc_html_e('Contact form', 'hepl-trad'); ?></legend>
-
                     <div class="form-text-ctn">
                         <div class="form__row">
                             <div class="form-text">
@@ -46,7 +43,6 @@
                                     name="name"
                                     id="name"
                                     class="field__input"
-                                    maxlength="400"
                                     aria-required="true"
                                     value="<?= esc_attr($old['name'] ?? '') ?>"
                             >
@@ -71,7 +67,6 @@
                                     name="email"
                                     id="email"
                                     class="field__input"
-                                    maxlength="400"
                                     aria-required="true"
                                     value="<?= esc_attr($old['email'] ?? '') ?>"
                             >
@@ -96,8 +91,9 @@
                                 name="message"
                                 id="message"
                                 class="field__input"
-                                maxlength="400"
                                 aria-required="true"
+                                cols="30"
+                                rows="10"
                         ><?= esc_textarea($old['message'] ?? '') ?></textarea>
                     </span>
                             <?php if (isset($errors['message'])): ?>

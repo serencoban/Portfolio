@@ -1,15 +1,11 @@
 <?php /* Template Name: Page "Home page" */ ?>
 <?php get_header(); ?>
-
-<main id="main" role="main" itemscope itemtype="https://schema.org/WebPage">
-
     <section class="header_hero">
         <div class="header_hero_elm">
-            <h2 id="main-title" class="main_title" itemprop="name">SEREN COBAN</h2>
+            <h2 role="heading" id="main-title" class="main_title" itemprop="name">SEREN COBAN</h2>
             <p itemprop="jobTitle"><?php echo esc_html(get_field('sub_title')); ?></p>
         </div>
     </section>
-
     <section class="about_me">
         <h2 id="about-title" class="sro"><?php echo esc_html__('About me', 'hepl-trad'); ?></h2>
         <div class="about-text-container">
@@ -24,16 +20,20 @@
             </a>
         </div>
     </section>
-
-    <section class="flower-stem-section" itemscope itemtype="https://schema.org/CreativeWork">
+    <section class="flower-stem-section">
         <h2 id="works-title" class="sro"><?php echo esc_html__('My works', 'hepl-trad'); ?></h2>
-
         <div class="flower_and_stem" aria-hidden="true">
             <div class="flower_ctn">
-                <img src="<?php echo esc_url(get_template_directory_uri()); ?>/resources/img/flower.png"
-                     alt="Illustration of lily flower"
-                     class="flower" role="presentation"
-                    width="323">
+                <?php
+                $flower = get_field('flower_img');
+                if ($flower) :
+                    echo wp_get_attachment_image($flower['ID'], 'full', false, [
+                        'alt' => esc_attr($flower['alt'] ?: 'Illustration of lily flower'),
+                        'class' => 'flower',
+                        'role' => 'presentation'
+                    ]);
+                endif;
+                ?>
             </div>
             <div class="stem">
                 <svg xmlns="http://www.w3.org/2000/svg" width="85" height="1375" viewBox="0 0 85 1375"
@@ -42,8 +42,7 @@
                 </svg>
             </div>
         </div>
-
-        <div class="flower-stem-container">
+        <div class="flower-stem-container" itemscope itemtype="https://schema.org/CreativeWork">
             <?php
             $projects = new WP_Query([
                 'post_type' => 'work',
@@ -61,8 +60,7 @@
                             <path d="M0 22.6961C10.2942 67.9019 55.3488 96.1901 100.632 85.8796L191 65.3036C180.705 20.0978 135.651 -8.19013 90.3671 2.12045L0 22.6961Z"/>
                             <path d="M171 49.5C145.346 40.1383 118.688 50.1615 88.5002 51.5C43.2319 53.5072 22.8612 51.323 3.02718 24.2908"/>
                         </svg>
-
-                        <article class="project-content" itemprop="workExample" itemscope itemtype="https://schema.org/CreativeWork">
+                        <article class="project-content" itemprop="workExample">
                             <h3 class="sro"><?php echo esc_html($title); ?></h3>
                             <div class="overlay">
                                 <a href="<?php echo esc_url($link); ?>"
@@ -88,8 +86,7 @@
             <?php endif; ?>
         </div>
     </section>
-
-    <div class="see-more" role="navigation" aria-label="More works">
+    <div class="see-more">
         <a class="btn"
            title="<?php echo esc_attr__('Discover more works', 'hepl-trad'); ?>"
            aria-label="<?php echo esc_attr__('Discover more works', 'hepl-trad'); ?>"
@@ -97,7 +94,4 @@
             <?php echo esc_html(get_field('btn_plus')); ?>
         </a>
     </div>
-
-</main>
-
 <?php get_footer(); ?>

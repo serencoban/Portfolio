@@ -25,7 +25,7 @@
 <header class="site-header" role="banner">
     <h1 class="sro" aria-level="1"><?php the_title(); ?></h1>
     <div class="header__container">
-    <nav class="nav_menu" role="navigation" aria-label="<?= esc_attr__('Main navigation', 'hepl-trad'); ?>">
+    <nav class="nav_menu" aria-label="<?= esc_attr__('Main navigation', 'hepl-trad'); ?>">
         <h2 class="sro" aria-level="2"> <?php esc_html_e('Main navigation', 'hepl-trad'); ?></h2>
         <a class="nav__logo" href="<?= home_url() ?>" title="<?php esc_attr_e('Go to Home', 'hepl-trad'); ?>" aria-label="<?php esc_attr_e('Go to Home', 'portfolio'); ?>">
             <img class="logo" src="<?= get_template_directory_uri(); ?>/resources/img/logo.svg"
@@ -41,7 +41,7 @@
             <span></span>
             <span></span>
             <span></span>
-            <div id="mobileMenu" class="sidenav" aria-hidden="true">
+            <div role="navigation" id="mobileMenu" class="sidenav" aria-hidden="true">
                 <?php wp_nav_menu([
                     'container' => false,
                     'menu' => pll_current_language() === 'en' ? 'Header en' :
@@ -49,7 +49,7 @@
                 ]); ?>
             </div>
         </div>
-        <div class="menu-desktop">
+        <div role="navigation" class="menu-desktop">
             <?php wp_nav_menu([
                 'container' => false,
                 'menu' => pll_current_language() === 'en' ? 'Header en' :

@@ -10,10 +10,8 @@
   @include wide{
     padding: 0 6.25rem 11.25rem;
   }
-
   .section-title {
     margin-bottom: 0.5rem;
-
     @include max-tablet {
       margin-bottom: 3rem;
     }
@@ -22,45 +20,41 @@
     }
   }
 }
-
 .description-section {
   padding-top: 6.25rem;
   font-family: var(--font-base), sans-serif;
   font-size: 0.75rem;
   margin: 0 auto;
   @include max-tablet {
-    padding-top: 9.375rem; // 150px
+    padding-top: 9.375rem;
     font-size: 1rem;
   }
   @include max-desktop {
     font-size: 1rem;
     max-width: 75rem;
   }
-
   .description-content {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 1rem; // 16px
+    gap: 1rem;
     @keyframes popSlideRotate {
       0% {
         opacity: 0;
         transform: translateX(-80px) scale(0.95) rotate(-3deg);
         filter: blur(2px);
       }
-
       100% {
         opacity: 1;
         transform: translateX(0) scale(1) rotate(0);
         filter: blur(0);
       }
     }
-
     .description-text-group {
       p {
         background-color: var(--green2);
-        padding: 2rem; // 32px
-        border-radius: 2rem 0; // 32px
+        padding: 2rem;
+        border-radius: 2rem 0;
         opacity: 0;
         animation: popSlideRotate 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
       }
@@ -72,7 +66,6 @@
       animation: rotateFlower 10s linear infinite;
       transform-origin: center;
     }
-
     @keyframes rotateFlower {
       from {
         transform: rotate(0deg);
@@ -81,12 +74,10 @@
         transform: rotate(360deg);
       }
     }
-
     .description-text-group {
       display: flex;
       flex-direction: column;
       align-self: flex-end;
-
       .description-text {
         line-height: 1.25rem;
 
@@ -99,12 +90,10 @@
       flex-direction: row;
       align-items: flex-start;
       gap: 2rem;
-
       .description-image {
         order: 0;
         flex-shrink: 0;
         width: 12.5rem;
-
         @include max-desktop {
           width: 18.75rem;
         }
@@ -116,17 +105,15 @@
     }
   }
 }
-
 .studies-section {
   h3, p {
     font-family: var(--font-base), sans-serif;
-    font-size: 0.75rem; // 12px
+    font-size: 0.75rem;
     line-height: 1.5rem;
     @include max-tablet {
       font-size: 1rem;
     }
   }
-
   .studies-timeline {
     margin-top: 16px;
     display: flex;
@@ -134,7 +121,6 @@
     @include max-desktop {
       gap: 24px;
     }
-
     li {
       display: flex;
       align-items: center;
@@ -144,63 +130,50 @@
       transition: opacity 0.8s ease, transform 0.8s ease;
       opacity: 1;
       transform: none;
-
       .js & {
         opacity: 0;
         transform: translateY(2rem);
         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-
         &.in-view {
           opacity: 1;
           transform: translateY(0);
         }
       }
-
       @include max-desktop {
         padding: 48px 0;
       }
-
       .studies-timeline li:not(:last-child) {
         margin-bottom: 48px;
       }
-
       .placement {
         display: flex;
         flex-direction: column;
         gap: 16px;
-
         @include max-desktop {
           flex-direction: row;
           gap: 32px;
         }
       }
-
       .studies {
         display: flex;
         flex-direction: column;
         gap: 8px;
-
         p:first-of-type {
           font-weight: bold;
         }
-
         p:last-of-type {
           font-weight: 300;
         }
       }
-
       .svg-wrapper {
         flex-shrink: 0;
-
         .petal-about {
           transition: transform 0.3s ease;
           transform-origin: 85% 20%;
           fill: none;
-
           path:nth-of-type(1) {
             fill: var(--green);
           }
-
           path:nth-of-type(2) {
             stroke: var(--beige);
             stroke-width: 2;
@@ -208,14 +181,12 @@
           }
         }
       }
-
       &:hover {
         .svg-wrapper .petal-about {
           transform: rotate(-5deg) translateY(-5px);
         }
       }
     }
-
     time {
       font-family: var(--font-time), serif;
       font-size: 32px;
@@ -237,13 +208,11 @@
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-
   .design {
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
   .timeline {
     width: 80%;
     height: auto;
@@ -251,7 +220,6 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-
     .timeline-content {
       padding: 1.75rem;
       background-color: var(--pink);
@@ -261,28 +229,23 @@
       transition: 0.4s ease;
       overflow-wrap: break-word !important;
     }
-
     .timeline-component {
       margin: 0 20px 20px 20px;
     }
   }
-
   @include max-tablet {
     .timeline {
       display: grid;
       grid-template-columns: 1fr 3px 1fr;
-
       .timeline-middle {
         position: relative;
         background-image: linear-gradient(45deg, var(--pink), var(--pink2));
         width: 3px;
         height: 100%;
       }
-
       .main-middle {
         opacity: 0;
       }
-
       .timeline-circle {
         position: absolute;
         top: 0;
@@ -296,10 +259,8 @@
     }
   }
 }
-
 .skills-section {
   font-family: var(--font-base), sans-serif;
-
   .skills-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -310,7 +271,6 @@
     @include max-desktop {
       grid-template-columns: repeat(2, 1fr);
     }
-
     .skill-card {
       background-color: var(--beige);
       padding: 24px;
@@ -319,39 +279,31 @@
       opacity: 1;
       transform: translateX(0);
       transition: background-color 0.3s ease-in-out, transform 0.6s ease-out, opacity 0.6s ease-out;
-
       .js & {
         opacity: 0;
         transition: opacity 0.6s ease, transform 0.6s ease;
-
         &.from-left {
           transform: translateX(-3rem);
         }
-
         &.from-right {
           transform: translateX(3rem);
         }
-
         &.in-view {
           opacity: 1;
           transform: translateX(0);
         }
       }
-
       &:hover {
         transform: scale(1.03);
         background-color: var(--green);
       }
-
       .skill-list {
         padding-top: 20px;
-
         li {
           padding-bottom: 12px;
           font-size: 16px;
         }
       }
-
       .skill-title {
         font-size: 24px;
         position: relative;
@@ -360,11 +312,9 @@
           font-size: 20px;
         }
       }
-
       @include max-desktop {
         padding: 40px 20px;
         border-radius: 72px 0;
-
         .skill-title {
           font-size: 32px;
         }

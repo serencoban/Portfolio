@@ -1,11 +1,14 @@
-<?php wp_footer(); ?>
 </main>
+<?php wp_footer(); ?>
 <footer role="contentinfo" aria-label="Pied de page du site">
     <div class="footer-container">
         <h2 class="sro" aria-hidden="true">Footer</h2>
 <div class="footer_top">
     <div class="left_footer">
-        <p><?php echo esc_html__('Let your projects flourish!', 'hepl-trad'); ?></p>
+        <p>
+            <?php echo esc_html__('Let your projects', 'hepl-trad'); ?>
+            <span class="flourish"><?php echo esc_html__('flourish', 'hepl-trad'); ?></span>
+        </p>
     </div>
     <div class="middle_footer">
         <h3><?php echo esc_html__('Navigation', 'hepl-trad'); ?></h3>
@@ -21,17 +24,17 @@
         <nav class="socials" aria-label="Link to my social media">
             <ul>
                 <li class="insta">
-                    <a href="https://www.instagram.com/sesouji/" rel="noopener noreferrer" aria-label="Instagram profil of Seren Coban" title="Go to my Instagram profil">
+                    <a href="https://www.instagram.com/sesouji/" rel="noopener noreferrer" aria-label="Instagram profil of Seren Coban" title="Go to my Instagram profil" target="_blank">
                         Instagram
                     </a>
                 </li>
                 <li class="linkedin">
-                    <a href="https://www.linkedin.com/in/seren-coban-17b955303/" title="Go to my Linkedin profil">
+                    <a href="https://www.linkedin.com/in/seren-coban-17b955303/" title="Go to my Linkedin profil" target="_blank">
                         Linkedin
                     </a>
                 </li>
                 <li class="github">
-                    <a href="https://github.com/serencoban" title="Go to my Github profil">
+                    <a href="https://github.com/serencoban" title="Go to my Github profil" target="_blank">
                         Github
                     </a>
                 </li>
@@ -52,7 +55,6 @@
     </a>
 
 </div>
-
 </footer>
 </body>
 </html>

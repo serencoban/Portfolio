@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-
 <section class="work_header">
     <div class="work_title">
         <h2 itemprop="headline"><?php the_title(); ?></h2>
@@ -7,7 +6,7 @@
             <a class="back-btn"
                href="<?php echo get_permalink(get_page_by_path('works')); ?>"
                title="<?php echo esc_attr__('Go back to other works', 'hepl-trad'); ?>">
-                <?php echo esc_html__('Go back to other works', 'hepl-trad'); ?>
+                <?php echo esc_html__(' ← Go back to other works', 'hepl-trad'); ?>
             </a>
         <?php endwhile; endif; ?>
         <div>
@@ -19,18 +18,14 @@
         </div>
     </div>
 </section>
-
 <section class="work-content" itemscope itemtype="https://schema.org/CreativeWork">
     <h2 class="sro"><?php echo esc_html__('Work content', 'hepl-trad'); ?></h2>
-
     <?php
     $resume_img    = get_field('resume_img');
     $objectif_img  = get_field('objectif_img');
     $weakness_img  = get_field('weakness_img');
     ?>
-
     <meta itemprop="name" content="<?php the_title(); ?>">
-
     <div class="work-section resume">
         <div class="work-text">
             <?php if ($title = get_field('resume')) : ?>
@@ -45,13 +40,10 @@
                 <img class="my-image"
                      src="<?php echo esc_url($resume_img['url']); ?>"
                      alt="<?php echo esc_attr($resume_img['alt']); ?>"
-                     title="<?php echo esc_attr__('Illustration of project summary', 'hepl-trad'); ?>"
-                     itemprop="url">
-                <meta itemprop="name" content="<?php echo esc_attr($resume_img['alt']); ?>">
+                  >
             <?php endif; ?>
         </div>
     </div>
-
     <div class="work-section objectif">
         <div class="work-text">
             <h3 itemprop="about"><?php echo esc_html(get_field('objectif')); ?></h3>
@@ -62,13 +54,10 @@
                 <img class="my-image"
                      src="<?php echo esc_url($objectif_img['url']); ?>"
                      alt="<?php echo esc_attr($objectif_img['alt']); ?>"
-                     title="<?php echo esc_attr__('Illustration of project goal', 'hepl-trad'); ?>"
-                     itemprop="url">
-                <meta itemprop="name" content="<?php echo esc_attr($objectif_img['alt']); ?>">
+                >
             <?php endif; ?>
         </div>
     </div>
-
     <div class="work-section weakness">
         <div class="work-text">
             <h3 itemprop="keywords"><?php echo esc_html(get_field('weakness')); ?></h3>
@@ -79,13 +68,10 @@
                 <img class="my-image"
                      src="<?php echo esc_url($weakness_img['url']); ?>"
                      alt="<?php echo esc_attr($weakness_img['alt']); ?>"
-                     title="<?php echo esc_attr__('Illustration of project weaknesses', 'hepl-trad'); ?>"
-                     itemprop="url">
-                <meta itemprop="name" content="<?php echo esc_attr($weakness_img['alt']); ?>">
+                >
             <?php endif; ?>
         </div>
     </div>
-
     <?php
     $prev_post = get_previous_post();
     $next_post = get_next_post();
@@ -97,7 +83,7 @@
                     <a class="other-work-link btn"
                        href="<?php echo get_permalink($prev_post); ?>"
                        itemprop="relatedLink"
-                       title="<?php echo esc_attr__('Previous project', 'hepl-trad'); ?>">
+                       title="<?php echo esc_attr(sprintf(__('Discover %s', 'hepl-trad'), get_the_title($prev_post))); ?>">
                         ← <?php echo get_the_title($prev_post); ?>
                     </a>
                 <?php endif; ?>
@@ -105,7 +91,7 @@
                     <a class="other-work-link btn"
                        href="<?php echo get_permalink($next_post); ?>"
                        itemprop="relatedLink"
-                       title="<?php echo esc_attr__('Next project', 'hepl-trad'); ?>">
+                       title="<?php echo esc_attr(sprintf(__('Discover %s', 'hepl-trad'), get_the_title($next_post))); ?>">
                         <?php echo get_the_title($next_post); ?> →
                     </a>
                 <?php endif; ?>
@@ -113,5 +99,4 @@
         </div>
     <?php endif; ?>
 </section>
-
 <?php get_footer(); ?>

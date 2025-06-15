@@ -1,6 +1,6 @@
 {
   "wp-content/themes/portfolio/resources/css/styles.scss": {
-    "file": "assets/css-BLMUD0VT.css",
+    "file": "assets/css-BmPKPbSF.css",
     "src": "wp-content/themes/portfolio/resources/css/styles.scss",
     "isEntry": true
   },
@@ -24,16 +24,16 @@
     "file": "assets/noticaserif-yqql8-D1r3jbGH.ttf",
     "src": "wp-content/themes/portfolio/resources/fonts/noticaserif-yqql8.ttf"
   },
-  "wp-content/themes/portfolio/resources/img/main-flower.jpg": {
-    "file": "assets/main-flower-DIPhNreN.jpg",
-    "src": "wp-content/themes/portfolio/resources/img/main-flower.jpg"
+  "wp-content/themes/portfolio/resources/img/main-flower-min.jpg": {
+    "file": "assets/main-flower-min-DTObdJhV.jpg",
+    "src": "wp-content/themes/portfolio/resources/img/main-flower-min.jpg"
   },
   "wp-content/themes/portfolio/resources/img/page404.JPG": {
     "file": "assets/page404-Cc_SL4ap.JPG",
     "src": "wp-content/themes/portfolio/resources/img/page404.JPG"
   },
   "wp-content/themes/portfolio/resources/img/project-flower.jpg": {
-    "file": "assets/project-flower-Dy3MQFou.jpg",
+    "file": "assets/project-flower-DNtQ00BJ.jpg",
     "src": "wp-content/themes/portfolio/resources/img/project-flower.jpg"
   },
   "wp-content/themes/portfolio/resources/img/sakura.png": {
@@ -41,7 +41,7 @@
     "src": "wp-content/themes/portfolio/resources/img/sakura.png"
   },
   "wp-content/themes/portfolio/resources/img/single-flower.jpg": {
-    "file": "assets/single-flower-B7To0t87.jpg",
+    "file": "assets/single-flower-RGpZJ9XY.jpg",
     "src": "wp-content/themes/portfolio/resources/img/single-flower.jpg"
   },
   "wp-content/themes/portfolio/resources/js/main.js": {
